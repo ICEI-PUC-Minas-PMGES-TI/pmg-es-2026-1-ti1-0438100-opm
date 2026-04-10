@@ -1,18 +1,23 @@
-# Nome do projeto
+# OPM - Otimização de Processos Produtivos em Máquinas
 
-Escreva um ou dois parágrafo resumindo o objetivo do seu projeto.
+Interface web voltada para a otimização e gestão da produção em ambientes industriais, centralizando ferramentas essenciais para a rotina operacional. O sistema busca organizar processos críticos, como o controle de login e cadastro de usuários por função.
 
 ## Alunos integrantes da equipe
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Bernardo Vinhal de Carvalho Teixeira
+* Daniel Gomes Rolando
+* Francisco de Castro Côrtes Netto
+* Guilherme Luiz Santos Chebile
+* Leonardo Federici Pettersen
+* Lucca Campos Xavier
+* Vitor Ladeia Sepúlveda
+
 
 ## Professores responsáveis
 
-* Nome completo do professor 1
-* Nome completo do professor 2
+* Diego Augusto de Faria Barros
+* Henrique Almeida Louzada
+* Lucca Soares de Paiva Lacerda
 
 
 
