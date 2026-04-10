@@ -73,6 +73,8 @@ Ferramentas
 
 * WhatsApp: Para comunicação síncrona da equipe.
 
+* Miro: Organização, passos visuais e documentação visual do grupo.
+
 Organização da equipe e divisão de papéis
 * Trabalhamos com o framework Scrum, dividindo as tarefas em Sprints semanais para garantir as entregas de design e documentação.
 
