@@ -26,8 +26,8 @@ No ritmo acelerado das fábricas, manter a produção em dia e as máquinas segu
 A falta de organização e padronização. Sem uma centralização, é difícil garantir que toda máquina passou por um checklist de segurança antes de ligar ou acompanhar se a produção está atingindo as metas de OEE (eficiência global) em tempo real. Isso gera riscos de acidentes e atrasos desnecessários .
 
 ## Objetivo do projeto
-  Geral: Desenvolver uma interface web que organize a rotina operacional e centralize os dados de produção e segurança .
-  Objetivos específicos: Digitalizar o processo de checklist (verificação de óleo, ferramentas e EPIs) e oferecer um portal de treinamentos rápidos para capacitação imediata do operador.
+  * Geral: Desenvolver uma interface web que organize a rotina operacional e centralize os dados de produção e segurança .
+  * Objetivos específicos: Digitalizar o processo de checklist (verificação de óleo, ferramentas e EPIs) e oferecer um portal de treinamentos rápidos para capacitação imediata do operador.
 
 ## Justificativa
 Escolhemos focar na integração do checklist com indicadores de performance porque máquina parada por erro operacional custa caro. Centralizar essas funções ajuda a reduzir falhas humanas, aumenta a vida útil dos equipamentos e garante que o gestor tenha dados confiáveis para tomar decisões .
