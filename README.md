@@ -63,7 +63,7 @@ Matriz CSD
   Projeto de Interface
   * Fluxo do usuário: Login -> Home -> Checklist -> Painel de Produção.
   * Wireframes: Estrutura focada em blocos de informação claros para rápida leitura.
-   Protótipo Interativo: [Link do Figma aqui]
+   Protótipo Interativo: [(https://www.figma.com/design/CNkfetUjhWQKAP0sK5NebE/Wireframe-OTM?node-id=0-1&t=dV5jlhZaUWU7i1Jj-1)]
 
 ## Metodologia
 Ferramentas
@@ -77,6 +77,3 @@ Ferramentas
 
 Organização da equipe e divisão de papéis
 * Trabalhamos com o framework Scrum, dividindo as tarefas em Sprints semanais para garantir as entregas de design e documentação.
-
-Quadro de controle de tarefas (Kanban)
-[Link ou Print do seu Kanban aqui]
