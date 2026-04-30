@@ -1,0 +1,84 @@
+header{
+    height: 5%;
+}
+.cabeçalho{
+    display: flex;
+    background-color: black;
+}
+.cabeçalho img{
+    width: 10%;
+    display: flex;
+    position: relative;
+    left: 43%;
+}
+.botao_menu{
+    position: relative;
+    right: 10%;
+    font-size: 40px;
+    color: white;
+    background-color: black;
+    border: none;
+    margin-left: 5px;
+}
+.botao_menu{
+    cursor: pointer;
+}
+.linha{
+    display: flex;
+    position: relative;
+    left: 50px;
+}
+.linha2{
+    display: flex;
+    position: relative;
+    right: 21%;
+}
+.linha-amarela{
+    height: 5px;
+    background-color: #e8a020;
+    margin: 0;
+    border: none;
+}
+body{
+    background-color: #1c1e22;
+    margin: 0;
+}
+.corpo{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+i{
+    background-color: white;
+    height: 50px;
+}
+.funil{
+    background-color: #e8a020;
+    border-radius: 20px;
+    height: 40px;
+    width: 50px;
+}
+.funil img{
+    height: 40px;
+    width: 30px;
+}
+.deletar{
+    background-color: rgb(99, 4, 4);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
+    padding: 7px;
+}
+.alterar{
+    background-color: rgb(27, 93, 27);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
+    padding: 7px;
+}
+.tabela{
+    background-color: #e8a020;
+}
