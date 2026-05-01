@@ -106,9 +106,17 @@ button {
     padding: 5px 12px;
 }
 
+.ok:hover {
+    background-color: green;
+}
+
 .nok {
     background-color: #f23b3b;
     padding: 5px 12px;
+}
+
+.nok:hover {
+    background-color: #9C1700;
 }
 
 .enviar {
