@@ -1,0 +1,23 @@
+:root {
+    --bg: #1c1e22;
+    --surface: #242830;
+    --surface2: #2d3139;
+    --border: #363c46;
+    --accent: #e8a020;
+    --accent2: #d43f3f;
+    --text: #dde2ec;
+    --muted: #7a8194;
+    --row-odd: #242830;
+    --row-even: #2a2f3a;
+    --row-sel: #2d3a4a;
+    --header-h: 54px;
+    --radius: 6px;
+}
+
+#list-container ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    gap: 3%;
+}
