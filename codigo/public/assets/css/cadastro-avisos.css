@@ -81,4 +81,16 @@ i{
 }
 .tabela{
     background-color: #e8a020;
+    font-family: Arial, Helvetica, sans-serif;
 }
+.cor2tabela{
+    background-color:  #eec682;
+}
+.cor1tabela{
+    background-color: #8b7144
+}
+h1{
+    color: #e8a020;
+    font-family: Arial, Helvetica, sans-serif;
+}
+

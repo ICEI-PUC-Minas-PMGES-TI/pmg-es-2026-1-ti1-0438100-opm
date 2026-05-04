@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="../../assets/css/cadastro-avisos.css">
     <link rel="stylesheet" href="https://cloudflare.com">
 </head>
+
 <body>
     <header>
         <div class="cabeçalho">
@@ -14,12 +16,12 @@
             <button class="botao_menu">&#9776</button>
             <hr class="linha">
             <hr class="linha2">
-            
+
         </div>
         <hr class="linha-amarela">
     </header>
     <main class="corpo">
-        <section>
+        <section class="esquerda">
             <button class="funil">
                 <img src="../../assets/images/filter-svgrepo-com.svg" alt="funil">
             </button>
@@ -36,8 +38,80 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr class="cor1tabela">
                         <td>1</td>
+                        <td>Alta</td>
+                        <td>Operario</td>
+                        <td>01/04/2026</td>
+                        <td>Texto de exemplo</td>
+
+                    </tr>
+
+                    <tr class="cor2tabela">
+                        <td>2</td>
+                        <td>Alta</td>
+                        <td>Operario</td>
+                        <td>01/04/2026</td>
+                        <td>Texto de exemplo</td>
+
+                    </tr>
+
+                    <tr class="cor1tabela">
+                        <td>3</td>
+                        <td>Alta</td>
+                        <td>Operario</td>
+                        <td>01/04/2026</td>
+                        <td>Texto de exemplo</td>
+
+                    </tr>
+
+                    <tr class="cor2tabela">
+                        <td>4</td>
+                        <td>Alta</td>
+                        <td>Operario</td>
+                        <td>01/04/2026</td>
+                        <td>Texto de exemplo</td>
+
+                    </tr>
+
+                    <tr class="cor1tabela">
+                        <td>5</td>
+                        <td>Alta</td>
+                        <td>Operario</td>
+                        <td>01/04/2026</td>
+                        <td>Texto de exemplo</td>
+
+                    </tr>
+
+                    <tr class="cor2tabela">
+                        <td>6</td>
+                        <td>Alta</td>
+                        <td>Operario</td>
+                        <td>01/04/2026</td>
+                        <td>Texto de exemplo</td>
+
+                    </tr>
+
+                    <tr class="cor1tabela">
+                        <td>7</td>
+                        <td>Alta</td>
+                        <td>Operario</td>
+                        <td>01/04/2026</td>
+                        <td>Texto de exemplo</td>
+
+                    </tr>
+
+                    <tr class="cor2tabela">
+                        <td>8</td>
+                        <td>Alta</td>
+                        <td>Operario</td>
+                        <td>01/04/2026</td>
+                        <td>Texto de exemplo</td>
+
+                    </tr>
+
+                    <tr class="cor1tabela">
+                        <td>9</td>
                         <td>Alta</td>
                         <td>Operario</td>
                         <td>01/04/2026</td>
@@ -46,7 +120,36 @@
                     </tr>
                 </tbody>
             </table>
+
+        </section>
+
+        <section class="direita">
+            <div>
+                <h1>Texto</h1>
+                <input placeholder="Insira o texto do aviso" type="text">
+            </div>
+
+            <div>
+                <h1>Importância</h1>
+                <select id="importancia" name="importancia">
+                    <option value="">Selecione a importância da peça</option>
+                    <option value="alta">Alta</option>
+                    <option value="media">Média</option>
+                    <option value="baixa">Baixa</option>
+                </select>
+            </div>
+
+            <div>
+                <h1>Tipo</h1>
+                <select name="tipo" id="tipo">
+                    <option value="">Selecione os tipos de usuário que verão o aviso</option>
+                    <option value="alta">Operário</option>
+                    <option value="media">Manutenção</option>
+                    <option value="baixa">Gestor</option>
+                </select>
+            </div>
         </section>
     </main>
 </body>
+
 </html>
