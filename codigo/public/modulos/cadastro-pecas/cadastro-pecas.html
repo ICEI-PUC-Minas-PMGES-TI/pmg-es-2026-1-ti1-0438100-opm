@@ -13,7 +13,8 @@
 
     </header>
     <main>
-        <section id="table-wrap">
+        <!--Painel da esquerda-->
+        <section id="table-container">
             <table id="tabela">
                 <thead>
                     <tr>
@@ -92,6 +93,67 @@
                     </tr>
                 </tbody>
             </table>
+        </section>
+
+        <!--Painel da direita-->
+        <section class="form-container">
+            <h2>Cadastro de Peça</h2>
+
+            <div class="campo">
+                <label>Tipo</label>
+                <div class="select-container">
+                    <select id="fTipo">
+                        <option value="">Selecione o tipo</option>
+                        <option>Maquina/Peça</option>
+                        <option>Componente</option>
+                        <option>Acessório</option>
+                        <option>Consumível</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="campo">
+                <label>Modelo da Peça</label>
+                <input id="fModelo" type="text" placeholder="Insira o nome da peça" />
+            </div>
+
+            <div class="campo">
+                <label>Código da Peça</label>
+                <input id="fCodigo" type="text" placeholder="Insira o código da peça" />
+            </div>
+
+            <div class="campo">
+                <label>Fabricante da Peça</label>
+                <input id="fFabricante" type="text" placeholder="Insira o nome do fabricante" />
+            </div>
+
+            <div class="campo">
+                <label>Associação da Máquina</label>
+                <input id="fAssociacao" type="text" placeholder="Insira a máquina associada à peça" />
+            </div>
+
+            <div class="campo">
+                <label>Ano de Peça</label>
+                <div class="select-container">
+                    <select id="fAno">
+                        <option value="">Insira o ano de fabricação da peça</option>
+                        <option>2024</option>
+                        <option>2023</option>
+                        <option>2022</option>
+                        <option>2021</option>
+                        <option>2020</option>
+                        <option>2019</option>
+                        <option>2018</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button class="btn-limpar">Limpar</button>
+                <button class="btn-adicionar">Adicionar</button>
+            </div>
+            </div>
+
         </section>
     </main>
     <footer>
