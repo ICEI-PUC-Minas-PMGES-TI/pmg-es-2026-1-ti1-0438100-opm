@@ -1,44 +1,4 @@
-header{
-    height: 5%;
-}
-.cabeçalho{
-    display: flex;
-    background-color: black;
-}
-.cabeçalho img{
-    width: 10%;
-    display: flex;
-    position: relative;
-    left: 43%;
-}
-.botao_menu{
-    position: relative;
-    right: 10%;
-    font-size: 40px;
-    color: white;
-    background-color: black;
-    border: none;
-    margin-left: 5px;
-}
-.botao_menu{
-    cursor: pointer;
-}
-.linha{
-    display: flex;
-    position: relative;
-    left: 50px;
-}
-.linha2{
-    display: flex;
-    position: relative;
-    right: 21%;
-}
-.linha-amarela{
-    height: 5px;
-    background-color: #e8a020;
-    margin: 0;
-    border: none;
-}
+
 body{
     background-color: #1c1e22;
     margin: 0;
