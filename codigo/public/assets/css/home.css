@@ -8,17 +8,6 @@ body{
     background-color: #1c1e22;
 }
 
-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #121212;
-    color: #e8a020;
-    border-bottom: solid 5px;
-    border-color: #e8a020;
-    padding: 10px;
-}
-
 nav li{
     margin-left: 10px;
 }
