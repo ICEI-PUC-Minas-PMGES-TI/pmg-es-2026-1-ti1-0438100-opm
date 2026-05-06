@@ -12,3 +12,23 @@ body {
     flex-direction: column;
     margin: 0;
 }
+
+.cadastro-usuario{
+    display: block;
+    background-color: black;
+    border-radius: 15%;
+    margin-top: 15%;
+    margin-right: 15%;
+    margin-left: 15%;
+}
+
+.bloco-de-cadastro{
+    padding: 5%;
+}
+
+h3{
+    font-size: auto;
+    display:flex;
+    justify-content: center;
+    padding-bottom: 10%;
+}
