@@ -6,7 +6,7 @@
 
 header {
     height: 70px;
-    background-color: #050505;
+    background-color: black;
     border-bottom: 5px solid #f0a51a;
     display: flex;
     align-items: center;
