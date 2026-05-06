@@ -1,0 +1,14 @@
+:root {
+    --bg: #1c1e22;
+    --text: #dde2ec;
+}
+
+body {
+    font-family: 'Barlow', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
