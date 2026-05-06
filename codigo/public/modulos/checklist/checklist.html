@@ -17,81 +17,16 @@
 
             <label for="maquina">Tipo de máquina</label>
             <select id="maquina">
-                <option>Selecione o tipo de máquina</option>
-                <option>Máquina 1</option>
-                <option>Máquina 2</option>
-                <option>Máquina 3</option>
+                <option value="">Selecione o tipo de máquina</option>
+                <option value="torno">Torno CNC</option>
+                <option value="fresa">Fresadora</option>
+                <option value="furadeira">Furadeira</option>
+                <option value="maquina_exemplo">Máquina Exemplo 1</option>
+                <option value="maquina_exemplo_2">Máquina Exemplo 2</option>
+                <option value="maquina_exemplo_3">Máquina Exemplo 3</option>
             </select>
 
-            <div class="checklist">
-
-                <div class="item">
-                    <span>Máquina limpa e sem cavacos acumulados</span>
-                    <button class="ok">OK</button>
-                    <button class="nok">NOK</button>
-                </div>
-
-                <div class="item">
-                    <span>Nível de óleo lubrificante</span>
-                    <button class="ok">OK</button>
-                    <button class="nok">NOK</button>
-                </div>
-
-                <div class="item">
-                    <span>Nível de fluido de corte (refrigerante)</span>
-                    <button class="ok">OK</button>
-                    <button class="nok">NOK</button>
-                </div>
-
-                <div class="item">
-                    <span>Pressão de ar adequada</span>
-                    <button class="ok">OK</button>
-                    <button class="nok">NOK</button>
-                </div>
-
-                <div class="item">
-                    <span>Ferramentas montadas corretamente</span>
-                    <button class="ok">OK</button>
-                    <button class="nok">NOK</button>
-                </div>
-
-                <div class="item">
-                    <span>Fixação da peça adequada</span>
-                    <button class="ok">OK</button>
-                    <button class="nok">NOK</button>
-                </div>
-
-                <div class="item">
-                    <span>Programa CNC correto carregado</span>
-                    <button class="ok">OK</button>
-                    <button class="nok">NOK</button>
-                </div>
-
-                <div class="item">
-                    <span>Ferramentas medidas e compensadas</span>
-                    <button class="ok">OK</button>
-                    <button class="nok">NOK</button>
-                </div>
-
-                <div class="item">
-                    <span>Parâmetros de corte corretos</span>
-                    <button class="ok">OK</button>
-                    <button class="nok">NOK</button>
-                </div>
-
-                <div class="item">
-                    <span>EPI’s utilizados</span>
-                    <button class="ok">OK</button>
-                    <button class="nok">NOK</button>
-                </div>
-
-                <div class="item">
-                    <span>Dispositivos de segurança funcionando</span>
-                    <button class="ok">OK</button>
-                    <button class="nok">NOK</button>
-                </div>
-
-            </div>
+            <div class="checklist" id="checklist"></div>
 
             <button class="enviar">Enviar</button>
 
@@ -99,5 +34,6 @@
     </main>
 
 <script src="../../assets/js/header.js"></script>
+<script src="../../assets/js/checklist.js"></script>
 </body>
 </html>
