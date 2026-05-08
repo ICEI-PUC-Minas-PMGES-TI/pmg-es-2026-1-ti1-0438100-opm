@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../assets/css/home.css">
     <link rel="stylesheet" href="../../assets/css/header.css">
+    <link rel="stylesheet" href="../../assets/css/home.css">
     <link rel="stylesheet" href="https://cloudflare.com">
     <title>OPM</title>
 </head>
@@ -30,21 +30,76 @@
             <div class="box-oee">
                 <h3>Eficiência Global do Equipamento</h3>
                 <div class="oee">
-                    <p>OEE Máquina 1: 92,5%</p>
-                    <p>OEE Máquina 2: 87,3%</p>
-                    <p>OEE Máquina 3: 76,8%</p>
-                    <p>OEE Máquina 4: 98,1%</p>
-                    <p>OEE Máquina 5: 63,4%</p>
+                    <p><strong>Máquina 1</strong>: 92,5%</p>
+                    <p><strong>OEE Máquina 2</strong>: 87,3%</p>
+                    <p><strong>OEE Máquina 3</strong>: 76,8%</p>
+                    <p><strong>OEE Máquina 4</strong>: 98,1%</p>
+                    <p><strong>OEE Máquina 5</strong>: 63,4%</p>
                     <p>OEE Máquina 6: 81,9%</p>
-                    <p>OEE Máquina 7: 54,2%</p>
-                    <p>Máquina 8 indisponível</p>
-                    <p>Máquina 9 em manutenção</p>
-                    <p>Máquina 10 parada para ajuste</p>
+                    <p><strong>OEE Máquina 7:</strong> 54,2%</p>
+                    <p><strong>Máquina 8 indisponível</strong></p>
+                    <p><strong>Máquina 9 em manutenção</strong></p>
+                    <p><strong>Máquina 10 parada para ajuste</strong></p>
                 </div>
             </div>
         </div>
+        <div class="pecas">
+            <h1>oi</h1>
+        </div>
+        <section class="treinamentos">
+            <div class="card">
+                <img src="https://loremflickr.com/400/300/industry?random=1">
+                <p>Treinamento</p>
+            </div>
+            <div class="card">
+                <img src="https://loremflickr.com/400/300/industry?random=2">
+                <p>Treinamento</p>
+            </div>
+            <div class="card">
+                <img src="https://loremflickr.com/400/300/industry?random=3">
+                <p>Treinamento</p>
+            </div>
+            <div class="card">
+                <img src="https://loremflickr.com/400/300/industry?random=4">
+                <p>Treinamento</p>
+            </div>
+            <div class="card">
+                <img src="https://loremflickr.com/400/300/industry?random=5">
+                <p>Treinamento</p>
+            </div>
+            <div class="card">
+                <img src="https://loremflickr.com/400/300/industry?random=6">
+                <p>Treinamento</p>
+            </div>
+            <div class="card">
+                <img src="https://loremflickr.com/400/300/industry?random=7">
+                <p>Treinamento</p>
+            </div>
+            <div class="card">
+                <img src="https://loremflickr.com/400/300/industry?random=8">
+                <p>Treinamento</p>
+            </div>
+            <div class="card">
+                <img src="https://loremflickr.com/400/300/industry?random=9">
+                <p>Treinamento</p>
+            </div>
+            <div class="card">
+                <img src="https://loremflickr.com/400/300/industry?random=10">
+                <p>Treinamento</p>
+            </div>
+
+        </section>
     </div>
 <script src="../../assets/js/header.js"></script>
+<script>
+const container = document.querySelector(".treinamentos");
+
+container.addEventListener("wheel", (e) => {
+    e.preventDefault();
+
+    container.scrollLeft += e.deltaY;
+});
+</script>
 </body>
 
 </html>
