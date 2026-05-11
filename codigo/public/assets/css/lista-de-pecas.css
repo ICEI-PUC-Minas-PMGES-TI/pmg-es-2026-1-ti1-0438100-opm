@@ -6,30 +6,25 @@
   --cinza-escuro: #333;
   --branco: #fff;
 }
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Arial, sans-serif;
 }
-
 body {
   background-color: var(--cinza-claro);
   color: var(--preto);
 }
-
 main {
   padding: 24px;
 }
-
 .filtros-container {
   display: grid;
   grid-template-columns: 3fr 1fr;
   gap: 24px;
   margin-bottom: 24px;
 }
-
 .filtros,
 .oee-card,
 .lista-pecas,
@@ -38,6 +33,7 @@ main {
   border: 1px solid var(--cinza);
   border-radius: 8px;
   padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .filtros h2,
@@ -45,6 +41,8 @@ main {
 .lista-pecas h2 {
   margin-bottom: 18px;
   color: var(--preto);
+  border-left: 5px solid var(--dourado);
+  padding-left: 10px;
 }
 
 .campos-filtros {
@@ -72,17 +70,23 @@ main {
   border-radius: 6px;
 }
 
+.campo input:focus,
+.campo select:focus,
+.rodape select:focus {
+  outline: none;
+  border-color: var(--dourado);
+  box-shadow: 0 0 0 2px rgba(201, 162, 39, 0.2);
+}
+
 .buscar {
   grid-column: span 2;
 }
-
 .botoes-filtro {
   display: flex;
   justify-content: flex-end;
   gap: 12px;
   margin-top: 20px;
 }
-
 .btn,
 button {
   padding: 9px 14px;
@@ -90,6 +94,12 @@ button {
   border-radius: 6px;
   cursor: pointer;
   font-weight: bold;
+  transition: 0.2s;
+}
+
+.btn:hover,
+button:hover {
+  transform: scale(1.03);
 }
 
 .btn.principal {
@@ -99,6 +109,23 @@ button {
 
 .btn.secundario {
   background-color: var(--cinza);
+}
+
+td button {
+  margin: 3px;
+  font-size: 12px;
+  background-color: var(--preto);
+  color: var(--dourado);
+  border: 1px solid var(--dourado);
+}
+
+td button:hover {
+  background-color: var(--dourado);
+  color: var(--preto);
+}
+
+.oee-card {
+  border-top: 5px solid var(--dourado);
 }
 
 .oee-conteudo {
@@ -112,6 +139,7 @@ button {
   height: 110px;
   border: 8px solid var(--dourado);
   border-radius: 50%;
+  background-color: #fff8e1;
   color: var(--preto);
   font-weight: bold;
   font-size: 28px;
@@ -140,8 +168,32 @@ button {
   margin-bottom: 16px;
 }
 
-table {
+.titulo-lista span {
+  background-color: var(--preto);
+  color: var(--dourado);
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.tabela-container {
   width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--cinza);
+  border-radius: 8px;
+}
+
+.tabela-container::after {
+  display: block;
+  font-size: 12px;
+  color: var(--cinza-escuro);
+  padding: 8px;
+  text-align: center;
+}
+
+.tabela-pecas {
+  width: 100%;
+  min-width: 900px;
   border-collapse: collapse;
   background-color: white;
 }
@@ -160,6 +212,14 @@ td {
 
 td:nth-child(3) {
   text-align: left;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+tbody tr:hover {
+  background-color: #f1ead2;
 }
 
 .prioridade,
@@ -227,61 +287,21 @@ td:nth-child(3) {
   }
 }
 
-.filtros,
-.oee-card,
-.lista-pecas,
-.rodape {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
+@media (max-width: 768px) {
+  main {
+    padding: 12px;
+  }
 
-.filtros h2,
-.oee-card h2,
-.lista-pecas h2 {
-  border-left: 5px solid var(--dourado);
-  padding-left: 10px;
-}
+  .titulo-lista {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
 
-tbody tr:nth-child(even) {
-  background-color: #fafafa;
-}
-
-tbody tr:hover {
-  background-color: #f1ead2;
-}
-
-td button {
-  margin: 3px;
-  font-size: 12px;
-  background-color: var(--preto);
-  color: var(--dourado);
-  border: 1px solid var(--dourado);
-}
-
-td button:hover {
-  background-color: var(--dourado);
-  color: var(--preto);
-}
-
-.oee-card {
-  border-top: 5px solid var(--dourado);
-}
-
-.oee-circulo {
-  background-color: #fff8e1;
-}
-
-.titulo-lista span {
-  background-color: var(--preto);
-  color: var(--dourado);
-  padding: 8px 12px;
-  border-radius: 6px;
-  font-weight: bold;
-}
-
-.campo input:focus,
-.campo select:focus,
-.rodape select:focus {
-  outline: none;
-  border-color: var(--dourado);
-  box-shadow: 0 0 0 2px rgba(201, 162, 39, 0.2);
+  .tabela-pecas th,
+  .tabela-pecas td {
+    padding: 10px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
 }
