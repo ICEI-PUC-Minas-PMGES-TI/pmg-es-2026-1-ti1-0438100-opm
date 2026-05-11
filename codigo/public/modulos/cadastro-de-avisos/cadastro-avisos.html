@@ -6,22 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro Avisos</title>
     <link rel="stylesheet" href="../../assets/css/cadastro-avisos.css">
-    <link rel="stylesheet" href="../../assets/css/header.css">
     <link rel="stylesheet" href="https://cloudflare.com">
-    <link rel="icon" type="image/png" href="../../assets/images/icon.png">
 </head>
 
 <body>
-<<<<<<< HEAD
     <header>
         <div class="cabeçalho">
             <img src="../../assets/images/logo-foda.png" alt="logotipo">
             <button class="botao_menu">&#9776</button>
-=======
->>>>>>> 8717d17f41fbeaa8078dfefcb6d48f801383ef45
 
-    <div id="header"></div>
-
+        </div>
+        <hr class="linha-amarela">
+    </header>
     <main class="corpo">
         <section class="esquerda">
             <button class="funil">
@@ -128,16 +124,16 @@
         <section class="direita">
             <div class="selecao-direita">
                 <h1>Texto</h1>
-                <input id="textoAviso" placeholder="Insira o texto do aviso" type="text">
+                <input placeholder="Insira o texto do aviso" type="text">
             </div>
 
             <div class="selecao-direita">
                 <h1>Importância</h1>
                 <select id="importancia" name="importancia">
-                    <option value="">Selecione a importância do aviso</option>
-                    <option value="Alta">Alta</option>
-                    <option value="Média">Média</option>
-                    <option value="Baixa">Baixa</option>
+                    <option value="">Selecione a importância da peça</option>
+                    <option value="alta">Alta</option>
+                    <option value="media">Média</option>
+                    <option value="baixa">Baixa</option>
                 </select>
             </div>
 
@@ -156,27 +152,38 @@
 
                 <div class="calendario">
                     <div class="calendario_topo">
-                        <button>&lt;</button>
 
                         <select>
-                            <option>Sep</option>
+                            <option>Mês</option>
+                            <option id="mes1">Janeiro</option>
+                            <option>Fevereiro</option>
+                            <option>Março</option>
+                            <option>Abril</option>
+                            <option>Maio</option>
+                            <option>Junho</option>
+                            <option>Julho</option>
+                            <option>Agosto</option>
+                            <option>Setembro</option>
+                            <option>Outubro</option>
+                            <option>Novembro</option>
+                            <option>Dezembro</option>
                         </select>
 
                         <select>
-                            <option>2025</option>
+                            <option>2026</option>
                         </select>
 
-                        <button>&gt;</button>
+                        
                     </div>
 
                     <div class="dias_semana">
-                        <span>Su</span>
-                        <span>Mo</span>
-                        <span>Tu</span>
-                        <span>We</span>
-                        <span>Th</span>
-                        <span>Fr</span>
-                        <span>Sa</span>
+                        <span>Seg</span>
+                        <span>Ter</span>
+                        <span>Qua</span>
+                        <span>Qui</span>
+                        <span>Sex</span>
+                        <span>Sáb</span>
+                        <span>Dom</span>
                     </div>
 
                     <div class="dias">
@@ -190,10 +197,10 @@
 
                         <span>7</span>
                         <span>8</span>
-                        <span class="selecionado">9</span>
-                        <span class="marcado">10</span>
-                        <span class="marcado">11</span>
-                        <span class="marcado">12</span>
+                        <span>9</span>
+                        <span>10</span>
+                        <span>11</span>
+                        <span>12</span>
                         <span class="selecionado">13</span>
 
                         <span>14</span>
@@ -229,11 +236,7 @@
             </div>
         </section>
     </main>
-<<<<<<< HEAD
     <script src="cadastro-de-avisos.js"></script>
-=======
-<script src="../../assets/js/header.js"></script>
->>>>>>> 8717d17f41fbeaa8078dfefcb6d48f801383ef45
 </body>
 
 </html>

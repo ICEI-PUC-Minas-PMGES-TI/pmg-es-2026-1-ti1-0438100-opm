@@ -9,6 +9,24 @@ const botaoDeletar = document.querySelector(".deletar");
 const tabela = document.querySelector(".tabela tbody");
 
 const dias = document.querySelectorAll(".dias span");
+const seletorMes = document.querySelectorAll(".calendario_topo select")[0];
+const seletorAno = document.querySelectorAll(".calendario_topo select")[1];
+
+// Mapeamento de mês em texto para número
+const mesesMap = {
+    "Janeiro": "01",
+    "Fevereiro": "02",
+    "Março": "03",
+    "Abril": "04",
+    "Maio": "05",
+    "Junho": "06",
+    "Julho": "07",
+    "Agosto": "08",
+    "Setembro": "09",
+    "Outubro": "10",
+    "Novembro": "11",
+    "Dezembro": "12"
+};
 
 let contador = 10;
 let dataSelecionada = "";
@@ -30,7 +48,9 @@ dias.forEach(function(dia) {
 
         dia.classList.add("selecionado");
 
-        dataSelecionada = dia.textContent + "/09/2025";
+        const mesNumero = mesesMap[seletorMes.value] || "01";
+        const ano = seletorAno.value || "2026";
+        dataSelecionada = dia.textContent + "/" + mesNumero + "/" + ano;
     });
 
 });
