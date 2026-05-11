@@ -1,6 +1,11 @@
 :root {
     --bg: #1c1e22;
     --text: #dde2ec;
+    --surface: #2a2c30;
+    --border: #4a4c50;
+    --destaque: #f0a51a;
+    --cor-tp:#dde2ec;
+    --cor-ts:#6b7280;
 }
 
 body {
@@ -13,22 +18,91 @@ body {
     margin: 0;
 }
 
-.cadastro-usuario{
-    display: block;
-    background-color: black;
-    border-radius: 15%;
-    margin-top: 15%;
-    margin-right: 15%;
-    margin-left: 15%;
-}
-
-.bloco-de-cadastro{
-    padding: 5%;
-}
-
-h3{
-    font-size: auto;
-    display:flex;
+main{
+    flex: 1;       
+    display: flex;
+    align-items: center;
     justify-content: center;
-    padding-bottom: 10%;
+    padding: 40px 16px;
+}
+
+.cadastro-usuario{
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    width: 100%;
+    max-width: 460px;
+    padding: 40px 36px;
+    box-shadow: 0 24px 64px rgba(0,0,0,.45);
+}
+
+.titulo-cadastro{
+    font-size: 26px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--destaque);
+    margin-bottom: 32px;
+    padding-bottom: 14px;
+    padding-left: 5%;
+    border-bottom: 1px solid var(--border)
+}
+
+.lado-a-lado{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 16px;
+}
+
+.info-usuario{    
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.info-usuario label{
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--cor-ts);
+    margin-bottom: 6px;
+}
+
+.info-usuario input {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--cor-tp);
+    font-size: 15px;
+    padding: 10px 14px;
+    outline: none;
+    transition: border-color .2s, box-shadow .2s;
+}
+
+.botao-cadastrar {
+    width: 100%;
+    padding: 13px;
+    background: var(--destaque);
+    color: #111;
+    border: none;
+    border-radius: 7px;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background .2s, transform .1s, box-shadow .2s;
+    margin-top: 4px;
+}
+.botao-cadastrar:hover {
+    background: #ffb93a;
+    box-shadow: 0 4px 20px rgba(240,165,26,.35);
+}
+
+.botao-cadastrar:active {
+    transform: scale(.98);
+}
+.botao-cadastrar:disabled {
+    background: var(--border);
+    color: var(--cor-ts);
+    cursor: not-allowed;
+    box-shadow: none;
 }

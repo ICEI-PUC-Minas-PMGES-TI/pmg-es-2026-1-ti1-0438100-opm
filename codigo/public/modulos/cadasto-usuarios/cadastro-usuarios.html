@@ -17,15 +17,35 @@
     </header>
 
     <main>
-        <section class="cadastro-usuario">
-            <div class="bloco-de-cadastro">
-                <h3> Cadastro de Usuário </h3>
-                <div>Nome</div>
-                <div>Sobrenome</div>
-                <div>Cargo</div>
-                <div>Senha</div>
+        <div class="cadastro-usuario">
+            <h3 class="titulo-cadastro">Cadastro de Usuário</h3>
+                <div class="lado-a-lado">
+                    <div class="info-usuario">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" placeholder="" required>
+                    </div>
+                    <div class="info-usuario">
+                        <label for="sobrenome">Sobrenome</label>
+                        <input type="text" id="sobrenome" placeholder="" required>
+                    </div>
+                </div>
+                <div class="info-usuario">
+                    <label for="cargo">Cargo</label>
+                    <input type="text" id="cargo" placeholder="Ex: Supervisor, Operador, etc." required>
+                </div>
+                <div class="info-usuario">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" placeholder="********" autocomplete="new-password" required>
+                </div>
+                <div class="info-usuario">
+                    <label for="confirma-senha">Confirmar Senha</label>
+                    <input type="password" id="confirma-senha" placeholder="********" autocomplete="new-password" required>
+                </div>
+                 <button type="submit" class="botao-cadastrar" id="botao-cadastrar">Cadastrar</button>
             </div>
-        </section>
+
+            </div>
+        </div>
     </main>
 <script src="../../assets/js/header.js"></script>
 </body>
