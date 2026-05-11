@@ -289,3 +289,29 @@ select:focus {
 .btn-adicionar:active {
     transform: scale(.97);
 }
+
+
+
+/* toast */
+.toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: var(--surface2);
+    border: 1px solid var(--accent);
+    color: var(--text);
+    padding: 12px 20px;
+    border-radius: var(--radius);
+    font-size: 14px;
+    font-family: 'Barlow', sans-serif;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, .4);
+    transform: translateY(80px);
+    opacity: 0;
+    transition: transform .3s, opacity .3s;
+    z-index: 999;
+}
+
+.toast.show {
+    transform: translateY(0);
+    opacity: 1;
+}
