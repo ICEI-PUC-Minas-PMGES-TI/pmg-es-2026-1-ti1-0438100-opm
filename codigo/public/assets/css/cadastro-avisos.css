@@ -4,12 +4,14 @@ header{
 .cabeçalho{
     display: flex;
     background-color: black;
+    height:55px;
 }
 .cabeçalho img{
     width: 10%;
     display: flex;
     position: relative;
     left: 43%;
+    
 }
 .botao_menu{
     position: relative;
