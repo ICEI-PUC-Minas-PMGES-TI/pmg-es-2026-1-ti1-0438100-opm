@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="../../assets/css/cadastro-pecas.css">
     <link rel="stylesheet" href="../../assets/css/header.css">
+    <link rel="icon" type="image/png" href="../../assets/images/icon.png">
 </head>
 
 <body>
@@ -35,70 +36,6 @@
                         </tr>
                     </thead>
                     <tbody id="tbody">
-                        <tr>
-                            <td>1</td>
-                            <td><span class="badge">Peca</span></td>
-                            <td>Modelo 43A</td>
-                            <td>472819428</td>
-                            <td>Fabricante fictício</td>
-                            <td>Maquina B3</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td><span class="badge">Peca</span></td>
-                            <td>Modelo 43A</td>
-                            <td>472819428</td>
-                            <td>Fabricante fictício</td>
-                            <td>Maquina B3</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td><span class="badge">Peca</span></td>
-                            <td>Modelo 43A</td>
-                            <td>472819428</td>
-                            <td>Fabricante fictício</td>
-                            <td>Maquina B3</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td><span class="badge">Peca</span></td>
-                            <td>Modelo 43A</td>
-                            <td>472819428</td>
-                            <td>Fabricante fictício</td>
-                            <td>Maquina B3</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td><span class="badge">Peca</span></td>
-                            <td>Modelo 43A</td>
-                            <td>472819428</td>
-                            <td>Fabricante fictício</td>
-                            <td>Maquina B3</td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td><span class="badge">Peca</span></td>
-                            <td>Modelo 43A</td>
-                            <td>472819428</td>
-                            <td>Fabricante fictício</td>
-                            <td>Maquina B3</td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td><span class="badge">Peca</span></td>
-                            <td>Modelo 43A</td>
-                            <td>472819428</td>
-                            <td>Fabricante fictício</td>
-                            <td>Maquina B3</td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td><span class="badge">Peca</span></td>
-                            <td>Modelo 43A</td>
-                            <td>472819428</td>
-                            <td>Fabricante fictício</td>
-                            <td>Maquina B3</td>
-                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -158,8 +95,8 @@
             </div>
 
             <div class="form-actions">
-                <button class="btn-limpar">Limpar</button>
-                <button class="btn-adicionar">Adicionar</button>
+                <button class="btn-limpar" onclick="limparForm()">Limpar</button>
+                <button class="btn-adicionar" onclick="adicionarOuSalvar()">Adicionar</button>
             </div>
             </div>
 
@@ -168,7 +105,9 @@
     <footer>
 
     </footer>
-<script src="../../assets/js/header.js"></script>
+    <div class="toast" id="toast"></div>
+    <script src="../../assets/js/header.js"></script>
+    <script src="../../assets/js/cadastro-pecas.js"></script>
 </body>
 
 </html>
