@@ -12,4 +12,11 @@ function enviarCadastro(){
         if (cargo === "") {
             alert("O campo cargo está em branco!");
         }
+        const senha = document.getElementById("senha").value;
+        const confirmar = document.getElementById("confirma-senha").value;
+        if (senha === "" || confirmar === "") {
+            alert("Campo de senha vazio.");
+        } else if (senha !== confirmar) {
+            alert("As senhas estão diferentes!");
+        }
 }
