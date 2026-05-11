@@ -11,6 +11,7 @@ const tabela = document.querySelector(".tabela tbody");
 const dias = document.querySelectorAll(".dias span");
 const seletorMes = document.querySelectorAll(".calendario_topo select")[0];
 const seletorAno = document.querySelectorAll(".calendario_topo select")[1];
+const quantidadeLinhasVazias = 9;
 
 // Mapeamento de mês em texto para número
 const mesesMap = {
@@ -28,9 +29,66 @@ const mesesMap = {
     "Dezembro": "12"
 };
 
-let contador = 10;
+let contador = 1;
 let dataSelecionada = "";
 let linhaSelecionada = null;
+
+criarLinhasVazias();
+
+/* LINHAS VAZIAS DA TABELA */
+
+function criarLinhasVazias() {
+
+    for (let i = 0; i < quantidadeLinhasVazias; i++) {
+
+        const linha = document.createElement("tr");
+
+        if (i % 2 === 0) {
+            linha.classList.add("cor1tabela");
+        } else {
+            linha.classList.add("cor2tabela");
+        }
+
+        limparLinha(linha);
+        adicionarEventoSelecao(linha);
+
+        tabela.appendChild(linha);
+    }
+}
+
+function limparLinha(linha) {
+
+    linha.dataset.preenchida = "false";
+    linha.style.outline = "none";
+
+    linha.innerHTML = `
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    `;
+}
+
+function adicionarEventoSelecao(linha) {
+
+    linha.addEventListener("click", function() {
+
+        if (linha.dataset.preenchida === "false") {
+            return;
+        }
+
+        const linhas = document.querySelectorAll(".tabela tbody tr");
+
+        linhas.forEach(function(item) {
+            item.style.outline = "none";
+        });
+
+        linha.style.outline = "3px solid white";
+
+        linhaSelecionada = linha;
+    });
+}
 
 /* CALENDARIO */
 
@@ -69,38 +127,25 @@ botaoAdicionar.addEventListener("click", function () {
         return;
     }
 
-    const novaLinha = document.createElement("tr");
+    const linhaVazia = document.querySelector('.tabela tbody tr[data-preenchida="false"]');
 
-    if (contador % 2 === 0) {
-        novaLinha.classList.add("cor1tabela");
-    } else {
-        novaLinha.classList.add("cor2tabela");
+    if (linhaVazia === null) {
+        alert("A tabela está cheia");
+        return;
     }
 
-    novaLinha.innerHTML = `
+    linhaVazia.dataset.preenchida = "true";
+
+    const textoImportancia = importancia.options[importancia.selectedIndex].text;
+    const textoTipo = tipo.options[tipo.selectedIndex].text;
+
+    linhaVazia.innerHTML = `
         <td>${contador}</td>
-        <td>${importancia.value}</td>
-        <td>${tipo.value}</td>
+        <td>${textoImportancia}</td>
+        <td>${textoTipo}</td>
         <td>${dataSelecionada}</td>
         <td>${texto.value}</td>
     `;
-
-    /* SELECIONAR LINHA */
-
-    novaLinha.addEventListener("click", function() {
-
-        const linhas = document.querySelectorAll(".tabela tbody tr");
-
-        linhas.forEach(function(linha) {
-            linha.style.outline = "none";
-        });
-
-        novaLinha.style.outline = "3px solid white";
-
-        linhaSelecionada = novaLinha;
-    });
-
-    tabela.appendChild(novaLinha);
 
     contador++;
 
@@ -122,7 +167,7 @@ botaoDeletar.addEventListener("click", function() {
         return;
     }
 
-    linhaSelecionada.remove();
+    limparLinha(linhaSelecionada);
 
     linhaSelecionada = null;
 });
