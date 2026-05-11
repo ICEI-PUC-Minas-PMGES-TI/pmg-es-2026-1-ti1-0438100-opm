@@ -8,4 +8,8 @@ function enviarCadastro(){
         } else if (sobrenome === "") {
             alert("O campo sobrenome está em branco!");
         }
+        const cargo = document.getElementById("cargo").value.trim();
+        if (cargo === "") {
+            alert("O campo cargo está em branco!");
+        }
 }
