@@ -69,19 +69,23 @@ button {
 .ok {
     background-color: #19c463;
     padding: 5px 12px;
+    transition: 0.2s;
 }
 
 .ok:hover {
     background-color: green;
+    transform: scale(1.1);
 }
 
 .nok {
     background-color: #f23b3b;
     padding: 5px 12px;
+    transition: 0.2s;
 }
 
 .nok:hover {
     background-color: #9C1700;
+    transform: scale(1.1);
 }
 
 .enviar {
@@ -90,9 +94,11 @@ button {
     width: 150px;
     padding: 10px;
     border-radius: 5px;
+    transition: 0.2s;
 }
 
 .enviar:hover {
     background-color: #f0a51a;
     color: black;
+    transform: scale(1.1);
 }
