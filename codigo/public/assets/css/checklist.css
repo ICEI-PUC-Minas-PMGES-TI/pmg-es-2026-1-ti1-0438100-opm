@@ -102,3 +102,16 @@ button {
     color: black;
     transform: scale(1.1);
 }
+
+.selecionado {
+    transform: scale(1.1);
+    border: 2px solid white;
+}
+
+.ok.selecionado {
+    background-color: green;
+}
+
+.nok.selecionado {
+    background-color: #9C1700;
+}
