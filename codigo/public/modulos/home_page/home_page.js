@@ -1,0 +1,96 @@
+const containerAvisos = document.getElementById("avisos");
+const containerOee = document.getElementById("oee");
+
+/* AVISOS */
+
+async function carregarAvisos() {
+
+    const resposta = await fetch("../../../db/avisos.json");
+
+    const avisos = await resposta.json();
+
+    avisos.forEach(function(aviso) {
+
+        containerAvisos.innerHTML += `
+            <div class="aviso">
+
+                <h4>${aviso.importancia}</h4>
+
+                <p>${aviso.texto}</p>
+
+                <span>
+                    ${aviso.tipo} • ${aviso.data}
+                </span>
+
+            </div>
+        `;
+
+    });
+
+}
+
+/* OEE */
+
+async function carregarOee() {
+
+    const resposta = await fetch("../../../db/oee.json");
+
+    const maquinas = await resposta.json();
+
+    maquinas.forEach(function(maquina) {
+
+        let corTexto = "#14532d";
+        let corFundo = "#bbf7d0";
+        let corBorda = "#166534";
+
+        const valor = parseFloat(
+            maquina.oee.replace("%", "").replace(",", ".")
+        );
+
+        /* LARANJA */
+
+        if (valor < 85) {
+
+            corTexto = "#9a3412";
+            corFundo = "#fed7aa";
+            corBorda = "#c2410c";
+
+        }
+
+        /* VERMELHO */
+
+        if (valor < 70) {
+
+            corTexto = "#991b1b";
+            corFundo = "#fecaca";
+            corBorda = "#b91c1c";
+
+        }
+
+        containerOee.innerHTML += `
+
+            <div class="oee-card">
+
+                <strong>${maquina.maquina}</strong>
+
+                <span 
+                    class="oee-valor"
+                    style="
+                        color:${corTexto};
+                        background:${corFundo};
+                        border:1px solid ${corBorda};
+                    "
+                >
+                    ${maquina.oee}
+                </span>
+
+            </div>
+
+        `;
+
+    });
+
+}
+
+carregarAvisos();
+carregarOee();
