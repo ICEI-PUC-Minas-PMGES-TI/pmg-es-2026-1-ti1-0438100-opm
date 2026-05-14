@@ -16,13 +16,30 @@
     <main>
         <section class="form-container">
 
-            <label for="maquina">Tipo de máquina</label>
-            <select id="maquina">
-                <option value="">Selecione o tipo de máquina</option>
-                <option value="torno">Torno CNC</option>
-                <option value="fresa">Fresadora</option>
-                <option value="furadeira">Furadeira</option>
-            </select>
+            <div class="topo-formulario">
+
+                <div class="campo">
+
+                    <label for="funcionario">Funcionário</label>
+
+                        <input
+                            type="text"
+                            id="funcionario"
+                            placeholder="Digite o nome"/>
+                </div>
+
+                <div class="campo">
+
+                    <label for="maquina">Tipo de máquina</label>
+
+                    <select id="maquina">
+                        <option value="">Selecione o tipo de máquina</option>
+                        <option value="torno">Torno CNC</option>
+                        <option value="fresa">Fresadora</option>
+                        <option value="furadeira">Furadeira</option>
+                    </select>
+                </div>
+            </div>
 
             <div class="checklist" id="checklist"></div>
 

@@ -1,6 +1,7 @@
 const selectMaquina = document.getElementById("maquina");
 const checklist = document.getElementById("checklist");
 const btnEnviar = document.querySelector(".enviar");
+const inputFuncionario = document.getElementById("funcionario");
 
 let checklists = {};
 let respostas = {};
@@ -71,17 +72,23 @@ checklist.addEventListener("click", function (evento) {
     const index = botao.dataset.index;
     const status = botao.dataset.status;
 
-    respostas[index] = status;
-
     const item = botao.parentElement;
 
     const botoes = item.querySelectorAll("button");
+
+    const jaSelecionado = item.querySelector(".selecionado");
 
     botoes.forEach(function (btn) {
         btn.classList.remove("selecionado");
     });
 
-    botao.classList.add("selecionado");
+    if (jaSelecionado) {
+        delete respostas[index];
+    } else {
+        botao.classList.add("selecionado");
+
+        respostas[index] = status;
+    }
 
 });
 
@@ -91,12 +98,20 @@ btnEnviar.addEventListener("click", function () {
 
     const maquina = checklists[maquinaSelecionada];
 
+    const funcionario = inputFuncionario.value;
+
     const dados = {
+        funcionario: funcionario,
         maquinaId: maquina.id,
         maquinaNome: maquina.nome,
+        dataHora: new Date(),
         respostas: respostas
     };
 
     console.log(dados);
+    
+    respostas = {};
+    checklist.innerHTML = "";
+    selectMaquina.value = "";
 
 });
