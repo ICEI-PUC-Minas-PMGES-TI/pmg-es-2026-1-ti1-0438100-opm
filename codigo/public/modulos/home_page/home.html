@@ -28,63 +28,97 @@
             </div>
         </div>
         <div class="pecas">
-            <h1>oi</h1>
+
+            <div class="pecas-box">
+
+                <!-- PENDENTES -->
+
+                <div class="pecas-coluna">
+
+                    <h3>Peças Pendentes</h3>
+
+                    <div class="lista-pecas" id="pecasPendentes"></div>
+
+                </div>
+
+                <!-- META -->
+
+                <div class="pecas-coluna">
+
+                    <h3>Meta do Dia</h3>
+
+                    <div class="lista-pecas" id="pecasMeta"></div>
+
+                </div>
+
+            </div>
+
         </div>
         <section class="treinamentos">
             <div class="card">
                 <a href="#"><img src="https://loremflickr.com/400/300/industry?random=1">
-                <p>Treinamento</p></a>
+                    <p>Treinamento</p>
+                </a>
             </div>
             <div class="card">
                 <a href="#"><img src="https://loremflickr.com/400/300/industry?random=2">
-                <p>Treinamento</p></a>
+                    <p>Treinamento</p>
+                </a>
             </div>
             <div class="card">
                 <a href="#"><img src="https://loremflickr.com/400/300/industry?random=3">
-                <p>Treinamento</p></a>
+                    <p>Treinamento</p>
+                </a>
             </div>
             <div class="card">
                 <a href="#"><img src="https://loremflickr.com/400/300/industry?random=4">
-                <p>Treinamento</p></a>
+                    <p>Treinamento</p>
+                </a>
             </div>
             <div class="card">
                 <a href="#"><img src="https://loremflickr.com/400/300/industry?random=5">
-                <p>Treinamento</p></a>
+                    <p>Treinamento</p>
+                </a>
             </div>
             <div class="card">
                 <a href="#"><img src="https://loremflickr.com/400/300/industry?random=6">
-                <p>Treinamento</p></a>
+                    <p>Treinamento</p>
+                </a>
             </div>
             <div class="card">
                 <a href="#"><img src="https://loremflickr.com/400/300/industry?random=7">
-                <p>Treinamento</p></a>
+                    <p>Treinamento</p>
+                </a>
             </div>
             <div class="card">
                 <a href="#"><img src="https://loremflickr.com/400/300/industry?random=8">
-                <p>Treinamento</p></a>
+                    <p>Treinamento</p>
+                </a>
             </div>
             <div class="card">
                 <a href="#"><img src="https://loremflickr.com/400/300/industry?random=9">
-                <p>Treinamento</p></a>
+                    <p>Treinamento</p>
+                </a>
             </div>
             <div class="card">
                 <a href="#"><img src="https://loremflickr.com/400/300/industry?random=10">
-                <p>Treinamento</p></a>
+                    <p>Treinamento</p>
+                </a>
             </div>
-            
+
         </section>
     </div>
-<script src="../../assets/js/header.js"></script>
-<script src="home_page.js"></script>
-<script>
-const container = document.querySelector(".treinamentos");
+    <script src="../../assets/js/header.js"></script>
+    <script src="../../assets/js/home_page.js"></script>
+    <script>
+        const container = document.querySelector(".treinamentos");
 
-container.addEventListener("wheel", (e) => {
-    e.preventDefault();
+        container.addEventListener("wheel", (e) => {
+            e.preventDefault();
 
-    container.scrollLeft += e.deltaY;
-});
-</script>
+            container.scrollLeft += e.deltaY;
+        });
+    </script>
 </body>
 
 </html>

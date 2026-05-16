@@ -9,7 +9,7 @@ async function carregarAvisos() {
 
     const avisos = await resposta.json();
 
-    avisos.forEach(function(aviso) {
+    avisos.forEach(function (aviso) {
 
         containerAvisos.innerHTML += `
             <div class="aviso">
@@ -37,7 +37,7 @@ async function carregarOee() {
 
     const maquinas = await resposta.json();
 
-    maquinas.forEach(function(maquina) {
+    maquinas.forEach(function (maquina) {
 
         let corTexto = "#14532d";
         let corFundo = "#bbf7d0";
@@ -92,5 +92,85 @@ async function carregarOee() {
 
 }
 
+const containerPendentes = document.getElementById("pecasPendentes");
+const containerMeta = document.getElementById("pecasMeta");
+
+/* PEÇAS */
+
+async function carregarPecas() {
+
+    const resposta = await fetch("../../../db/pecas.json");
+
+    const dados = await resposta.json();
+
+    /* PENDENTES */
+
+    dados.pendentes.forEach(function (peca) {
+
+        containerPendentes.innerHTML += `
+
+            <div class="peca-card">
+
+                <div class="peca-topo">
+
+                    <strong>
+                        ${peca.quantidade} peças tipo ${peca.tipo}
+                    </strong>
+
+                    <span>${peca.dia}</span>
+
+                </div>
+
+                <div class="barra">
+
+                    <div 
+                        class="progresso azul"
+                        style="width:${peca.progresso}%"
+                    ></div>
+
+                </div>
+
+            </div>
+
+        `;
+
+    });
+
+    /* META */
+
+    dados.meta.forEach(function (peca) {
+
+        containerMeta.innerHTML += `
+
+            <div class="peca-card">
+
+                <div class="peca-topo">
+
+                    <strong>
+                        ${peca.quantidade} peças tipo ${peca.tipo}
+                    </strong>
+
+                    <span>${peca.dia}</span>
+
+                </div>
+
+                <div class="barra">
+
+                    <div 
+                        class="progresso cinza"
+                        style="width:${peca.progresso}%"
+                    ></div>
+
+                </div>
+
+            </div>
+
+        `;
+
+    });
+
+}
+
+carregarPecas();
 carregarAvisos();
 carregarOee();
