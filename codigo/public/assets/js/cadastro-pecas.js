@@ -85,6 +85,19 @@ function deletarSelecionado() {
     showToast('🗑 Peça deletada.');
 }
 
+function alterarSelecionado() {
+    if (selectedIndex < 0) { showToast('Selecione uma linha para alterar.'); return; }
+    const p = pecas[selectedIndex];
+    document.getElementById('fTipo').value = p.tipo;
+    document.getElementById('fModelo').value = p.modelo;
+    document.getElementById('fCodigo').value = p.codigo;
+    document.getElementById('fFabricante').value = p.fabricante;
+    document.getElementById('fAssociacao').value = p.associacao;
+    document.getElementById('fAno').value = p.ano;
+    editando = true;
+    document.querySelector('.btn-add').textContent = 'Salvar';
+    showToast('Edite os campos e clique em Salvar.');
+}
 
 
 
