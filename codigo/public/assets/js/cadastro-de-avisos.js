@@ -5,6 +5,7 @@ const tipo = document.getElementById("tipo");
 const botaoAdicionar = document.querySelector(".adicionar");
 const botaoLimpar = document.querySelector(".limpar");
 const botaoDeletar = document.querySelector(".deletar");
+const botaoFiltro = document.querySelector(".funil");
 
 const tabela = document.querySelector(".tabela tbody");
 
@@ -112,6 +113,48 @@ dias.forEach(function(dia) {
     });
 
 });
+
+/* FILTRO */
+
+function ordenarAvisosPorImportancia() {
+    const linhas = Array.from(tabela.querySelectorAll("tr"));
+    const linhasPreenchidas = linhas.filter(function(linha) {
+        return linha.dataset.preenchida === "true";
+    });
+
+    if (linhasPreenchidas.length === 0) {
+        return;
+    }
+
+    const ordemImportancia = {
+        "Alta": 1,
+        "Média": 2,
+        "Baixa": 3
+    };
+
+    linhasPreenchidas.sort(function(a, b) {
+        const importanciaA = a.children[1].textContent.trim();
+        const importanciaB = b.children[1].textContent.trim();
+        return (ordemImportancia[importanciaA] || 99) - (ordemImportancia[importanciaB] || 99);
+    });
+
+    const linhasVazias = linhas.filter(function(linha) {
+        return linha.dataset.preenchida === "false";
+    });
+
+    tabela.innerHTML = "";
+    linhasPreenchidas.concat(linhasVazias).forEach(function(linha, index) {
+        linha.classList.remove("cor1tabela", "cor2tabela");
+        linha.classList.add(index % 2 === 0 ? "cor1tabela" : "cor2tabela");
+        tabela.appendChild(linha);
+    });
+}
+
+if (botaoFiltro) {
+    botaoFiltro.addEventListener("click", function () {
+        ordenarAvisosPorImportancia();
+    });
+}
 
 /* ADICIONAR */
 

@@ -77,8 +77,16 @@ i {
 
 .esquerda {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
+    gap: 10px;
+}
+
+.botoes-acao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
     gap: 10px;
 }
 
@@ -102,9 +110,12 @@ i {
     font-family: Arial, Helvetica, sans-serif;
     border-radius: 5px;
     border: none;
-    font-size: 20px;
-    padding: 7px;
+    font-size: 25px;
+    height: 40px;
+    width: 310px;
+    padding: 0 15px;
     cursor: pointer;
+    
 }
 
 .alterar {
