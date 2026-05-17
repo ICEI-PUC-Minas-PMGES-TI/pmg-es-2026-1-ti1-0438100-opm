@@ -17,6 +17,12 @@ header {
     color: white;
     margin-left: 15px;
     cursor: pointer;
+    transition: 0.2s;
+}
+
+.menu:hover {
+    color: gray;
+    transform: scale(1.1);
 }
 
 .logo-area {

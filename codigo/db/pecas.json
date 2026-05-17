@@ -1,0 +1,55 @@
+{
+    "pendentes": [
+        {
+            "tipo": "B",
+            "quantidade": 7,
+            "dia": "Ontem",
+            "progresso": 80
+        },
+        {
+            "tipo": "C",
+            "quantidade": 12,
+            "dia": "Segunda",
+            "progresso": 60
+        },
+        {
+            "tipo": "A",
+            "quantidade": 5,
+            "dia": "Terça",
+            "progresso": 40
+        },
+        {
+            "tipo": "D",
+            "quantidade": 9,
+            "dia": "Quarta",
+            "progresso": 70
+        }
+    ],
+
+    "meta": [
+        {
+            "tipo": "A",
+            "quantidade": 15,
+            "dia": "Hoje",
+            "progresso": 100
+        },
+        {
+            "tipo": "B",
+            "quantidade": 20,
+            "dia": "Hoje",
+            "progresso": 100
+        },
+        {
+            "tipo": "C",
+            "quantidade": 10,
+            "dia": "Hoje",
+            "progresso": 100
+        },
+        {
+            "tipo": "D",
+            "quantidade": 18,
+            "dia": "Hoje",
+            "progresso": 100
+        }
+    ]
+}
