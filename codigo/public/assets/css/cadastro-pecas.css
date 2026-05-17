@@ -131,6 +131,11 @@ tbody tr:hover {
     background: var(--row-sel);
 }
 
+tbody tr.selected {
+    background: var(--row-sel);
+    border-left: 3px solid var(--accent);
+}
+
 
 td {
     padding: 11px 12px;

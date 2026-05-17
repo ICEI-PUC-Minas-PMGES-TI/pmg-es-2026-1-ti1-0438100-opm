@@ -33,8 +33,7 @@ function renderTabela() {
         <td>${p.modelo}</td>
         <td style="font-family:'IBM Plex Mono',monospace;font-size:12px">${p.codigo}</td>
         <td>${p.fabricante}</td>
-        <td>${p.associacao}</td>
-      `;
+        <td>${p.associacao}</td>`;
         tr.onclick = () => { selectedIndex = i; renderTabela(); };
         tbody.appendChild(tr);
     });
@@ -77,6 +76,15 @@ function showToast(msg) {
     clearTimeout(toastTimer);
     toastTimer = setTimeout(() => t.classList.remove('show'), 2800);
 }
+
+function deletarSelecionado() {
+    if (selectedIndex < 0) { showToast('Selecione uma linha para deletar.'); return; }
+    pecas.splice(selectedIndex, 1);
+    selectedIndex = -1;
+    renderTabela();
+    showToast('🗑 Peça deletada.');
+}
+
 
 
 
