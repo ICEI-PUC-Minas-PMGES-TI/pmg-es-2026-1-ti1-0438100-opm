@@ -1,0 +1,20 @@
+[
+    {
+        "importancia": "Alta",
+        "tipo": "Operário",
+        "data": "13/05/2026",
+        "texto": "Máquina 4 parada para manutenção."
+    },
+    {
+        "importancia": "Média",
+        "tipo": "Gestor",
+        "data": "14/05/2026",
+        "texto": "Reunião de produção às 14h."
+    },
+    {
+        "importancia": "Baixa",
+        "tipo": "Manutenção",
+        "data": "15/05/2026",
+        "texto": "Troca de óleo programada."
+    }
+]

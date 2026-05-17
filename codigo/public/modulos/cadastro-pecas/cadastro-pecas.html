@@ -19,9 +19,56 @@
         <!--Painel da esquerda-->
         <section>
             <div class="botoes-container">
-                <span class="icone-filtro" title="Filtrar">⚙</span>
-                <button class="btn btn-deletar">Deletar</button>
-                <button class="btn btn-editar">Alterar</button>
+                <button class="btn btn-deletar" onclick="deletarSelecionado()">Deletar</button>
+                <button class="btn btn-editar" onclick="alterarSelecionado()">Alterar</button>
+                <button class="btn btn-filter" onclick="toggleFiltro()">⚙ Filtrar</button>
+
+            </div>
+            <div class="filter-panel" id="filterPanel">
+                <div class="filter-row">
+                    <div class="filter-field">
+                        <label>Tipo</label>
+                        <div class="select-wrap">
+                            <select id="filtTipo" onchange="renderTabela()">
+                                <option value="">Todos</option>
+                                <option>Peça</option>
+                                <option>Componente</option>
+                                <option>Acessório</option>
+                                <option>Consumível</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="filter-field">
+                        <label>Modelo</label>
+                        <input id="filtModelo" type="text" placeholder="Buscar modelo..." oninput="renderTabela()" />
+                    </div>
+                    <div class="filter-field">
+                        <label>Fabricante</label>
+                        <input id="filtFabricante" type="text" placeholder="Buscar fabricante..."
+                            oninput="renderTabela()" />
+                    </div>
+                    <div class="filter-field">
+                        <label>Associação</label>
+                        <input id="filtAssociacao" type="text" placeholder="Buscar máquina..."
+                            oninput="renderTabela()" />
+                    </div>
+                    <div class="filter-field">
+                        <label>Ano</label>
+                        <div class="select-container">
+                            <select id="filtAno" onchange="renderTabela()">
+                                <option value="">Todos</option>
+                                <option>2024</option>
+                                <option>2023</option>
+                                <option>2022</option>
+                                <option>2021</option>
+                                <option>2020</option>
+                                <option>2019</option>
+                                <option>2018</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn-limpar-filtro" onclick="limparFiltro()">Limpar filtros</button>
+                </div>
             </div>
             <div id="table-container">
                 <table id="tabela">
@@ -50,7 +97,7 @@
                 <div class="select-container">
                     <select id="fTipo">
                         <option value="">Selecione o tipo</option>
-                        <option>Maquina/Peça</option>
+                        <option>Peça</option>
                         <option>Componente</option>
                         <option>Acessório</option>
                         <option>Consumível</option>

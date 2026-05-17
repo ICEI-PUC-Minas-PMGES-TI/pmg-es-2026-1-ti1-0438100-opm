@@ -1,0 +1,42 @@
+{
+    "torno": {
+        "id": "1",
+        "nome": "Torno CNC",
+        "itens": [
+        "Máquina limpa e sem cavacos acumulados",
+        "Nível de óleo lubrificante",
+        "Todas ferramentas necessárias disponíveis",
+        "Programa CNC correto carregado",
+        "Botão de emergência funcionando",
+        "EPI’s utilizados"
+        ]
+    },
+
+    "fresa": {
+        "id": "2",
+        "nome": "Fresadora",
+        "itens": [
+        "Máquina limpa e sem cavacos acumulados",
+        "Mesa da máquina limpa",
+        "Todas ferramentas necessárias disponíveis",
+        "Nível de óleo lubrificante",
+        "Ferramenta de corte instalada",
+        "Botão de emergência funcionando",
+        "EPI’s utilizados"
+    ]
+    },
+
+    "furadeira": {
+        "id": "3",
+        "nome": "Furadeira",
+        "itens": [
+        "Máquina limpa e sem cavacos acumulados",
+        "Todas ferramentas necessárias disponíveis",
+        "Nível de óleo lubrificante",
+        "Proteção da máquina posicionada",
+        "Peça presa corretamente",
+        "Botão de emergência funcionando",
+        "EPI’s utilizados"
+    ]
+    }
+}

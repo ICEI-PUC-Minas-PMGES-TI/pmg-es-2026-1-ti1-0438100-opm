@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestão de Máquinas - OPM</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="cadastro_de_péças.css">
+    <style>
+        .grid-maquinas {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 20px 0;
+        }
+        .search-area {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <header class="cabeçalho">
+        <button class="botao_menu">☰</button>
+        <div class="linha-amarela"></div>
+    </header>
+
+    <main>
+        <section class="esquerda">
+            <h1>Apresentação das Máquinas</h1>
+            
+            <div class="search-area">
+                <input type="text" id="inputBusca" placeholder="Pesquisar máquina por nome...">
+                <select id="filtroStatus">
+                    <option value="">Todos os Status</option>
+                    <option value="Operacional">Operacional</option>
+                    <option value="Manutenção">Manutenção</option>
+                </select>
+                <button id="btnOrdenar" class="btn btn-editar">Ordenar A-Z</button>
+            </div>
+
+            <div id="containerMaquinas" class="grid-maquinas">
+                </div>
+        </section>
+    </main>
+
+    <script src="maquinas.js"></script>
+</body>
+</html>

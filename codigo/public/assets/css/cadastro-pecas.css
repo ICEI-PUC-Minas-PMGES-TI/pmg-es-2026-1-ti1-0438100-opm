@@ -131,6 +131,11 @@ tbody tr:hover {
     background: var(--row-sel);
 }
 
+tbody tr.selected {
+    background: var(--row-sel);
+    border-left: 3px solid var(--accent);
+}
+
 
 td {
     padding: 11px 12px;
@@ -314,4 +319,118 @@ select:focus {
 .toast.show {
     transform: translateY(0);
     opacity: 1;
+}
+
+
+
+/* Filtro */
+
+.btn-filter {
+    background: var(--surface2);
+    color: var(--muted);
+    border: 1px solid var(--border);
+}
+
+.btn-filter:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.btn-filter.active {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(232, 160, 32, .08);
+}
+
+.filter-panel {
+    display: none;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    margin-bottom: 12px;
+}
+
+.filter-panel.open {
+    display: block;
+}
+
+.filter-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+.filter-field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1;
+    min-width: 130px;
+}
+
+.filter-field label {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.filter-field input,
+.filter-field select {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text);
+    font-family: 'Barlow', sans-serif;
+    font-size: 13px;
+    padding: 7px 10px;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    transition: border-color .15s;
+}
+
+.filter-field input::placeholder {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.filter-field input:focus,
+.filter-field select:focus {
+    border-color: var(--accent);
+}
+
+.btn-limpar-filtro {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 7px 14px;
+    border-radius: var(--radius);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    align-self: flex-end;
+    white-space: nowrap;
+    transition: all .15s;
+}
+
+.btn-limpar-filtro:hover {
+    border-color: var(--accent2);
+    color: var(--accent2);
+}
+
+.count-label {
+    font-size: 11px;
+    color: var(--muted);
+    font-family: 'IBM Plex Mono', monospace;
+    margin-bottom: 8px;
+}
+
+.count-label span {
+    color: var(--accent);
+    font-weight: 600;
 }

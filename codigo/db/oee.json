@@ -1,0 +1,22 @@
+[
+    {
+        "maquina": "Máquina 1",
+        "oee": "92,5%"
+    },
+    {
+        "maquina": "Máquina 2",
+        "oee": "87,3%"
+    },
+    {
+        "maquina": "Máquina 3",
+        "oee": "76,8%"
+    },
+    {
+        "maquina": "Máquina 4",
+        "oee": "98,1%"
+    },
+    {
+        "maquina": "Máquina 5",
+        "oee": "63,4%"
+    }
+]

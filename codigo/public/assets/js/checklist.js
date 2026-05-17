@@ -1,71 +1,117 @@
-const checklists = {
-    maquina_exemplo: [
-        "Exemplo de item 1",
-        "Exemplo de item 2",
-        "Exemplo de item 3",
-        "Exemplo de item 4",
-        "Exemplo de item 5",
-    ],
-    maquina_exemplo_2: [
-        "Exemplo de item 6",
-        "Exemplo de item 7",
-        "Exemplo de item 8",
-        "Exemplo de item 9",
-        "Exemplo de item 10",
-    ],
-    maquina_exemplo_3: [
-        "Exemplo de item 11",
-        "Exemplo de item 12",
-        "Exemplo de item 13",
-        "Exemplo de item 14",
-        "Exemplo de item 15",
-    ],
-    torno: [
-        "Máquina limpa e sem cavacos acumulados",
-        "Nível de óleo lubrificante",
-        "Ferramentas montadas corretamente",
-        "Programa CNC correto carregado",
-        "Parâmetros de corte corretos"
-    ],
-
-    fresa: [
-        "Mesa da máquina limpa",
-        "Ferramentas montadas corretamente",
-        "Ferramenta de corte instalada",
-        "Sistema de refrigeração funcionando",
-        "EPI’s utilizados"
-    ],
-
-    furadeira: [
-        "Broca bem fixada",
-        "Proteção da máquina posicionada",
-        "Peça presa corretamente",
-        "Botão de emergência funcionando",
-        "Ferramentas montadas corretamente"
-    ]
-};
-
 const selectMaquina = document.getElementById("maquina");
 const checklist = document.getElementById("checklist");
+const btnEnviar = document.querySelector(".enviar");
+const inputFuncionario = document.getElementById("funcionario");
+
+let checklists = {};
+let respostas = {};
+
+fetch("../../../db/checklist.json")
+    .then(res => res.json())
+    .then(data => {
+        checklists = data;
+    });
 
 selectMaquina.addEventListener("change", function () {
+
     const maquinaSelecionada = selectMaquina.value;
 
     checklist.innerHTML = "";
+    respostas = {};
 
     if (maquinaSelecionada === "") {
         return;
     }
 
-    const itens = checklists[maquinaSelecionada];
+    const maquina = checklists[maquinaSelecionada];
 
-    itens.forEach(function (texto) {
+    const itens = maquina.itens;
+
+    itens.forEach(function (texto, index) {
+
         checklist.innerHTML += `
             <div class="item">
+
                 <span>${texto}</span>
-                <button class="ok">OK</button>
-                <button class="nok">NOK</button>
+
+                <button
+                    type="button"
+                    class="ok"
+                    data-index="${index}"
+                    data-status="OK"
+                >
+                    OK
+                </button>
+
+                <button
+                    type="button"
+                    class="nok"
+                    data-index="${index}"
+                    data-status="NOK"
+                >
+                    NOK
+                </button>
+
             </div>
         `;
     });
+
+});
+
+checklist.addEventListener("click", function (evento) {
+
+    const botao = evento.target;
+
+    if (
+        !botao.classList.contains("ok") &&
+        !botao.classList.contains("nok")
+    ) {
+        return;
+    }
+
+    const index = botao.dataset.index;
+    const status = botao.dataset.status;
+
+    const item = botao.parentElement;
+
+    const botoes = item.querySelectorAll("button");
+
+    const jaSelecionado = item.querySelector(".selecionado");
+
+    botoes.forEach(function (btn) {
+        btn.classList.remove("selecionado");
+    });
+
+    if (jaSelecionado) {
+        delete respostas[index];
+    } else {
+        botao.classList.add("selecionado");
+
+        respostas[index] = status;
+    }
+
+});
+
+btnEnviar.addEventListener("click", function () {
+
+    const maquinaSelecionada = selectMaquina.value;
+
+    const maquina = checklists[maquinaSelecionada];
+
+    const funcionario = inputFuncionario.value;
+
+    const dados = {
+        funcionario: funcionario,
+        maquinaId: maquina.id,
+        maquinaNome: maquina.nome,
+        dataHora: new Date(),
+        respostas: respostas
+    };
+
+    console.log(dados);
+    
+    respostas = {};
+    checklist.innerHTML = "";
+    selectMaquina.value = "";
+
 });
