@@ -1,56 +1,8 @@
-header {
-    height: 5%;
-}
+
 
 body {
     background-color: #1c1e22;
     margin: 0;
-}
-
-/* CABEÇALHO */
-
-.cabeçalho {
-    display: flex;
-    background-color: black;
-    height: 55px;
-    
-}
-
-.cabeçalho img {
-    width: 10%;
-    display: flex;
-    position: relative;
-    left: 43%;
-}
-
-.botao_menu {
-    position: relative;
-    right: 10%;
-    font-size: 40px;
-    color: white;
-    background-color: black;
-    border: none;
-    margin-left: 5px;
-    cursor: pointer;
-}
-
-.linha {
-    display: flex;
-    position: relative;
-    left: 50px;
-}
-
-.linha2 {
-    display: flex;
-    position: relative;
-    right: 21%;
-}
-
-.linha-amarela {
-    height: 5px;
-    background-color: #e8a020;
-    margin: 0;
-    border: none;
 }
 
 /* CORPO */
@@ -77,8 +29,16 @@ i {
 
 .esquerda {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
+    gap: 10px;
+}
+
+.botoes-acao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
     gap: 10px;
 }
 
@@ -102,9 +62,12 @@ i {
     font-family: Arial, Helvetica, sans-serif;
     border-radius: 5px;
     border: none;
-    font-size: 20px;
-    padding: 7px;
+    font-size: 25px;
+    height: 40px;
+    width: 310px;
+    padding: 0 15px;
     cursor: pointer;
+    
 }
 
 .alterar {
