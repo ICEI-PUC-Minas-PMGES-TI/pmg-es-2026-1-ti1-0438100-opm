@@ -1,0 +1,248 @@
+/* CONFIGURAÇÃO DA SEÇÃO DE TÍTULO */
+.titulo-secao {
+    background-color: var(--surface2);
+    padding: 15px 20px;
+    border-radius: 15px;
+    margin: 5px 0 15px 0;
+}
+
+.titulo-secao h2 {
+    margin: 0;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* BARRA DE FILTROS E BUSCA */
+.filtros-container {
+    background-color: var(--surface2);
+    padding: 20px;
+    border-radius: 15px;
+    margin: 5px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-end;
+}
+
+.busca-box {
+    flex: 2;
+    min-width: 250px;
+}
+
+.busca-box input {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 14px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.filtro-select {
+    flex: 1;
+    min-width: 180px;
+}
+
+.filtro-select label {
+    display: block;
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.filtro-select select {
+    width: 100%;
+    padding: 11px;
+    background-color: var(--bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+/* CARDS DE RESUMO (INDICADORES DE STATUS) */
+.cards-resumo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 5px 0;
+}
+
+.card-status {
+    background-color: var(--surface2);
+    padding: 20px;
+    border-radius: 15px;
+    border-left: 6px solid var(--border);
+    display: flex;
+    align-items: center;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-info .qtd {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.card-info .label {
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* CORES DAS BORDAS DOS CARDS DE RESUMO */
+.card-status.concluido { border-left-color: #28a745; }
+.card-status.andamento { border-left-color: #2563eb; }
+.card-status.atrasado { border-left-color: var(--accent2); }
+.card-status.nao-iniciado { border-left-color: var(--muted); }
+
+/* TABELA DE TREINAMENTOS */
+.tabela-container {
+    background-color: var(--surface2);
+    margin: 5px 0;
+    padding: 20px;
+    border-radius: 15px;
+    overflow-x: auto; /* Permite rolagem horizontal se a tela for pequena */
+}
+
+.tabela-treinamentos {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 14px;
+}
+
+.tabela-treinamentos th {
+    background-color: var(--bg);
+    color: var(--muted);
+    padding: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
+
+.tabela-treinamentos th:first-child {
+    border-top-left-radius: var(--radius);
+    border-bottom-left-radius: var(--radius);
+}
+
+.tabela-treinamentos th:last-child {
+    border-top-right-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
+}
+
+.tabela-treinamentos td {
+    padding: 15px;
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+}
+
+.tabela-treinamentos tbody tr:hover {
+    background-color: var(--row-even);
+}
+
+/* CONTAINER DO PERFIL DO COLABORADOR DENTRO DA CELULA */
+.colaborador-celula {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.colaborador-celula img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--border);
+}
+
+.colaborador-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.colaborador-info .nome {
+    font-weight: bold;
+    color: white;
+}
+
+.colaborador-info .sub {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+/* BADGES DE STATUS */
+.badge-status {
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+    text-align: center;
+}
+
+.badge-status.concluido { background-color: #14532d; color: #bbf7d0; border: 1px solid #166534; }
+.badge-status.andamento { background-color: #1e3a8a; color: #bfdbfe; border: 1px solid #1e40af; }
+.badge-status.atrasado { background-color: #7f1d1d; color: #fecaca; border: 1px solid #991b1b; }
+.badge-status.nao-iniciado { background-color: #374151; color: #d1d5db; border: 1px solid #4b5563; }
+
+/* REAPROVEITAMENTO DAS BARRAS DE PROGRESSO DA HOME */
+.progresso-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 140px;
+}
+
+.progresso-container span {
+    font-size: 13px;
+    font-weight: bold;
+    color: white;
+    width: 35px;
+    text-align: right;
+}
+
+/* BOTÕES DE AÇÃO */
+.btn-acao {
+    background-color: var(--bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    padding: 8px 12px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+.btn-acao:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* RESPONSIVIDADE ADICIONAL */
+@media (max-width: 768px) {
+    .filtros-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .busca-box, .filtro-select {
+        width: 100%;
+    }
+}

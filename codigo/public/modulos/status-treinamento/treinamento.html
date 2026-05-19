@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status de Treinamento - OPM</title>
+    <link rel="stylesheet" href="../../../assets/css/styles.css">
+    <link rel="stylesheet" href="../../../assets/css/header.css">
+    <link rel="stylesheet" href="../../../assets/css/treinamento.css">
+</head>
+<body>
+    <header id="header-container"></header>
+
+    <main class="container">
+        <section class="titulo-secao">
+            <h2>STATUS DE TREINAMENTO</h2>
+        </section>
+
+        <section class="filtros-container">
+            <div class="busca-box">
+                <input type="text" id="input-busca" placeholder="Pesquisar colaborador, treinamento...">
+            </div>
+            <div class="filtro-select">
+                <label for="filtro-status">Filtrar por status:</label>
+                <select id="filtro-status">
+                    <option value="Todos">Todos</option>
+                    <option value="Concluido">Concluídos</option>
+                    <option value="Em andamento">Em andamento</option>
+                    <option value="Atrasado">Atrasados</option>
+                    <option value="Não iniciado">Não iniciados</option>
+                </select>
+            </div>
+            <div class="filtro-select">
+                <label for="filtro-area">Filtrar por área:</label>
+                <select id="filtro-area">
+                    <option value="Todas">Todas</option>
+                    <option value="Produção">Produção</option>
+                    <option value="Manutenção">Manutenção</option>
+                    <option value="Qualidade">Qualidade</option>
+                    <option value="Logística">Logística</option>
+                </select>
+            </div>
+        </section>
+
+        <section class="cards-resumo">
+            <div class="card-status concluido">
+                <div class="card-info">
+                    <span class="qtd" id="qtd-concluido">0</span>
+                    <span class="label">Concluídos</span>
+                </div>
+            </div>
+            <div class="card-status andamento">
+                <div class="card-info">
+                    <span class="qtd" id="qtd-andamento">0</span>
+                    <span class="label">Em andamento</span>
+                </div>
+            </div>
+            <div class="card-status atrasado">
+                <div class="card-info">
+                    <span class="qtd" id="qtd-atrasado">0</span>
+                    <span class="label">Atrasados</span>
+                </div>
+            </div>
+            <div class="card-status nao-iniciado">
+                <div class="card-info">
+                    <span class="qtd" id="qtd-nao-iniciado">0</span>
+                    <span class="label">Não iniciados</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="tabela-container">
+            <table class="tabela-treinamentos">
+                <thead>
+                    <tr>
+                        <th>Colaborador</th>
+                        <th>Treinamento</th>
+                        <th>Status</th>
+                        <th>Progresso</th>
+                        <th>Data limite</th>
+                        <th>Última atividade</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="dados-treinamento">
+                    </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="../../../assets/js/header.js"></script>
+    <script src="../../../assets/js/treinamento.js"></script>
+</body>
+</html>
