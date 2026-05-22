@@ -1,0 +1,67 @@
+{
+  "avisos": [
+    {
+      "id": 1,
+      "texto": "Manutenção preventiva agendada para o setor de máquinas.",
+      "importanciaId": 1,
+      "tipoUsuarioId": 2,
+      "data": "13/01/2026",
+      "ativo": true
+    },
+    {
+      "id": 2,
+      "texto": "Uso obrigatório de equipamentos de segurança durante o expediente.",
+      "importanciaId": 1,
+      "tipoUsuarioId": 1,
+      "data": "15/01/2026",
+      "ativo": true
+    },
+    {
+      "id": 3,
+      "texto": "Reunião com gestores para alinhamento da produção.",
+      "importanciaId": 2,
+      "tipoUsuarioId": 3,
+      "data": "20/01/2026",
+      "ativo": true
+    }
+  ],
+
+  "importancias": [
+    {
+      "id": 1,
+      "nome": "Alta",
+      "prioridade": 1,
+      "descricao": "Aviso urgente ou muito importante"
+    },
+    {
+      "id": 2,
+      "nome": "Média",
+      "prioridade": 2,
+      "descricao": "Aviso de importância intermediária"
+    },
+    {
+      "id": 3,
+      "nome": "Baixa",
+      "prioridade": 3,
+      "descricao": "Aviso informativo ou de baixa urgência"
+    }
+  ],
+
+  "tiposUsuarios": [
+    {
+      "id": 1,
+      "nome": "Operário",
+      "descricao": "Usuário responsável pela operação das máquinas"
+    },
+    {
+      "id": 2,
+      "nome": "Manutenção",
+      "descricao": "Usuário responsável por manutenções e reparos"
+    },
+    {
+      "id": 3,
+      "nome": "Gestor",
+      "descricao": "Usuário responsável pela gestão e acompanhamento"
+    }
+  ]
+}
