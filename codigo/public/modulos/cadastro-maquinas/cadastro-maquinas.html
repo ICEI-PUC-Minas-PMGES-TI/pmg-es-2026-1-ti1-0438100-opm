@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OPERA – Cadastro de Máquinas</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Barlow:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+
+    <div id="header"></div>
+
+
+    <div class="workspace">
+
+        <div class="left-panel">
+            <div class="toolbar">
+                <button class="btn btn-delete" onclick="deletarSelecionado()">Deletar</button>
+                <button class="btn btn-edit" onclick="alterarSelecionado()">Alterar</button>
+                <button class="btn btn-filter" onclick="toggleFiltro()">⚙ Filtrar</button>
+            </div>
+
+            <div class="filter-panel" id="filterPanel">
+                <div class="filter-row">
+                    <div class="filter-field">
+                        <label>Nome</label>
+                        <input id="filtNome" type="text" placeholder="Buscar nome..." oninput="renderTabela()" />
+                    </div>
+                    <div class="filter-field">
+                        <label>Tipo</label>
+                        <div class="select-wrap">
+                            <select id="filtTipo" onchange="renderTabela()">
+                                <option value="">Todos</option>
+                                <option>Torno CNC</option>
+                                <option>Fresadora</option>
+                                <option>Prensa</option>
+                                <option>Injetora</option>
+                                <option>Soldadora</option>
+                                <option>Outro</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="filter-field">
+                        <label>Status</label>
+                        <div class="select-wrap">
+                            <select id="filtStatus" onchange="renderTabela()">
+                                <option value="">Todos</option>
+                                <option>Ativo</option>
+                                <option>Inativo</option>
+                                <option>Manutenção</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="filter-field">
+                        <label>Localização</label>
+                        <input id="filtLocal" type="text" placeholder="Buscar setor..." oninput="renderTabela()" />
+                    </div>
+                    <button class="btn-limpar-filtro" onclick="limparFiltro()">Limpar</button>
+                </div>
+            </div>
+
+            <div id="countLabel" class="count-label"></div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nº</th>
+                            <th>Nome</th>
+                            <th>Tipo</th>
+                            <th>Patrimônio</th>
+                            <th>Localização</th>
+                            <th>Ano</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="form-panel">
+            <h2>Cadastro de Máquina</h2>
+
+            <div class="field-row">
+                <div class="field">
+                    <label>Nome da Máquina</label>
+                    <input id="fNome" type="text" placeholder="Ex: Maquina A1" />
+                </div>
+                <div class="field">
+                    <label>Tipo</label>
+                    <div class="select-wrap">
+                        <select id="fTipo">
+                            <option value="">Selecione o tipo</option>
+                            <option>Torno CNC</option>
+                            <option>Fresadora</option>
+                            <option>Prensa</option>
+                            <option>Injetora</option>
+                            <option>Soldadora</option>
+                            <option>Outro</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field-row">
+                <div class="field">
+                    <label>Nº de Patrimônio</label>
+                    <input id="fPatrimonio" type="text" placeholder="Ex: PAT-00421" />
+                </div>
+                <div class="field">
+                    <label>Número de Série</label>
+                    <input id="fSerie" type="text" placeholder="Ex: SN-9948271" />
+                </div>
+            </div>
+
+            <div class="field-row">
+                <div class="field">
+                    <label>Fabricante</label>
+                    <input id="fFabricante" type="text" placeholder="Nome do fabricante" />
+                </div>
+                <div class="field">
+                    <label>Ano de Fabricação</label>
+                    <div class="select-wrap">
+                        <select id="fAno">
+                            <option value="">Selecione</option>
+                            <option>2025</option>
+                            <option>2024</option>
+                            <option>2023</option>
+                            <option>2022</option>
+                            <option>2021</option>
+                            <option>2020</option>
+                            <option>2019</option>
+                            <option>2018</option>
+                            <option>2017</option>
+                            <option>2016</option>
+                            <option>2015</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field-row">
+                <div class="field">
+                    <label>Localização / Setor</label>
+                    <input id="fLocal" type="text" placeholder="Ex: Galpão B – Linha 3" />
+                </div>
+                <div class="field">
+                    <label>Status</label>
+                    <div class="select-wrap">
+                        <select id="fStatus">
+                            <option value="">Selecione</option>
+                            <option>Ativo</option>
+                            <option>Inativo</option>
+                            <option>Manutenção</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field">
+                <label>Última Manutenção</label>
+                <input id="fUltManutencao" type="date" />
+            </div>
+
+            <div class="field">
+                <label>Observações</label>
+                <textarea id="fObs" placeholder="Informações adicionais sobre a máquina..."></textarea>
+            </div>
+
+            <div class="form-actions">
+                <button class="btn-clear" onclick="limparForm()">Limpar</button>
+                <button class="btn-add" onclick="adicionarOuSalvar()">Adicionar</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="toast" id="toast"></div>
+    <script src="../../assets/js/header.js"></script>
+    <script src="../../assets/js/cadastro-pecas.js"></script>
+</body>
+
+
+</html>
