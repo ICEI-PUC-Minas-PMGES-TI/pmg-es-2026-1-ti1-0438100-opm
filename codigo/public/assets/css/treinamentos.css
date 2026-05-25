@@ -1,400 +1,121 @@
-/* ==========================================================================
-   CONFIGURAÇÃO DA SEÇÃO DE TÍTULO E GLOBAIS DO MÓDULO
-   ========================================================================== */
-.titulo-secao {
-    background-color: var(--surface2);
-    padding: 15px 20px;
-    border-radius: 15px;
-    margin: 5px 0 15px 0;
+html {
+    height: 100%;
 }
 
-.titulo-secao h2 {
+body {
     margin: 0;
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #242830;
 }
 
-.subtitulo {
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.treinamentos-rapidos,
+.treinamentos {
+    background-color: #2d3139;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.treinamentos-rapidos h3,
+.treinamentos h3 {
     color: white;
     margin-top: 0;
     margin-bottom: 20px;
-    font-size: 18px;
 }
 
-/* ==========================================================================
-   ESTILIZAÇÃO DA VISÃO DO COLABORADOR (USUÁRIO COMUM)
-   ========================================================================== */
-.painel-usuario {
+.rapidos-container {
     display: flex;
-    flex-direction: column;
     gap: 20px;
-}
-
-/* Card Principal do Perfil do Usuário Logado */
-.card-perfil-progresso {
-    background-color: var(--surface2);
-    padding: 25px;
-    border-radius: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.usuario-topo {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.usuario-topo img {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid var(--accent);
-}
-
-.usuario-topo h3 {
-    margin: 0 0 5px 0;
-    color: white;
-    font-size: 22px;
-}
-
-.usuario-topo p {
-    margin: 0;
-    color: var(--muted);
-    font-weight: bold;
-    font-size: 14px;
-}
-
-.progresso-geral-box {
-    flex: 1;
-    min-width: 280px;
-    max-width: 500px;
-}
-
-.progresso-geral-box label {
-    display: block;
-    color: var(--text);
-    font-weight: bold;
-    font-size: 14px;
-    margin-bottom: 10px;
-}
-
-/* Lista de Treinamentos Atribuídos (Layout em Grid de Cards) */
-.meus-treinamentos-lista {
-    background-color: var(--surface2);
-    padding: 25px;
-    border-radius: 15px;
-}
-
-/* O Dev de JS criará este container como grid ou flex para alinhar os cards */
-#lista-meus-treinamentos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 15px;
-    margin-top: 15px;
-}
-
-/* Card Individual de cada Treinamento do Usuário */
-.meu-treinamento-card {
-    background-color: var(--bg);
-    padding: 20px;
-    border-radius: 12px;
-    border-top: 4px solid var(--border);
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    transition: transform 0.2s;
-}
-
-.meu-treinamento-card:hover {
-    transform: translateY(-3px);
-}
-
-.meu-treinamento-card.concluido { border-top-color: #28a745; }
-.meu-treinamento-card.andamento { border-top-color: #2563eb; }
-.meu-treinamento-card.atrasado { border-top-color: var(--accent2); }
-
-.card-treinamento-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 10px;
-}
-
-.card-treinamento-header h4 {
-    margin: 0;
-    color: white;
-    font-size: 16px;
-}
-
-.card-treinamento-header .categoria {
-    font-size: 11px;
-    color: var(--muted);
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-.card-treinamento-prazos {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    font-size: 13px;
-    color: var(--muted);
-}
-
-.card-treinamento-prazos span strong {
-    color: var(--text);
-}
-
-
-/* ==========================================================================
-   ESTILIZAÇÃO DA VISÃO DO ADMINISTRADOR / GESTOR
-   ========================================================================== */
-.painel-admin {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-/* Barra de Filtros e Busca */
-.filtros-container {
-    background-color: var(--surface2);
-    padding: 20px;
-    border-radius: 15px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    align-items: flex-end;
-}
-
-.busca-box {
-    flex: 2;
-    min-width: 250px;
-}
-
-.busca-box input {
-    width: 100%;
-    padding: 12px;
-    background-color: var(--bg);
-    color: var(--text);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    font-size: 14px;
-    outline: none;
-    box-sizing: border-box;
-}
-
-.filtro-select {
-    flex: 1;
-    min-width: 180px;
-}
-
-.filtro-select label {
-    display: block;
-    color: var(--muted);
-    font-size: 13px;
-    font-weight: bold;
-    margin-bottom: 6px;
-}
-
-.filtro-select select {
-    width: 100%;
-    padding: 11px;
-    background-color: var(--bg);
-    color: var(--text);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    font-size: 14px;
-    outline: none;
-    cursor: pointer;
-}
-
-/* Cards de Resumo Estatístico */
-.cards-resumo {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-}
-
-.card-status {
-    background-color: var(--surface2);
-    padding: 20px;
-    border-radius: 15px;
-    border-left: 6px solid var(--border);
-    display: flex;
-    align-items: center;
-}
-
-.card-info {
-    display: flex;
-    flex-direction: column;
-}
-
-.card-info .qtd {
-    font-size: 28px;
-    font-weight: bold;
-    color: white;
-    line-height: 1;
-    margin-bottom: 4px;
-}
-
-.card-info .label {
-    font-size: 13px;
-    color: var(--muted);
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-.card-status.concluido { border-left-color: #28a745; }
-.card-status.andamento { border-left-color: #2563eb; }
-.card-status.atrasado { border-left-color: var(--accent2); }
-.card-status.nao-iniciado { border-left-color: var(--muted); }
-
-/* Tabela Geral de Controle */
-.tabela-container {
-    background-color: var(--surface2);
-    padding: 20px;
-    border-radius: 15px;
     overflow-x: auto;
 }
 
-.tabela-treinamentos {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: left;
-    font-size: 14px;
+.rapidos-container::-webkit-scrollbar {
+    display: none;
 }
 
-.tabela-treinamentos th {
-    background-color: var(--bg);
-    color: var(--muted);
-    padding: 15px;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 12px;
-    letter-spacing: 0.5px;
-}
-
-.tabela-treinamentos th:first-child { border-top-left-radius: var(--radius); border-bottom-left-radius: var(--radius); }
-.tabela-treinamentos th:last-child { border-top-right-radius: var(--radius); border-bottom-right-radius: var(--radius); }
-
-.tabela-treinamentos td {
-    padding: 15px;
-    color: var(--text);
-    border-bottom: 1px solid var(--border);
-    vertical-align: middle;
-}
-
-.tabela-treinamentos tbody tr:hover {
-    background-color: var(--row-even);
-}
-
-.colaborador-celula {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.colaborador-celula img {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid var(--border);
-}
-
-.colaborador-info {
-    display: flex;
-    flex-direction: column;
-}
-
-.colaborador-info .nome { font-weight: bold; color: white; }
-.colaborador-info .sub { font-size: 12px; color: var(--muted); }
-
-
-/* ==========================================================================
-   COMPONENTES COMPARTILHADOS (REUTILIZÁVEIS)
-   ========================================================================== */
-/* Badges de Status */
-.badge-status {
-    padding: 6px 12px;
-    border-radius: 999px;
-    font-size: 12px;
-    font-weight: bold;
-    display: inline-block;
-    text-align: center;
-}
-
-.badge-status.concluido { background-color: #14532d; color: #bbf7d0; border: 1px solid #166534; }
-.badge-status.andamento { background-color: #1e3a8a; color: #bfdbfe; border: 1px solid #1e40af; }
-.badge-status.atrasado { background-color: #7f1d1d; color: #fecaca; border: 1px solid #991b1b; }
-.badge-status.nao-iniciado { background-color: #374151; color: #d1d5db; border: 1px solid #4b5563; }
-
-/* Estrutura de Barras de Progresso Horizontais */
-.progresso-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    min-width: 140px;
-}
-
-.barra {
-    width: 100%;
-    height: 8px;
-    background: var(--surface);
-    border-radius: 999px;
+.rapido-card {
+    min-width: 180px;
+    height: 110px;
+    background: #1c1e22;
+    border-radius: 12px;
     overflow: hidden;
-}
-
-.progresso {
-    height: 100%;
-    border-radius: 999px;
-    transition: width 0.4s ease;
-}
-
-.amarelo { background: linear-gradient(90deg, #f5d061, var(--accent)); }
-.verde { background: linear-gradient(90deg, #56ab2f, #a8ff78); }
-
-/* Botões de Ação da Tabela */
-.btn-acao {
-    background-color: var(--bg);
-    color: var(--text);
-    border: 1px solid var(--border);
-    padding: 8px 12px;
-    border-radius: var(--radius);
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 13px;
     transition: 0.2s;
 }
 
-.btn-acao:hover {
-    border-color: var(--accent);
-    color: var(--accent);
+.rapido-card:hover {
+    transform: translateY(-3px);
 }
 
-/* ==========================================================================
-REGRAS DE RESPONSIVIDADE (MEDIA QUERIES)
-========================================================================== */
-@media (max-width: 768px) {
-    .filtros-container {
-        flex-direction: column;
-        align-items: stretch;
-    }
-    .busca-box, .filtro-select {
-        width: 100%;
-    }
-    .card-perfil-progresso {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .progresso-geral-box {
-        width: 100%;
-        max-width: none;
-    }
+.rapido-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.treinamentos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.treinamento-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1c1e22;
+    padding: 20px;
+    border-radius: 15px;
+    transition: 0.2s;
+}
+
+.treinamento-card:hover {
+    transform: translateY(-3px);
+}
+
+.info {
+    width: 55%;
+}
+
+.info h2 {
+    color: white;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.info p {
+    color: #7a8194;
+    line-height: 1.5;
+}
+
+.thumb {
+    width: 220px;
+    height: 130px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+:root {
+    --bg: #1c1e22;
+    --surface: #242830;
+    --surface2: #2d3139;
+    --border: #363c46;
+    --accent: #e8a020;
+    --text: #dde2ec;
+    --muted: #7a8194;
 }
