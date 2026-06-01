@@ -49,20 +49,20 @@ main {
 }
 
 .buscar {
-    background-color: #f0a51a;
-    color: black;
-
+    background-color: #d89b10;
+    color: #000;
     border: none;
-    border-radius: 6px;
-
-    padding: 10px 20px;
-
-    font-weight: bold;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
     cursor: pointer;
+    transition: 0.2s;
 }
 
 .buscar:hover {
-    opacity: 0.9;
+    background-color: #f0b52b;
+    transform: translateY(-2px);
 }
 
 .tabela-container {
@@ -99,4 +99,21 @@ tbody tr {
 
 tbody tr:hover {
     background-color: #181818;
+}
+
+.visualizar {
+    background-color: #d89b10;
+    color: #000;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.visualizar:hover {
+    background-color: #f0b52b;
+    transform: translateY(-2px);
 }

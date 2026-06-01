@@ -1,25 +1,104 @@
 {
   "usuarios": [
     {
-      "id": 1,
+      "id": "1",
       "login": "admin",
       "senha": "123",
       "nome": "Administrador do Sistema",
       "email": "admin@abc.com"
     },
     {
-      "id": 2,
+      "id": "2",
       "login": "user",
       "senha": "123",
       "nome": "Usuario Comum",
       "email": "user@abc.com"
     },
     {
+      "id": "3",
       "login": "rommel",
       "senha": "123",
       "nome": "Rommel",
-      "email": "rommel@gmail.com",
-      "id": 3
+      "email": "rommel@gmail.com"
     }
-  ]
+  ],
+  "checklists": [
+    {
+      "torno": {
+        "id": "1",
+        "nome": "Torno CNC",
+        "itens": [
+          "Máquina limpa e sem cavacos acumulados",
+          "Nível de óleo lubrificante",
+          "Todas ferramentas necessárias disponíveis",
+          "Programa CNC correto carregado",
+          "Botão de emergência funcionando",
+          "EPI’s utilizados"
+        ]
+      },
+      "fresa": {
+        "id": "2",
+        "nome": "Fresadora",
+        "itens": [
+          "Máquina limpa e sem cavacos acumulados",
+          "Mesa da máquina limpa",
+          "Todas ferramentas necessárias disponíveis",
+          "Nível de óleo lubrificante",
+          "Ferramenta de corte instalada",
+          "Botão de emergência funcionando",
+          "EPI’s utilizados"
+        ]
+      },
+      "furadeira": {
+        "id": "3",
+        "nome": "Furadeira",
+        "itens": [
+          "Máquina limpa e sem cavacos acumulados",
+          "Todas ferramentas necessárias disponíveis",
+          "Nível de óleo lubrificante",
+          "Proteção da máquina posicionada",
+          "Peça presa corretamente",
+          "Botão de emergência funcionando",
+          "EPI’s utilizados"
+        ]
+      },
+      "id": "o09eymzWnSU"
+    }
+  ],
+  "formularios": [
+    {
+      "funcionario": "Exemplo1",
+      "maquinaId": "1",
+      "maquinaNome": "Torno CNC",
+      "dataHora": "01/06/2026, 14:56:46",
+      "respostas": [
+        {
+          "item": "Máquina limpa e sem cavacos acumulados",
+          "status": "OK"
+        },
+        {
+          "item": "Nível de óleo lubrificante",
+          "status": "OK"
+        },
+        {
+          "item": "Todas ferramentas necessárias disponíveis",
+          "status": "OK"
+        },
+        {
+          "item": "Programa CNC correto carregado",
+          "status": "OK"
+        },
+        {
+          "item": "Botão de emergência funcionando",
+          "status": "OK"
+        },
+        {
+          "item": "EPI’s utilizados",
+          "status": "OK"
+        }
+      ],
+      "id": "9LmoYOS_LWg"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
