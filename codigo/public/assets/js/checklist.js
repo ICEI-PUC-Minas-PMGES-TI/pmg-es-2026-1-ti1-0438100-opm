@@ -3,21 +3,18 @@ const checklist = document.getElementById("checklist");
 const btnEnviar = document.querySelector(".enviar");
 const inputFuncionario = document.getElementById("funcionario");
 
+const API_URL = "http://localhost:3000";
+
 let checklists = {};
 let respostas = {};
-let formularios = JSON.parse(localStorage.getItem("formularios")) || [];
 
-fetch("../../../db/checklist.json")
-    .then(function (res) {
-        return res.json();
-    })
-    .then(function (data) {
-        checklists = data;
-        console.log("Checklists carregadas:", checklists);
-    })
-    .catch(function (erro) {
-        console.log("Erro ao carregar checklist.json:", erro);
-    });
+fetch(`${API_URL}/checklists`)
+    .then(res => res.json())
+    .then(data => {
+    checklists = data.find(item => item.torno && item.fresa && item.furadeira);
+
+    console.log("Checklists carregadas:", checklists);
+});
 
 selectMaquina.addEventListener("change", function () {
     const maquinaSelecionada = selectMaquina.value;
@@ -32,16 +29,13 @@ selectMaquina.addEventListener("change", function () {
     const maquina = checklists[maquinaSelecionada];
 
     if (!maquina) {
-        console.log("Máquina não encontrada:", maquinaSelecionada);
+        console.log("Máquina não encontrada.");
         return;
     }
 
-    const itens = maquina.itens;
-
-    itens.forEach(function (texto, index) {
+    maquina.itens.forEach(function (texto, index) {
         checklist.innerHTML += `
             <div class="item">
-
                 <span>${texto}</span>
 
                 <button
@@ -61,7 +55,6 @@ selectMaquina.addEventListener("change", function () {
                 >
                     NOK
                 </button>
-
             </div>
         `;
     });
@@ -80,10 +73,6 @@ checklist.addEventListener("click", function (evento) {
     const maquinaSelecionada = selectMaquina.value;
     const maquina = checklists[maquinaSelecionada];
 
-    if (!maquina) {
-        return;
-    }
-
     const index = botao.dataset.index;
     const status = botao.dataset.status;
 
@@ -92,7 +81,7 @@ checklist.addEventListener("click", function (evento) {
 
     const jaSelecionado = botao.classList.contains("selecionado");
 
-    botoes.forEach(function (btn) {
+    botoes.forEach(btn => {
         btn.classList.remove("selecionado");
     });
 
@@ -109,34 +98,24 @@ checklist.addEventListener("click", function (evento) {
             status: status
         };
     }
-
-    console.log("Respostas atuais:", respostas);
 });
 
 btnEnviar.addEventListener("click", function () {
     const maquinaSelecionada = selectMaquina.value;
     const maquina = checklists[maquinaSelecionada];
-    const funcionario = inputFuncionario.value;
+    const funcionario = inputFuncionario.value.trim();
 
     if (maquinaSelecionada === "") {
         alert("Selecione uma máquina.");
         return;
     }
 
-    if (!funcionario) {
+    if (funcionario === "") {
         alert("Digite o nome do funcionário.");
         return;
     }
 
-    if (!maquina) {
-        alert("Máquina não encontrada.");
-        return;
-    }
-
-    const id = formularios.length + 1;
-
     const dados = {
-        id: id,
         funcionario: funcionario,
         maquinaId: maquina.id,
         maquinaNome: maquina.nome,
@@ -151,12 +130,10 @@ btnEnviar.addEventListener("click", function () {
         JSON.stringify(formularios)
     );
 
-    console.log(dados);
-    
+    console.log("Formulários salvos:", formularios);
+
     respostas = {};
-
     checklist.innerHTML = "";
-
     selectMaquina.value = "";
-
+    inputFuncionario.value = "";
 });
