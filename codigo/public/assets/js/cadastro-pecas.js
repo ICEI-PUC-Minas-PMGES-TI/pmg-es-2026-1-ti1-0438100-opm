@@ -1,3 +1,13 @@
+const API_URL = 'http://localhost:3000/pecas';
+
+async function carregarPecas() {
+    const response = await fetch(API_URL);
+    pecas = await response.json();
+    renderTabela();
+}
+let pecas = []
+
+
 function limparForm() {
     ['fTipo', 'fModelo', 'fCodigo', 'fFabricante', 'fAssociacao', 'fAno'].forEach(id => {
         document.getElementById(id).value = '';
@@ -7,7 +17,7 @@ function limparForm() {
 }
 
 
-let pecas = [
+/*let pecas = [
     { tipo: 'Peça', modelo: 'Modelo 43A', codigo: '472819428', fabricante: 'Fabricante fictício', associacao: 'Maquina B3', ano: '2021' },
     { tipo: 'Peça', modelo: 'Modelo 43A', codigo: '472819428', fabricante: 'Fabricante fictício', associacao: 'Maquina B3', ano: '2021' },
     { tipo: 'Peça', modelo: 'Modelo 43A', codigo: '472819428', fabricante: 'Fabricante fictício', associacao: 'Maquina B3', ano: '2021' },
@@ -17,7 +27,7 @@ let pecas = [
     { tipo: 'Peça', modelo: 'Modelo 43A', codigo: '472819428', fabricante: 'Fabricante fictício', associacao: 'Maquina B3', ano: '2021' },
     { tipo: 'Peça', modelo: 'Modelo 43A', codigo: '472819428', fabricante: 'Fabricante fictício', associacao: 'Maquina B3', ano: '2021' },
     { tipo: 'Peça', modelo: 'Modelo 43A', codigo: '472819428', fabricante: 'Fabricante fictício', associacao: 'Maquina B3', ano: '2021' },
-];
+];*/
 let selectedIndex = -1;
 let editando = false;
 
@@ -83,7 +93,7 @@ function renderTabela() {
     });
 }
 
-function adicionarOuSalvar() {
+async function adicionarOuSalvar() {
     const tipo = document.getElementById('fTipo').value;
     const modelo = document.getElementById('fModelo').value.trim();
     const codigo = document.getElementById('fCodigo').value.trim();
@@ -96,20 +106,31 @@ function adicionarOuSalvar() {
         return;
     }
 
-    const peca = { tipo, modelo, codigo, fabricante, associacao, ano };
+    const peca = { id: "", tipo, modelo, codigo, fabricante, associacao, ano };
 
     if (editando && selectedIndex >= 0) {
-        pecas[selectedIndex] = peca;
-        editando = false;
+        await fetch(`${API_URL}/${pecas[selectedIndex].id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(peca)
+        }); editando = false;
         document.querySelector('.btn-adicionar').textContent = 'Adicionar';
         showToast('✓ Peça atualizada com sucesso.');
     } else {
-        pecas.push(peca);
+        await fetch(API_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(peca)
+        });
         showToast('✓ Peça adicionada com sucesso.');
     }
 
     limparForm();
-    renderTabela();
+    await carregarPecas();
 }
 
 let toastTimer;
@@ -121,10 +142,11 @@ function showToast(msg) {
     toastTimer = setTimeout(() => t.classList.remove('show'), 2800);
 }
 
-function deletarSelecionado() {
+async function deletarSelecionado() {
     if (selectedIndex < 0) { showToast('Selecione uma linha para deletar.'); return; }
-    pecas.splice(selectedIndex, 1);
-    selectedIndex = -1;
+    await fetch(`${API_URL}/${pecas[selectedIndex].id}`, {
+        method: 'DELETE'
+    }); selectedIndex = -1;
     renderTabela();
     showToast('🗑 Peça deletada.');
 }
@@ -145,4 +167,4 @@ function alterarSelecionado() {
 
 
 
-renderTabela();
+carregarPecas();

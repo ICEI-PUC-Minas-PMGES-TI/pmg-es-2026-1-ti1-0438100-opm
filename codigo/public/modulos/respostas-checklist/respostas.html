@@ -14,6 +14,61 @@
     <div id="header"></div>
 
     <main>
+        <div class="painel-respostas">
+
+    <h1>Histórico de Checklists</h1>
+
+    <div class="filtros">
+
+        <input
+            type="text"
+            id="filtro-funcionario"
+            placeholder="Funcionário"
+        >
+
+        <select id="filtro-maquina">
+            <option value="">Todas as máquinas</option>
+            <option value="Torno CNC">Torno CNC</option>
+            <option value="Fresadora">Fresadora</option>
+            <option value="Furadeira">Furadeira</option>
+        </select>
+
+        <input
+            type="date"
+            id="filtro-data"
+        >
+
+        <button type="button" class="buscar">
+            Buscar
+        </button>
+
+    </div>
+
+    <div class="tabela-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>ID</th>
+                    <th>Funcionário</th>
+                    <th>Máquina</th>
+                    <th>Data</th>
+                </tr>
+
+            </thead>
+
+            <tbody id="tabela-respostas">
+
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
     </main>
 
 <script src="../../assets/js/header.js"></script>

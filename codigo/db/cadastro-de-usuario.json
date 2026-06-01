@@ -1,0 +1,77 @@
+{
+"usuarios": [
+{
+"id": 1,
+"nome": "Carlos",
+"sobrenome": "Silva",
+"cargo": "Supervisor",
+"senha": "$2b$10$exampleHashedPassword123",
+"ativo": true,
+"criadoEm": "2025-01-10T08:00:00.000Z"
+},
+{
+"id": 2,
+"nome": "Ana",
+"sobrenome": "Pereira",
+"cargo": "Operador",
+"senha": "$2b$10$exampleHashedPassword456",
+"ativo": true,
+"criadoEm": "2025-02-14T09:30:00.000Z"
+},
+{
+"id": 3,
+"nome": "João",
+"sobrenome": "Martins",
+"cargo": "Técnico",
+"senha": "$2b$10$exampleHashedPassword789",
+"ativo": false,
+"criadoEm": "2025-03-01T11:00:00.000Z"
+}
+],
+"cargos": [
+{
+"id": 1,
+"nome": "Supervisor",
+"descricao": "Responsável pela supervisão da equipe e processos",
+"nivel": 3
+},
+{
+"id": 2,
+"nome": "Técnico",
+"descricao": "Executa atividades técnicas especializadas",
+"nivel": 2
+},
+{
+"id": 3,
+"nome": "Operador",
+"descricao": "Responsável pela operação diária dos equipamentos",
+"nivel": 1
+}
+],
+"registrosAtividade": [
+{
+"id": 1,
+"usuarioId": 1,
+"tipo": "login",
+"descricao": "Login realizado com sucesso",
+"dataHora": "2025-05-01T08:05:00.000Z",
+"ip": "192.168.0.10"
+},
+{
+"id": 2,
+"usuarioId": 2,
+"tipo": "cadastro",
+"descricao": "Novo usuário cadastrado por Ana Pereira",
+"dataHora": "2025-05-02T10:15:00.000Z",
+"ip": "192.168.0.22"
+},
+{
+"id": 3,
+"usuarioId": 1,
+"tipo": "logout",
+"descricao": "Sessão encerrada",
+"dataHora": "2025-05-01T17:00:00.000Z",
+"ip": "192.168.0.10"
+}
+]
+}

@@ -1,0 +1,32 @@
+{
+    "pecas": [
+        {
+            "id": "jYDapmTM7Pw",
+            "tipo": "Acessório",
+            "modelo": "Modelo 45A",
+            "codigo": "786310964",
+            "fabricante": "Fabricante 1",
+            "associacao": "Maquina 32B",
+            "ano": "2018"
+        },
+        {
+            "id": "sHMvso4Uups",
+            "tipo": "Peça",
+            "modelo": "Modelo 21B",
+            "codigo": "854720943",
+            "fabricante": "Fabricante 5",
+            "associacao": "Maquina 17K",
+            "ano": "2019"
+        },
+        {
+            "id": "CEHCj-y4KdY",
+            "tipo": "Componente",
+            "modelo": "Modelo 4Z",
+            "codigo": "389103943",
+            "fabricante": "Fabricante 3",
+            "associacao": "Maquina 32B",
+            "ano": "2022"
+        }
+    ],
+    "$schema": "./node_modules/json-server/schema.json"
+}
