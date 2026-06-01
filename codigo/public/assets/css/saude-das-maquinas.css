@@ -409,3 +409,25 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+.botoes-controle {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.botoes-controle button {
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #f2a51a;
+  color: black;
+}
+
+.botoes-controle button:hover {
+  opacity: 0.8;
+}
