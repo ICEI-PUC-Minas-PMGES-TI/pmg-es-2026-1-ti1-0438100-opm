@@ -1,126 +1,72 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Status de Treinamento - OPM</title>
-    <link rel="stylesheet" href="../../../assets/css/styles.css">
-    <link rel="stylesheet" href="../../../assets/css/header.css">
-    <link rel="stylesheet" href="../../../assets/css/treinamento.css">
+
+    <link rel="stylesheet" href="../../assets/css/header.css">
+    <link rel="stylesheet" href="../../assets/css/treinamentos.css">
+
+    <link rel="icon" type="image/png" href="../../assets/images/icon.png">
+
+    <title>Treinamentos</title>
 </head>
+
 <body>
-    <header id="header-container"></header>
 
-    <main class="container">
-        <section class="titulo-secao">
-            <h2>STATUS DE TREINAMENTO</h2>
-        </section>
+    <div id="header"></div>
 
-        <section id="visao-colaborador" class="painel-usuario" style="display: none;">
-            <div class="card-perfil-progresso">
-                <div class="usuario-topo">
-                    <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" id="foto-meu-perfil" alt="Sua foto">
-                    <div>
-                        <h3 id="nome-meu-perfil">Carregando seu perfil...</h3>
-                        <p id="cargo-meu-perfil">Operador</p>
-                    </div>
-                </div>
-                
-                <div class="progresso-geral-box">
-                    <label>Seu Progresso Geral em Treinamentos:</label>
-                    <div class="progresso-container">
-                        <div class="barra">
-                            <div id="barra-meu-progresso" class="progresso verde" style="width: 0%"></div>
-                        </div>
-                        <span id="texto-meu-progresso">0%</span>
-                    </div>
-                </div>
-            </div>
+    <div class="container">
 
-            <div class="meus-treinamentos-lista">
-                <h3 class="subtitulo">Meus Treinamentos Atribuídos</h3>
-                <div id="lista-meus-treinamentos">
-                    </div>
+        <section class="treinamentos-rapidos">
+            <h3>Treinamentos Rápidos</h3>
+
+            <div class="rapidos-container">
+                <div class="rapido-card"><img src="https://loremflickr.com/300/200/industry?random=1"></div>
+                <div class="rapido-card"><img src="https://loremflickr.com/300/200/industry?random=2"></div>
+                <div class="rapido-card"><img src="https://loremflickr.com/300/200/industry?random=3"></div>
+                <div class="rapido-card"><img src="https://loremflickr.com/300/200/industry?random=4"></div>
+                <div class="rapido-card"><img src="https://loremflickr.com/300/200/industry?random=5"></div>
+                <div class="rapido-card"><img src="https://loremflickr.com/300/200/industry?random=6"></div>
+                <div class="rapido-card"><img src="https://loremflickr.com/300/200/industry?random=7"></div>
             </div>
         </section>
 
+        <section class="treinamentos">
 
-        <section id="visao-admin" class="painel-admin" style="display: block;">
-            
-            <div class="filtros-container">
-                <div class="busca-box">
-                    <input type="text" id="input-busca" placeholder="Pesquisar colaborador, treinamento...">
-                </div>
-                <div class="filtro-select">
-                    <label for="filtro-status">Filtrar por status:</label>
-                    <select id="filtro-status">
-                        <option value="Todos">Todos</option>
-                        <option value="Concluido">Concluídos</option>
-                        <option value="Em andamento">Em andamento</option>
-                        <option value="Atrasado">Atrasados</option>
-                        <option value="Não iniciado">Não iniciados</option>
-                    </select>
-                </div>
-                <div class="filtro-select">
-                    <label for="filtro-area">Filtrar por área:</label>
-                    <select id="filtro-area">
-                        <option value="Todas">Todas</option>
-                        <option value="Produção">Produção</option>
-                        <option value="Manutenção">Manutenção</option>
-                        <option value="Qualidade">Qualidade</option>
-                        <option value="Logística">Logística</option>
-                    </select>
-                </div>
+            <h3>Treinamentos</h3>
+
+            <div class="filtros">
+
+                <input
+                    type="text"
+                    id="pesquisa"
+                    placeholder="Pesquisar treinamento..."
+                >
+
+                <select id="categoria">
+                    <option value="Todos">Todas categorias</option>
+                    <option value="Segurança">Segurança</option>
+                    <option value="Operação">Operação</option>
+                    <option value="Qualidade">Qualidade</option>
+                    <option value="Logística">Logística</option>
+                </select>
+
             </div>
 
-            <div class="cards-resumo">
-                <div class="card-status concluido">
-                    <div class="card-info">
-                        <span class="qtd" id="qtd-concluido">0</span>
-                        <span class="label">Concluídos</span>
-                    </div>
-                </div>
-                <div class="card-status andamento">
-                    <div class="card-info">
-                        <span class="qtd" id="qtd-andamento">0</span>
-                        <span class="label">Em andamento</span>
-                    </div>
-                </div>
-                <div class="card-status atrasado">
-                    <div class="card-info">
-                        <span class="qtd" id="qtd-atrasado">0</span>
-                        <span class="label">Atrasados</span>
-                    </div>
-                </div>
-                <div class="card-status nao-iniciado">
-                    <div class="card-info">
-                        <span class="qtd" id="qtd-nao-iniciado">0</span>
-                        <span class="label">Não iniciados</span>
-                    </div>
-                </div>
-            </div>
+            <div
+                class="treinamentos-grid"
+                id="treinamentosGrid"
+            ></div>
 
-            <div class="tabela-container">
-                <table class="tabela-treinamentos">
-                    <thead>
-                        <tr>
-                            <th>Colaborador</th>
-                            <th>Treinamento</th>
-                            <th>Status</th>
-                            <th>Progresso</th>
-                            <th>Data limite</th>
-                            <th>Última atividade</th>
-                            <th>Ações</th>
-                        </tr>
-                    </thead>
-                    <tbody id="dados-treinamento">
-                        </tbody>
-                </table>
-            </div>
         </section>
-    </main>
 
-    <script src="../../../assets/js/header.js"></script>
-    <script src="../../../assets/js/treinamento.js"></script>
+    </div>
+
+    <script src="../../assets/js/header.js"></script>
+    <script src="../../assets/js/treinamentos.js"></script>
+
 </body>
+
 </html>

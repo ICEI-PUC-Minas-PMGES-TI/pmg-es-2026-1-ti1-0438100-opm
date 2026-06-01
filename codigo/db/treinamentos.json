@@ -1,0 +1,49 @@
+{
+    "treinamentos": [
+        {
+            "id": 1,
+            "titulo": "Treinamento de Segurança",
+            "descricao": "Boas práticas de segurança industrial.",
+            "imagem": "https://loremflickr.com/400/300/industry?random=11",
+            "categoria": "Segurança",
+            "duracao": "15 min",
+            "progresso": 75
+        },
+        {
+            "id": 2,
+            "titulo": "Operação de Máquinas",
+            "descricao": "Procedimentos corretos para operação.",
+            "imagem": "https://loremflickr.com/400/300/industry?random=12",
+            "categoria": "Operação",
+            "duracao": "20 min",
+            "progresso": 40
+        },
+        {
+            "id": 3,
+            "titulo": "Controle de Qualidade",
+            "descricao": "Garantia de qualidade na produção.",
+            "imagem": "https://loremflickr.com/400/300/industry?random=13",
+            "categoria": "Qualidade",
+            "duracao": "18 min",
+            "progresso": 90
+        },
+        {
+            "id": 4,
+            "titulo": "Logística Industrial",
+            "descricao": "Fluxo eficiente de materiais.",
+            "imagem": "https://loremflickr.com/400/300/industry?random=14",
+            "categoria": "Logística",
+            "duracao": "25 min",
+            "progresso": 60
+        },
+        {
+            "id": 5,
+            "titulo": "Uso de EPIs",
+            "descricao": "Equipamentos de proteção individual.",
+            "imagem": "https://loremflickr.com/400/300/industry?random=15",
+            "categoria": "Segurança",
+            "duracao": "10 min",
+            "progresso": 100
+        }
+    ]
+}
