@@ -16,47 +16,22 @@
 
   <main class="conteudo-principal">
 
-    <section class="secao-topo-pagina">
-
-      <div class="area-titulo-pagina">
-        <h1 class="titulo-pagina">Estado das Máquinas</h1>
-
-        <p class="descricao-pagina">
-          Visão geral do estado atual, vida útil e durabilidade das máquinas.
-        </p>
-      </div>
-
-      <div class="area-filtros">
-
-        <div class="campo-busca">
-          <input type="text" class="input-busca" placeholder="Buscar máquina...">
-
-          <span class="icone-busca">🔍</span>
-        </div>
-
-        <select class="select-filtro-status">
-          <option>Todas as máquinas</option>
-          <option>Operando</option>
-          <option>Atenção</option>
-          <option>Parada</option>
-        </select>
-
-      </div>
-
-    </section>
-
     <section class="grade-maquinas">
 
+      <!-- CARDS -->
       <article class="card-maquina">
 
         <div class="cabecalho-card-maquina">
 
           <div class="area-nome-maquina">
-            <span class="bolinha-status status-operando"></span>
+
+            <span class="bolinha-status"></span>
+
             <h2 class="nome-maquina">Máquina</h2>
+
           </div>
 
-          <span class="selo-status selo-operando">
+          <span class="selo-status">
             Operando
           </span>
 
@@ -69,6 +44,7 @@
           </div>
 
           <div class="dados-maquina">
+
             <p>
               <strong>Modelo</strong>
               <span>OM-250</span>
@@ -78,6 +54,7 @@
               <strong>Local</strong>
               <span>Setor A</span>
             </p>
+
           </div>
 
         </div>
@@ -86,52 +63,76 @@
 
         <div class="area-indicadores">
 
+          <!-- VIDA ÚTIL -->
           <div class="indicador">
+
             <strong>Vida Útil</strong>
+
             <span>Estimativa</span>
 
             <div class="barra-fundo">
-              <div class="barra-preenchida barra-verde" style="width: 80%;"></div>
+
+              <div
+                class="barra-preenchida"
+                style="width: 80%;"
+              ></div>
+
             </div>
 
-            <div class="botoes-controle">
+            <div class="controles-barra">
+
               <button class="btn-diminuir">-</button>
+
               <button class="btn-aumentar">+</button>
+
             </div>
+
           </div>
 
+          <!-- DURABILIDADE -->
           <div class="indicador">
+
             <strong>Durabilidade</strong>
+
             <span>Nível</span>
 
             <div class="barra-fundo">
-              <div class="barra-preenchida barra-verde" style="width: 80%;"></div>
+
+              <div
+                class="barra-preenchida"
+                style="width: 75%;"
+              ></div>
+
             </div>
 
-            <div class="botoes-controle">
+            <div class="controles-barra">
+
               <button class="btn-diminuir">-</button>
+
               <button class="btn-aumentar">+</button>
+
             </div>
+
           </div>
 
         </div>
 
-        <p class="texto-atualizacao">
-          Última atualização: há pouco tempo
-        </p>
-
       </article>
 
+      <!-- CARDS -->
       <article class="card-maquina">
 
         <div class="cabecalho-card-maquina">
 
           <div class="area-nome-maquina">
-            <span class="bolinha-status status-operando"></span>
+
+            <span class="bolinha-status"></span>
+
             <h2 class="nome-maquina">Máquina</h2>
+
           </div>
 
-          <span class="selo-status selo-operando">
+          <span class="selo-status">
             Operando
           </span>
 
@@ -144,232 +145,7 @@
           </div>
 
           <div class="dados-maquina">
-            <p>
-              <strong>Modelo</strong>
-              <span>OM-300</span>
-            </p>
 
-            <p>
-              <strong>Local</strong>
-              <span>Setor B</span>
-            </p>
-          </div>
-
-        </div>
-
-        <div class="linha-divisoria"></div>
-
-        <div class="area-indicadores">
-
-          <div class="indicador">
-            <strong>Vida Útil</strong>
-            <span>Estimativa</span>
-
-            <div class="barra-fundo">
-              <div class="barra-preenchida barra-verde" style="width: 80%;"></div>
-            </div>
-
-            <div class="botoes-controle">
-              <button class="btn-diminuir">-</button>
-              <button class="btn-aumentar">+</button>
-            </div>
-          </div>
-
-          <div class="indicador">
-            <strong>Durabilidade</strong>
-            <span>Nível</span>
-
-            <div class="barra-fundo">
-              <div class="barra-preenchida barra-verde" style="width: 80%;"></div>
-            </div>
-
-            <div class="botoes-controle">
-              <button class="btn-diminuir">-</button>
-              <button class="btn-aumentar">+</button>
-            </div>
-            
-          </div>
-
-        </div>
-
-        <p class="texto-atualizacao">
-          Última atualização: há pouco tempo
-        </p>
-
-      </article>
-
-      <article class="card-maquina">
-
-        <div class="cabecalho-card-maquina">
-
-          <div class="area-nome-maquina">
-            <span class="bolinha-status status-atencao"></span>
-            <h2 class="nome-maquina">Máquina</h2>
-          </div>
-
-          <span class="selo-status selo-atencao">
-            Atenção
-          </span>
-
-        </div>
-
-        <div class="area-informacoes-maquina">
-
-          <div class="icone-maquina">
-            ⚙
-          </div>
-
-          <div class="dados-maquina">
-            <p>
-              <strong>Modelo</strong>
-              <span>OM-410</span>
-            </p>
-
-            <p>
-              <strong>Local</strong>
-              <span>Setor C</span>
-            </p>
-          </div>
-
-        </div>
-
-        <div class="linha-divisoria"></div>
-
-        <div class="area-indicadores">
-
-          <div class="indicador">
-            <strong>Vida Útil</strong>
-            <span>Estimativa</span>
-
-            <div class="barra-fundo">
-              <div class="barra-preenchida barra-verde" style="width: 80%;"></div>
-            </div>
-
-            <div class="botoes-controle">
-              <button class="btn-diminuir">-</button>
-              <button class="btn-aumentar">+</button>
-            </div>
-          </div>
-
-          <div class="indicador">
-            <strong>Durabilidade</strong>
-            <span>Nível</span>
-
-            <div class="barra-fundo">
-              <div class="barra-preenchida barra-verde" style="width: 80%;"></div>
-            </div>
-
-            <div class="botoes-controle">
-              <button class="btn-diminuir">-</button>
-              <button class="btn-aumentar">+</button>
-            </div>
-          </div>
-
-        </div>
-
-        <p class="texto-atualizacao">
-          Última atualização: há pouco tempo
-        </p>
-
-      </article>
-
-      <article class="card-maquina">
-
-        <div class="cabecalho-card-maquina">
-
-          <div class="area-nome-maquina">
-            <span class="bolinha-status status-parada"></span>
-            <h2 class="nome-maquina">Máquina</h2>
-          </div>
-
-          <span class="selo-status selo-parada">
-            Parada
-          </span>
-
-        </div>
-
-        <div class="area-informacoes-maquina">
-
-          <div class="icone-maquina">
-            ⚙
-          </div>
-
-          <div class="dados-maquina">
-            <p>
-              <strong>Modelo</strong>
-              <span>OM-180</span>
-            </p>
-
-            <p>
-              <strong>Local</strong>
-              <span>Setor D</span>
-            </p>
-          </div>
-
-        </div>
-
-        <div class="linha-divisoria"></div>
-
-        <div class="area-indicadores">
-
-          <div class="indicador">
-            <strong>Vida Útil</strong>
-            <span>Estimativa</span>
-
-            <div class="barra-fundo">
-              <div class="barra-preenchida barra-verde" style="width: 80%;"></div>
-            </div>
-
-            <div class="botoes-controle">
-              <button class="btn-diminuir">-</button>
-              <button class="btn-aumentar">+</button>
-            </div>
-          </div>
-
-          <div class="indicador">
-            <strong>Durabilidade</strong>
-            <span>Nível</span>
-
-            <div class="barra-fundo">
-              <div class="barra-preenchida barra-verde" style="width: 80%;"></div>
-            </div>
-
-            <div class="botoes-controle">
-              <button class="btn-diminuir">-</button>
-              <button class="btn-aumentar">+</button>
-            </div>
-          </div>
-
-        </div>
-
-        <p class="texto-atualizacao">
-          Última atualização: há pouco tempo
-        </p>
-
-      </article>
-
-      <article class="card-maquina">
-
-        <div class="cabecalho-card-maquina">
-
-          <div class="area-nome-maquina">
-            <span class="bolinha-status status-operando"></span>
-            <h2 class="nome-maquina">Máquina</h2>
-          </div>
-
-          <span class="selo-status selo-operando">
-            Operando
-          </span>
-
-        </div>
-
-        <div class="area-informacoes-maquina">
-
-          <div class="icone-maquina">
-            ⚙
-          </div>
-
-          <div class="dados-maquina">
             <p>
               <strong>Modelo</strong>
               <span>OM-250</span>
@@ -379,6 +155,7 @@
               <strong>Local</strong>
               <span>Setor A</span>
             </p>
+
           </div>
 
         </div>
@@ -387,52 +164,76 @@
 
         <div class="area-indicadores">
 
+          <!-- VIDA ÚTIL -->
           <div class="indicador">
+
             <strong>Vida Útil</strong>
+
             <span>Estimativa</span>
 
             <div class="barra-fundo">
-              <div class="barra-preenchida barra-verde" style="width: 80%;"></div>
+
+              <div
+                class="barra-preenchida"
+                style="width: 80%;"
+              ></div>
+
             </div>
 
-            <div class="botoes-controle">
+            <div class="controles-barra">
+
               <button class="btn-diminuir">-</button>
+
               <button class="btn-aumentar">+</button>
+
             </div>
+
           </div>
 
+          <!-- DURABILIDADE -->
           <div class="indicador">
+
             <strong>Durabilidade</strong>
+
             <span>Nível</span>
 
             <div class="barra-fundo">
-              <div class="barra-preenchida barra-verde" style="width: 80%;"></div>
+
+              <div
+                class="barra-preenchida"
+                style="width: 75%;"
+              ></div>
+
             </div>
 
-            <div class="botoes-controle">
+            <div class="controles-barra">
+
               <button class="btn-diminuir">-</button>
+
               <button class="btn-aumentar">+</button>
+
             </div>
+
           </div>
 
         </div>
 
-        <p class="texto-atualizacao">
-          Última atualização: há pouco tempo
-        </p>
-
       </article>
 
+      <!-- CARDS -->
       <article class="card-maquina">
 
         <div class="cabecalho-card-maquina">
 
           <div class="area-nome-maquina">
-            <span class="bolinha-status status-operando"></span>
+
+            <span class="bolinha-status"></span>
+
             <h2 class="nome-maquina">Máquina</h2>
+
           </div>
 
-          <span class="selo-status selo-operando">
+          <span class="selo-status">
             Operando
           </span>
 
@@ -445,15 +246,17 @@
           </div>
 
           <div class="dados-maquina">
+
             <p>
               <strong>Modelo</strong>
-              <span>OM-300</span>
+              <span>OM-250</span>
             </p>
 
             <p>
               <strong>Local</strong>
-              <span>Setor B</span>
+              <span>Setor A</span>
             </p>
+
           </div>
 
         </div>
@@ -462,53 +265,76 @@
 
         <div class="area-indicadores">
 
+          <!-- VIDA ÚTIL -->
           <div class="indicador">
+
             <strong>Vida Útil</strong>
+
             <span>Estimativa</span>
 
             <div class="barra-fundo">
-              <div class="barra-preenchida barra-verde" style="width: 80%;"></div>
+
+              <div
+                class="barra-preenchida"
+                style="width: 80%;"
+              ></div>
+
             </div>
 
-            <div class="botoes-controle">
+            <div class="controles-barra">
+
               <button class="btn-diminuir">-</button>
+
               <button class="btn-aumentar">+</button>
+
             </div>
+
           </div>
 
+          <!-- DURABILIDADE -->
           <div class="indicador">
+
             <strong>Durabilidade</strong>
+
             <span>Nível</span>
 
             <div class="barra-fundo">
-              <div class="barra-preenchida barra-verde" style="width: 80%;"></div>
+
+              <div
+                class="barra-preenchida"
+                style="width: 75%;"
+              ></div>
+
             </div>
 
-            <div class="botoes-controle">
+            <div class="controles-barra">
+
               <button class="btn-diminuir">-</button>
+
               <button class="btn-aumentar">+</button>
+
             </div>
+
           </div>
 
         </div>
 
-        <p class="texto-atualizacao">
-          Última atualização: há pouco tempo
-        </p>
-
       </article>
-
+      <!-- CARDS -->
       <article class="card-maquina">
 
         <div class="cabecalho-card-maquina">
 
           <div class="area-nome-maquina">
-            <span class="bolinha-status status-atencao"></span>
+
+            <span class="bolinha-status"></span>
+
             <h2 class="nome-maquina">Máquina</h2>
+
           </div>
 
-          <span class="selo-status selo-atencao">
-            Atenção
+          <span class="selo-status">
+            Operando
           </span>
 
         </div>
@@ -520,15 +346,17 @@
           </div>
 
           <div class="dados-maquina">
+
             <p>
               <strong>Modelo</strong>
-              <span>OM-410</span>
+              <span>OM-250</span>
             </p>
 
             <p>
               <strong>Local</strong>
-              <span>Setor C</span>
+              <span>Setor A</span>
             </p>
+
           </div>
 
         </div>
@@ -537,53 +365,77 @@
 
         <div class="area-indicadores">
 
+          <!-- VIDA ÚTIL -->
           <div class="indicador">
+
             <strong>Vida Útil</strong>
+
             <span>Estimativa</span>
 
             <div class="barra-fundo">
-              <div class="barra-preenchida barra-verde" style="width: 80%;"></div>
+
+              <div
+                class="barra-preenchida"
+                style="width: 80%;"
+              ></div>
+
             </div>
 
-            <div class="botoes-controle">
+            <div class="controles-barra">
+
               <button class="btn-diminuir">-</button>
+
               <button class="btn-aumentar">+</button>
+
             </div>
+
           </div>
 
+          <!-- DURABILIDADE -->
           <div class="indicador">
+
             <strong>Durabilidade</strong>
+
             <span>Nível</span>
 
             <div class="barra-fundo">
-              <div class="barra-preenchida barra-verde" style="width: 80%;"></div>
+
+              <div
+                class="barra-preenchida"
+                style="width: 75%;"
+              ></div>
+
             </div>
 
-            <div class="botoes-controle">
+            <div class="controles-barra">
+
               <button class="btn-diminuir">-</button>
+
               <button class="btn-aumentar">+</button>
+
             </div>
+
           </div>
 
         </div>
 
-        <p class="texto-atualizacao">
-          Última atualização: há pouco tempo
-        </p>
-
       </article>
 
+      <!-- CARDS -->
       <article class="card-maquina">
 
         <div class="cabecalho-card-maquina">
 
           <div class="area-nome-maquina">
-            <span class="bolinha-status status-parada"></span>
+
+            <span class="bolinha-status"></span>
+
             <h2 class="nome-maquina">Máquina</h2>
+
           </div>
 
-          <span class="selo-status selo-parada">
-            Parada
+          <span class="selo-status">
+            Operando
           </span>
 
         </div>
@@ -595,15 +447,17 @@
           </div>
 
           <div class="dados-maquina">
+
             <p>
               <strong>Modelo</strong>
-              <span>OM-180</span>
+              <span>OM-250</span>
             </p>
 
             <p>
               <strong>Local</strong>
-              <span>Setor D</span>
+              <span>Setor A</span>
             </p>
+
           </div>
 
         </div>
@@ -612,50 +466,368 @@
 
         <div class="area-indicadores">
 
+          <!-- VIDA ÚTIL -->
           <div class="indicador">
+
             <strong>Vida Útil</strong>
+
             <span>Estimativa</span>
 
             <div class="barra-fundo">
-              <div class="barra-preenchida barra-verde" style="width: 80%;"></div>
+
+              <div
+                class="barra-preenchida"
+                style="width: 80%;"
+              ></div>
+
             </div>
 
-            <div class="botoes-controle">
+            <div class="controles-barra">
+
               <button class="btn-diminuir">-</button>
+
               <button class="btn-aumentar">+</button>
+
             </div>
+
           </div>
 
+          <!-- DURABILIDADE -->
           <div class="indicador">
+
             <strong>Durabilidade</strong>
+
             <span>Nível</span>
 
             <div class="barra-fundo">
-              <div class="barra-preenchida barra-verde" style="width: 80%;"></div>
+
+              <div
+                class="barra-preenchida"
+                style="width: 75%;"
+              ></div>
+
             </div>
 
-            <div class="botoes-controle">
+            <div class="controles-barra">
+
               <button class="btn-diminuir">-</button>
+
               <button class="btn-aumentar">+</button>
+
             </div>
+
           </div>
 
         </div>
 
-        <p class="texto-atualizacao">
-          Última atualização: há pouco tempo
-        </p>
+      </article>
+
+      <!-- CARDS -->
+      <article class="card-maquina">
+
+        <div class="cabecalho-card-maquina">
+
+          <div class="area-nome-maquina">
+
+            <span class="bolinha-status"></span>
+
+            <h2 class="nome-maquina">Máquina</h2>
+
+          </div>
+
+          <span class="selo-status">
+            Operando
+          </span>
+
+        </div>
+
+        <div class="area-informacoes-maquina">
+
+          <div class="icone-maquina">
+            ⚙
+          </div>
+
+          <div class="dados-maquina">
+
+            <p>
+              <strong>Modelo</strong>
+              <span>OM-250</span>
+            </p>
+
+            <p>
+              <strong>Local</strong>
+              <span>Setor A</span>
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="linha-divisoria"></div>
+
+        <div class="area-indicadores">
+
+          <!-- VIDA ÚTIL -->
+          <div class="indicador">
+
+            <strong>Vida Útil</strong>
+
+            <span>Estimativa</span>
+
+            <div class="barra-fundo">
+
+              <div
+                class="barra-preenchida"
+                style="width: 80%;"
+              ></div>
+
+            </div>
+
+            <div class="controles-barra">
+
+              <button class="btn-diminuir">-</button>
+
+              <button class="btn-aumentar">+</button>
+
+            </div>
+
+          </div>
+
+          <!-- DURABILIDADE -->
+          <div class="indicador">
+
+            <strong>Durabilidade</strong>
+
+            <span>Nível</span>
+
+            <div class="barra-fundo">
+
+              <div
+                class="barra-preenchida"
+                style="width: 75%;"
+              ></div>
+
+            </div>
+
+            <div class="controles-barra">
+
+              <button class="btn-diminuir">-</button>
+
+              <button class="btn-aumentar">+</button>
+
+            </div>
+
+          </div>
+
+        </div>
 
       </article>
 
+      <!-- CARDS -->
+      <article class="card-maquina">
 
+        <div class="cabecalho-card-maquina">
+
+          <div class="area-nome-maquina">
+
+            <span class="bolinha-status"></span>
+
+            <h2 class="nome-maquina">Máquina</h2>
+
+          </div>
+
+          <span class="selo-status">
+            Operando
+          </span>
+
+        </div>
+
+        <div class="area-informacoes-maquina">
+
+          <div class="icone-maquina">
+            ⚙
+          </div>
+
+          <div class="dados-maquina">
+
+            <p>
+              <strong>Modelo</strong>
+              <span>OM-250</span>
+            </p>
+
+            <p>
+              <strong>Local</strong>
+              <span>Setor A</span>
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="linha-divisoria"></div>
+
+        <div class="area-indicadores">
+
+          <!-- VIDA ÚTIL -->
+          <div class="indicador">
+
+            <strong>Vida Útil</strong>
+
+            <span>Estimativa</span>
+
+            <div class="barra-fundo">
+
+              <div
+                class="barra-preenchida"
+                style="width: 80%;"
+              ></div>
+
+            </div>
+
+            <div class="controles-barra">
+
+              <button class="btn-diminuir">-</button>
+
+              <button class="btn-aumentar">+</button>
+
+            </div>
+
+          </div>
+
+          <!-- DURABILIDADE -->
+          <div class="indicador">
+
+            <strong>Durabilidade</strong>
+
+            <span>Nível</span>
+
+            <div class="barra-fundo">
+
+              <div
+                class="barra-preenchida"
+                style="width: 75%;"
+              ></div>
+
+            </div>
+
+            <div class="controles-barra">
+
+              <button class="btn-diminuir">-</button>
+
+              <button class="btn-aumentar">+</button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
+      <!-- CARDS -->
+      <article class="card-maquina">
+
+        <div class="cabecalho-card-maquina">
+
+          <div class="area-nome-maquina">
+
+            <span class="bolinha-status"></span>
+
+            <h2 class="nome-maquina">Máquina</h2>
+
+          </div>
+
+          <span class="selo-status">
+            Operando
+          </span>
+
+        </div>
+
+        <div class="area-informacoes-maquina">
+
+          <div class="icone-maquina">
+            ⚙
+          </div>
+
+          <div class="dados-maquina">
+
+            <p>
+              <strong>Modelo</strong>
+              <span>OM-250</span>
+            </p>
+
+            <p>
+              <strong>Local</strong>
+              <span>Setor A</span>
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="linha-divisoria"></div>
+
+        <div class="area-indicadores">
+
+          <!-- VIDA ÚTIL -->
+          <div class="indicador">
+
+            <strong>Vida Útil</strong>
+
+            <span>Estimativa</span>
+
+            <div class="barra-fundo">
+
+              <div
+                class="barra-preenchida"
+                style="width: 80%;"
+              ></div>
+
+            </div>
+
+            <div class="controles-barra">
+
+              <button class="btn-diminuir">-</button>
+
+              <button class="btn-aumentar">+</button>
+
+            </div>
+
+          </div>
+
+          <!-- DURABILIDADE -->
+          <div class="indicador">
+
+            <strong>Durabilidade</strong>
+
+            <span>Nível</span>
+
+            <div class="barra-fundo">
+
+              <div
+                class="barra-preenchida"
+                style="width: 75%;"
+              ></div>
+
+            </div>
+
+            <div class="controles-barra">
+
+              <button class="btn-diminuir">-</button>
+
+              <button class="btn-aumentar">+</button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
     </section>
 
-    <footer class="rodape-pagina">
-      Os dados são atualizados automaticamente a cada poucos minutos.
-    </footer>
-
   </main>
+
   <script src="../../assets/js/header.js"></script>
 
   <script src="../../assets/js/saude-das-maquinas.js"></script>
