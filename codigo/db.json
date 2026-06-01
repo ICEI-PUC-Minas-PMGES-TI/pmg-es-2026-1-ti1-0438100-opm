@@ -26,6 +26,33 @@
             "fabricante": "Fabricante 3",
             "associacao": "Maquina 32B",
             "ano": "2022"
+        },
+        {
+            "id": "pFp9UyvCzYk",
+            "tipo": "Componente",
+            "modelo": "asda",
+            "codigo": "sadasd",
+            "fabricante": "asdasd",
+            "associacao": "dasda",
+            "ano": "2020"
+        }
+    ],
+    "maquinas": [
+        {
+            "id": "11VIp3DSoAI"
+        },
+        {
+            "nome": "sdfghjkl;",
+            "tipo": "Torno CNC",
+            "patrimonio": "sdfghj",
+            "serie": "dfghjk",
+            "fabricante": "fghjkl",
+            "ano": "2024",
+            "local": "fghjkl",
+            "status": "Ativo",
+            "ultManutencao": "2026-06-02",
+            "obs": "dfghjkl",
+            "id": "rp3z7-wyKYM"
         }
     ],
     "$schema": "./node_modules/json-server/schema.json"

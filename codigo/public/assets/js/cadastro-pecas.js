@@ -115,7 +115,8 @@ async function adicionarOuSalvar() {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(peca)
-        }); editando = false;
+        }); 
+        editando = false;
         document.querySelector('.btn-adicionar').textContent = 'Adicionar';
         showToast('✓ Peça atualizada com sucesso.');
     } else {

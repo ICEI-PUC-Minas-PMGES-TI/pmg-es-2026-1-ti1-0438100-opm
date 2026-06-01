@@ -1,3 +1,14 @@
+const API_URL = 'http://localhost:3000/maquinas'
+
+async function carregarMaquinas() {
+    const response = await fetch(API_URL)
+    maquinas = await response.json()
+    renderTabela()
+}
+
+let maquinas = []
+
+/*
 let maquinas = [
     { nome: 'Maquina A1', tipo: 'Torno CNC', patrimonio: 'PAT-00101', serie: 'SN-8812301', fabricante: 'Romi', ano: '2021', local: 'Galpão A – Linha 1', status: 'Ativo', ultManutencao: '2025-03-10', obs: '' },
     { nome: 'Maquina B3', tipo: 'Fresadora', patrimonio: 'PAT-00234', serie: 'SN-7741029', fabricante: 'Romi', ano: '2020', local: 'Galpão A – Linha 2', status: 'Ativo', ultManutencao: '2025-01-22', obs: '' },
@@ -5,7 +16,7 @@ let maquinas = [
     { nome: 'Maquina D4', tipo: 'Injetora', patrimonio: 'PAT-00412', serie: 'SN-5521837', fabricante: 'Arburg', ano: '2022', local: 'Galpão B – Linha 3', status: 'Ativo', ultManutencao: '2025-04-18', obs: '' },
     { nome: 'Maquina E1', tipo: 'Soldadora', patrimonio: 'PAT-00501', serie: 'SN-4410293', fabricante: 'Lincoln', ano: '2018', local: 'Galpão C – Linha 1', status: 'Inativo', ultManutencao: '2024-06-30', obs: 'Desativada aguardando descarte' },
     { nome: 'Maquina F2', tipo: 'Torno CNC', patrimonio: 'PAT-00618', serie: 'SN-3309182', fabricante: 'Mazak', ano: '2023', local: 'Galpão A – Linha 3', status: 'Ativo', ultManutencao: '2025-05-02', obs: '' },
-];
+];*/
 
 let selectedIndex = -1;
 let editando = false;
@@ -56,14 +67,13 @@ function renderTabela() {
         <td style="font-family:'IBM Plex Mono',monospace;font-size:12px">${m.patrimonio}</td>
         <td style="color:var(--muted);font-size:13px">${m.local}</td>
         <td style="font-family:'IBM Plex Mono',monospace;font-size:12px">${m.ano}</td>
-        <td><span class="badge ${statusClass[m.status] || ''}">${m.status}</span></td>
-      `;
+        <td><span class="badge ${statusClass[m.status] || ''}">${m.status}</span></td>`;
         tr.onclick = () => { selectedIndex = realIndex; renderTabela(); };
         tbody.appendChild(tr);
     });
 }
 
-function adicionarOuSalvar() {
+async function adicionarOuSalvar() {
     const nome = document.getElementById('fNome').value.trim();
     const tipo = document.getElementById('fTipo').value;
     const patrimonio = document.getElementById('fPatrimonio').value.trim();
@@ -80,27 +90,41 @@ function adicionarOuSalvar() {
         return;
     }
 
-    const maq = { nome, tipo, patrimonio, serie, fabricante, ano, local, status, ultManutencao, obs };
+    const maquina = { nome, tipo, patrimonio, serie, fabricante, ano, local, status, ultManutencao, obs };
 
     if (editando && selectedIndex >= 0) {
-        maquinas[selectedIndex] = maq;
+        await fetch(`${API_URL}/${maquinas[selectedIndex].id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(maquina)
+        });
         editando = false;
         document.querySelector('.btn-add').textContent = 'Adicionar';
         showToast('✓ Máquina atualizada com sucesso.');
     } else {
-        maquinas.push(maq);
+        await fetch(API_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(maquina)
+        })
         showToast('✓ Máquina adicionada com sucesso.');
     }
 
     limparForm();
-    renderTabela();
+    await carregarMaquinas()
 }
 
-function deletarSelecionado() {
+async function deletarSelecionado() {
     if (selectedIndex < 0) { showToast('Selecione uma linha para deletar.'); return; }
-    maquinas.splice(selectedIndex, 1);
+    await fetch(`${API_URL}/${maquinas[selectedIndex].id}`,{
+        method: 'DELETE'  
+    })
     selectedIndex = -1;
-    renderTabela();
+    await carregarMaquinas();
     showToast('🗑 Máquina deletada.');
 }
 
@@ -140,4 +164,4 @@ function showToast(msg) {
     toastTimer = setTimeout(() => t.classList.remove('show'), 2800);
 }
 
-renderTabela();
+carregarMaquinas();
