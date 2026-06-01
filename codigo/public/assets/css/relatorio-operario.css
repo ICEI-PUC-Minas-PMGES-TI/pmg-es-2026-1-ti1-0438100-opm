@@ -1,0 +1,34 @@
+:root {
+    --cor-fundo-pagina:    #1c1e22;  /* fundo da página inteira */
+    --cor-fundo-surface:   #111214;  /* fundo dos cartões e cabeçalho */
+    --cor-borda:           #2a2d33;  /* bordas e divisórias */
+    --cor-destaque:        #f0a51a;  /* laranja/amarelo — detalhes importantes */
+    --cor-texto-principal: #dde2ec;  /* texto normal */
+    --cor-texto-secundario:#6b7280;  /* texto de apoio */
+    --cor-erro:            #f87171;  /* vermelho claro */
+    --cor-sucesso:         #4ade80;  /* verde claro */
+    --cor-perigo:          #f87171;  /* vermelho — ocorrências */
+    --raio-borda:          8px;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Barlow', sans-serif;
+    background: var(--cor-fundo-pagina);
+    color: var(--cor-texto-principal);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.conteudo-principal {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 28px 20px 60px;
+    width: 100%;
+}
+
