@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Status de Treinamento</title>
+  <link rel="stylesheet" href="../saude-das-maquinas/saude-das-maquinas.css">
+  <link rel="stylesheet" href="../../assets/css/training.css">
+</head>
+<body>
+  <header class="cabecalho-principal">
+    <button class="botao-menu" type="button">☰</button>
+
+    <div class="area-logo">
+      <div class="icone-logo">⚙</div>
+      <div class="texto-logo">
+        <strong>OPERA</strong>
+        <span>TREINAMENTOS</span>
+      </div>
+    </div>
+
+    <div class="area-icones-cabecalho">
+      <span class="icone-cabecalho">🔔</span>
+      <span class="icone-cabecalho">👤</span>
+    </div>
+  </header>
+
+  <main class="conteudo-principal">
+    <section class="secao-topo-pagina">
+      <div class="area-titulo-pagina">
+        <h1 class="titulo-pagina">Status de Treinamento</h1>
+        <p class="descricao-pagina">Indicadores de conformidade por operário e por setor.</p>
+      </div>
+
+      <div class="area-filtros">
+        <div class="campo-busca">
+          <input id="dashboard-search" class="input-busca" type="text" placeholder="Busca rápida">
+          <span class="icone-busca">🔍</span>
+        </div>
+
+        <a class="botao-principal" href="cadastro-treinamentos.html">Cadastrar</a>
+      </div>
+    </section>
+
+    <section class="dashboard-resumo">
+      <article class="card-resumo destaque">
+        <span>Percentual Geral de Conformidade</span>
+        <strong id="general-compliance">0%</strong>
+      </article>
+
+      <article class="card-resumo">
+        <span>Total de Operários</span>
+        <strong id="total-operators">0</strong>
+      </article>
+
+      <article class="card-resumo">
+        <span>Treinamentos Concluídos</span>
+        <strong id="completed-trainings">0</strong>
+      </article>
+
+      <article class="card-resumo">
+        <span>Treinamentos Pendentes</span>
+        <strong id="pending-trainings">0</strong>
+      </article>
+
+      <article class="card-resumo">
+        <span>Treinamentos Vencidos</span>
+        <strong id="expired-trainings">0</strong>
+      </article>
+    </section>
+
+    <section class="secao-topo-pagina">
+      <div class="area-titulo-pagina">
+        <h2 class="titulo-pagina">Indicadores por Operário</h2>
+      </div>
+
+      <div class="area-filtros">
+        <div class="campo-busca">
+          <select id="dashboard-sector" aria-label="Filtrar por setor">
+            <option value="">Todos os setores</option>
+          </select>
+        </div>
+
+        <div class="campo-busca">
+          <select id="dashboard-operator" aria-label="Filtrar por operário">
+            <option value="">Todos os operários</option>
+          </select>
+        </div>
+
+        <select id="dashboard-sort" class="select-filtro-status" aria-label="Ordenar indicadores">
+          <option value="nome">Ordenar por nome</option>
+          <option value="menor-percentual">Menor percentual</option>
+          <option value="maior-percentual">Maior percentual</option>
+        </select>
+      </div>
+    </section>
+
+    <section id="operator-grid" class="grade-maquinas"></section>
+    <p id="empty-dashboard" class="estado-vazio" hidden>Nenhum treinamento cadastrado para os filtros atuais.</p>
+
+    <section class="secao-setores">
+      <h2>Treinamentos por Setor</h2>
+      <div id="sector-grid" class="setores-grid"></div>
+    </section>
+
+    <footer class="rodape-pagina">
+      Os dados são atualizados automaticamente a partir dos treinamentos cadastrados.
+    </footer>
+  </main>
+
+  <script src="../../assets/js/training-storage.js"></script>
+  <script src="../../assets/js/training-dashboard.js"></script>
+</body>
+</html>

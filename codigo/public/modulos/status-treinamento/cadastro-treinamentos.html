@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Treinamentos</title>
+  <link rel="stylesheet" href="../saude-das-maquinas/saude-das-maquinas.css">
+  <link rel="stylesheet" href="../../assets/css/training.css">
+</head>
+<body>
+  <header class="cabecalho-principal">
+    <button class="botao-menu" type="button">☰</button>
+
+    <div class="area-logo">
+      <div class="icone-logo">⚙</div>
+      <div class="texto-logo">
+        <strong>OPERA</strong>
+        <span>TREINAMENTOS</span>
+      </div>
+    </div>
+
+    <div class="area-icones-cabecalho">
+      <span class="icone-cabecalho">🔔</span>
+      <span class="icone-cabecalho">👤</span>
+    </div>
+  </header>
+
+  <main class="conteudo-principal">
+    <section class="secao-topo-pagina">
+      <div class="area-titulo-pagina">
+        <h1 class="titulo-pagina">Cadastro de Treinamentos</h1>
+        <p class="descricao-pagina">Registre, edite e acompanhe os treinamentos atribuídos aos operários.</p>
+      </div>
+
+      <div class="area-filtros">
+        <a class="botao-principal" href="status-treinamento.html">Ver dashboard</a>
+      </div>
+    </section>
+
+    <section class="form-card">
+      <h2>Dados do treinamento</h2>
+
+      <form id="training-form">
+        <div class="training-form-grid">
+          <div class="grupo-campo">
+            <label for="nomeOperario">Nome do Operário</label>
+            <input id="nomeOperario" name="nomeOperario" type="text" required>
+          </div>
+
+          <div class="grupo-campo">
+            <label for="matricula">Matrícula</label>
+            <input id="matricula" name="matricula" type="text" required>
+          </div>
+
+          <div class="grupo-campo">
+            <label for="setor">Setor</label>
+            <input id="setor" name="setor" type="text" required>
+          </div>
+
+          <div class="grupo-campo">
+            <label for="cargo">Cargo</label>
+            <input id="cargo" name="cargo" type="text" required>
+          </div>
+
+          <div class="grupo-campo">
+            <label for="nomeTreinamento">Nome do treinamento</label>
+            <input id="nomeTreinamento" name="nomeTreinamento" type="text" required>
+          </div>
+
+          <div class="grupo-campo">
+            <label for="categoria">Categoria</label>
+            <input id="categoria" name="categoria" type="text" required>
+          </div>
+
+          <div class="grupo-campo">
+            <label for="dataRealizacao">Data de realização</label>
+            <input id="dataRealizacao" name="dataRealizacao" type="date" required>
+          </div>
+
+          <div class="grupo-campo">
+            <label for="dataVencimento">Data de vencimento</label>
+            <input id="dataVencimento" name="dataVencimento" type="date" required>
+          </div>
+
+          <div class="grupo-campo">
+            <label for="cargaHoraria">Carga horária</label>
+            <input id="cargaHoraria" name="cargaHoraria" type="number" min="1" step="1" required>
+          </div>
+
+          <div class="grupo-campo">
+            <label for="responsavel">Responsável</label>
+            <input id="responsavel" name="responsavel" type="text" required>
+          </div>
+
+          <div class="grupo-campo">
+            <label for="status">Status</label>
+            <select id="status" name="status" required>
+              <option value="Concluido">Concluído</option>
+              <option value="Em andamento">Em andamento</option>
+              <option value="Pendente">Pendente</option>
+              <option value="Vencido">Vencido</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="acoes-formulario">
+          <button id="cancel-edit" class="botao-secundario" type="button" hidden>Cancelar edição</button>
+          <button id="submit-training" class="botao-principal" type="submit">Adicionar treinamento</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="lista-card">
+      <h2>Treinamentos cadastrados</h2>
+
+      <div class="training-list-tools">
+        <div class="campo-busca">
+          <input id="search-training" class="input-busca" type="text" placeholder="Pesquisar por nome, matrícula ou treinamento">
+          <span class="icone-busca">🔍</span>
+        </div>
+
+        <div class="campo-busca">
+          <select id="filter-sector" aria-label="Filtrar por setor">
+            <option value="">Todos os setores</option>
+          </select>
+        </div>
+
+        <div class="campo-busca">
+          <select id="filter-status" aria-label="Filtrar por status">
+            <option value="">Todos os status</option>
+            <option value="Concluido">Concluído</option>
+            <option value="Em andamento">Em andamento</option>
+            <option value="Pendente">Pendente</option>
+            <option value="Vencido">Vencido</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="training-table-wrapper">
+        <table class="training-table">
+          <thead>
+            <tr>
+              <th>Operário</th>
+              <th>Setor</th>
+              <th>Treinamento</th>
+              <th>Categoria</th>
+              <th>Vencimento</th>
+              <th>Status</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="training-table-body"></tbody>
+        </table>
+      </div>
+
+      <p id="empty-training-list" class="estado-vazio" hidden>Nenhum treinamento encontrado.</p>
+    </section>
+  </main>
+
+  <script src="../../assets/js/training-storage.js"></script>
+  <script src="../../assets/js/training-form.js"></script>
+</body>
+</html>

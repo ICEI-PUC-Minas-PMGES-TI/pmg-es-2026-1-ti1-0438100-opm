@@ -1,0 +1,306 @@
+.dashboard-resumo,
+.training-form-grid,
+.training-list-tools,
+.training-table-wrapper,
+.setores-grid {
+  width: 100%;
+}
+
+.dashboard-resumo {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(160px, 1fr));
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.card-resumo {
+  background-color: var(--cor-card);
+  border: 2px solid var(--cor-borda);
+  border-radius: 8px;
+  padding: 22px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+}
+
+.card-resumo span {
+  display: block;
+  color: var(--cor-texto-secundario);
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.card-resumo strong {
+  color: var(--cor-texto-principal);
+  display: block;
+  font-size: 32px;
+}
+
+.card-resumo.destaque {
+  border-color: var(--cor-amarelo-principal);
+}
+
+.card-resumo.destaque strong {
+  color: var(--cor-amarelo-principal);
+}
+
+.form-card,
+.lista-card,
+.secao-setores {
+  background-color: var(--cor-card);
+  border: 2px solid var(--cor-borda);
+  border-radius: 8px;
+  padding: 26px;
+  margin-bottom: 28px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+}
+
+.form-card h2,
+.lista-card h2,
+.secao-setores h2 {
+  color: var(--cor-amarelo-principal);
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.training-form-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.grupo-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.grupo-campo label {
+  color: var(--cor-amarelo-claro);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.grupo-campo input,
+.grupo-campo select,
+.campo-busca select {
+  width: 100%;
+  min-height: 48px;
+  border: 2px solid var(--cor-amarelo-escuro);
+  border-radius: 8px;
+  color: #222222;
+  font-size: 15px;
+  outline: none;
+  padding: 0 14px;
+}
+
+.grupo-campo input:focus,
+.grupo-campo select:focus,
+.input-busca:focus,
+.campo-busca select:focus {
+  border-color: var(--cor-amarelo-principal);
+}
+
+.acoes-formulario {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 22px;
+}
+
+.botao-principal,
+.botao-secundario,
+.botao-perigo {
+  align-items: center;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 14px;
+  font-weight: 700;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 16px;
+  text-decoration: none;
+}
+
+.botao-principal {
+  background-color: var(--cor-amarelo-principal);
+  border: 2px solid var(--cor-amarelo-principal);
+  color: #151515;
+}
+
+.botao-secundario {
+  background: transparent;
+  border: 2px solid var(--cor-amarelo-principal);
+  color: var(--cor-amarelo-principal);
+}
+
+.botao-perigo {
+  background: transparent;
+  border: 2px solid #ef4444;
+  color: #ef4444;
+}
+
+.training-list-tools {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.training-table-wrapper {
+  overflow-x: auto;
+}
+
+.training-table {
+  border-collapse: collapse;
+  min-width: 960px;
+  width: 100%;
+}
+
+.training-table th,
+.training-table td {
+  border-bottom: 1px solid var(--cor-borda);
+  color: var(--cor-texto-principal);
+  padding: 14px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.training-table th {
+  color: var(--cor-amarelo-claro);
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.training-table td span {
+  color: var(--cor-texto-secundario);
+  display: block;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.acoes-tabela {
+  display: flex;
+  gap: 8px;
+}
+
+.status-pill {
+  border-radius: 6px;
+  display: inline-block;
+  font-weight: 700;
+  padding: 7px 10px;
+}
+
+.status-concluido {
+  border: 1px solid #22c55e;
+  color: #22c55e !important;
+}
+
+.status-andamento,
+.status-pendente {
+  border: 1px solid #f59e0b;
+  color: #f59e0b !important;
+}
+
+.status-vencido {
+  border: 1px solid #ef4444;
+  color: #ef4444 !important;
+}
+
+.indicadores-operario {
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 22px;
+}
+
+.indicadores-operario .indicador {
+  background-color: #1d2024;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.indicadores-operario .indicador strong {
+  color: var(--cor-amarelo-principal);
+  font-size: 24px;
+}
+
+.indicador-progresso {
+  margin-top: 18px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #3d3d3d;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 20px;
+  transition: width 0.25s ease;
+}
+
+.card-setor {
+  background-color: var(--cor-card);
+  border: 2px solid var(--cor-borda);
+  border-radius: 8px;
+  padding: 22px;
+}
+
+.card-setor h3 {
+  color: var(--cor-texto-principal);
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.card-setor span {
+  color: var(--cor-texto-secundario);
+  display: block;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.card-setor strong {
+  color: var(--cor-amarelo-principal);
+  display: block;
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+
+.setores-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.estado-vazio {
+  color: var(--cor-texto-secundario);
+  margin-top: 16px;
+  text-align: center;
+}
+
+@media (max-width: 1200px) {
+  .dashboard-resumo,
+  .training-form-grid,
+  .setores-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .training-list-tools {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .dashboard-resumo,
+  .training-form-grid,
+  .setores-grid,
+  .indicadores-operario {
+    grid-template-columns: 1fr;
+  }
+
+  .acoes-formulario,
+  .acoes-tabela {
+    flex-direction: column;
+  }
+}
