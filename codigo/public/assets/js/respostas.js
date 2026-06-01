@@ -1,66 +1,82 @@
-const tabelaRespostas = document.getElementById("tabela-respostas");
-
 const API_URL = "http://localhost:3000";
 
-function carregarRespostas(
-    funcionarioFiltro = "",
-    maquinaFiltro = "",
-    dataFiltro = ""
-) {
+const tabela = document.getElementById("tabela-respostas");
+const btnBuscar = document.getElementById("btn-buscar");
 
-    fetch("http://localhost:3000/formularios")
+const inputFuncionario = document.getElementById("filtro-funcionario");
+const selectMaquina = document.getElementById("filtro-maquina");
+const inputData = document.getElementById("filtro-data");
+
+let formularios = [];
+
+function carregarRespostas() {
+    fetch(`${API_URL}/formularios`)
         .then(res => res.json())
-        .then(formularios => {
-
-            const tabela =
-                document.getElementById("tabela-respostas");
-
-            tabela.innerHTML = "";
-
-            formularios.forEach(formulario => {
-
-                const funcionarioOk =
-                    formulario.funcionario
-                        .toLowerCase()
-                        .includes(funcionarioFiltro);
-
-                const maquinaOk =
-                    maquinaFiltro === "" ||
-                    formulario.maquinaNome === maquinaFiltro;
-
-                const dataOk =
-                    dataFiltro === "" ||
-                    formulario.dataHora.startsWith(dataFiltro);
-
-                if (
-                    funcionarioOk &&
-                    maquinaOk &&
-                    dataOk
-                ) {
-
-                    tabela.innerHTML += `
-                        <tr>
-                            <td>${formulario.id}</td>
-                            <td>${formulario.funcionario}</td>
-                            <td>${formulario.maquinaNome}</td>
-                            <td>${formulario.dataHora}</td>
-
-                            <td>
-                                <button
-                                    class="visualizar"
-                                    data-id="${formulario.id}"
-                                >
-                                    Visualizar
-                                </button>
-                            </td>
-                        </tr>
-                    `;
-                }
-
-            });
-
+        .then(data => {
+            formularios = data;
+            mostrarNaTabela(formularios);
+        })
+        .catch(erro => {
+            console.log("Erro ao carregar respostas:", erro);
         });
 }
+
+function mostrarNaTabela(lista) {
+    tabela.innerHTML = "";
+
+    lista.forEach(function (formulario) {
+        tabela.innerHTML += `
+            <tr>
+                <td>${formulario.id}</td>
+                <td>${formulario.funcionario}</td>
+                <td>${formulario.maquinaNome}</td>
+                <td>${formulario.dataHora}</td>
+                <td>
+                    <button
+                        type="button"
+                        class="visualizar"
+                        data-id="${formulario.id}"
+                    >
+                        Visualizar
+                    </button>
+                </td>
+            </tr>
+        `;
+    });
+}
+
+function converterData(dataInput) {
+    if (dataInput === "") {
+        return "";
+    }
+
+    const partes = dataInput.split("-");
+    return `${partes[2]}/${partes[1]}/${partes[0]}`;
+}
+
+btnBuscar.addEventListener("click", function () {
+    const funcionarioDigitado = inputFuncionario.value.trim().toLowerCase();
+    const maquinaSelecionada = selectMaquina.value;
+    const dataSelecionada = converterData(inputData.value);
+
+    const filtrados = formularios.filter(function (formulario) {
+        const funcionarioOk =
+            funcionarioDigitado === "" ||
+            formulario.funcionario.toLowerCase().includes(funcionarioDigitado);
+
+        const maquinaOk =
+            maquinaSelecionada === "" ||
+            formulario.maquinaNome === maquinaSelecionada;
+
+        const dataOk =
+            dataSelecionada === "" ||
+            formulario.dataHora.includes(dataSelecionada);
+
+        return funcionarioOk && maquinaOk && dataOk;
+    });
+
+    mostrarNaTabela(filtrados);
+});
 
 function visualizarChecklist(id) {
 
