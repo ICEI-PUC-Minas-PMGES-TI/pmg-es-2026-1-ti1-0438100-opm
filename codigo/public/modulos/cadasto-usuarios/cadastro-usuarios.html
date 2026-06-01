@@ -16,35 +16,75 @@
             </div>
     </header>
 
-    <main>
-        <div class="cadastro-usuario">
-            <h3 class="titulo-cadastro">Cadastro de Usuário</h3>
-                <div class="lado-a-lado">
-                    <div class="info-usuario">
-                        <label for="nome">Nome</label>
-                        <input type="text" id="nome" placeholder="" required>
-                    </div>
-                    <div class="info-usuario">
-                        <label for="sobrenome">Sobrenome</label>
-                        <input type="text" id="sobrenome" placeholder="" required>
-                    </div>
+<main class="conteudo-principal">
+    <div class="cartao-formulario">
+        <h3 class="cartao-formulario__titulo">Cadastro de Usuário</h3>
+
+        <form id="formulario-cadastro" class="formulario" novalidate>
+            <div class="formulario__linha-dupla">
+                <div class="campo">
+                    <label class="campo__etiqueta" for="nome">Nome</label>
+                    <input class="campo__entrada" type="text" id="nome" placeholder="João" required>
+                    <span class="campo__mensagem-erro" id="erro-nome"></span>
                 </div>
-                <div class="info-usuario">
-                    <label for="cargo">Cargo</label>
-                    <input type="text" id="cargo" placeholder="Ex: Supervisor, Operador, etc." required>
+
+                <div class="campo">
+                    <label class="campo__etiqueta" for="sobrenome">Sobrenome</label>
+                    <input class="campo__entrada" type="text" id="sobrenome" placeholder="Silva" required>
+                    <span class="campo__mensagem-erro" id="erro-sobrenome"></span>
                 </div>
-                <div class="info-usuario">
-                    <label for="senha">Senha</label>
-                    <input type="password" id="senha" placeholder="********" autocomplete="new-password" required>
-                </div>
-                <div class="info-usuario">
-                    <label for="confirma-senha">Confirmar Senha</label>
-                    <input type="password" id="confirma-senha" placeholder="********" autocomplete="new-password" required>
-                </div>
-                 <button onclick="enviarCadastro()"class="botao-cadastrar" id="botao-cadastrar">Cadastrar</button>
             </div>
-        </div>
-    </main>
+
+            <div class="campo">
+                <label class="campo__etiqueta" for="cargo">Cargo</label>
+                <input class="campo__entrada" type="text" id="cargo" placeholder="Ex.: Analista, Gerente…" required>
+                <span class="campo__mensagem-erro" id="erro-cargo"></span>
+            </div>
+
+            <div class="campo">
+                <label class="campo__etiqueta" for="senha">Senha</label>
+                <div class="campo__senha-invólucro">
+                    <input class="campo__entrada" type="password" id="senha" placeholder="••••••••" autocomplete="new-password" required>
+                    <button type="button" class="campo__botao-mostrar-senha" id="botao-mostrar-senha" aria-label="Mostrar senha">👁</button>
+                </div>
+                <span class="campo__mensagem-erro" id="erro-senha"></span>
+            </div>
+
+            <div class="requisitos-senha" id="requisitos-senha">
+                <p class="requisitos-senha__titulo">A senha deve conter:</p>
+
+                <div class="requisitos-senha__item" id="requisito-minimo">
+                    <span class="requisitos-senha__icone">✕</span> Mínimo de 7 caracteres
+                </div>
+
+                <div class="requisitos-senha__item" id="requisito-caractere-especial">
+                    <span class="requisitos-senha__icone">✕</span> Pelo menos 1 caractere especial (!@#$%…)
+                </div>
+
+                <div class="requisitos-senha__item" id="requisito-sem-espaco">
+                    <span class="requisitos-senha__icone">✕</span> Sem espaços
+                </div>
+            </div>
+
+            <div class="campo">
+                <label class="campo__etiqueta" for="confirmar-senha">Confirmar Senha</label>
+                <div class="campo__senha-invólucro">
+                    <input class="campo__entrada" type="password" id="confirmar-senha" placeholder="••••••••" autocomplete="new-password" required>
+                    <button type="button" class="campo__botao-mostrar-senha" id="botao-mostrar-confirmacao" aria-label="Mostrar senha">👁</button>
+                </div>
+                <span class="campo__mensagem-erro" id="erro-confirmar-senha"></span>
+            </div>
+
+            <div class="alerta-senhas-diferentes" id="alerta-senhas-diferentes">
+                ⚠ As senhas não coincidem. Verifique e tente novamente.
+            </div>
+
+            <button type="submit" class="botao-cadastrar" id="botao-cadastrar">Cadastrar</button>
+        </form>
+    </div>
+</main>
+
+<div class="notificacao-sucesso" id="notificacao-sucesso">✔ Usuário cadastrado com sucesso!</div>
 <script src="../../assets/js/header.js"></script>
 <script src="../../assets/js/cadastro-usuarios.js"></script>
 </body>
