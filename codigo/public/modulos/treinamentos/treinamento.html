@@ -3,124 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Status de Treinamento - OPM</title>
-    <link rel="stylesheet" href="../../../assets/css/styles.css">
-    <link rel="stylesheet" href="../../../assets/css/header.css">
-    <link rel="stylesheet" href="../../../assets/css/treinamento.css">
+    <title>Treinamentos - OPM</title>
+    <link rel="stylesheet" href="../../assets/css/treinamentos.css">
 </head>
 <body>
-    <header id="header-container"></header>
+    <header class="cabecalho-treinamentos">
+        <div class="marca">
+            <span class="marca-icone">OP</span>
+            <div>
+                <strong>OPERA</strong>
+                <span>Treinamentos</span>
+            </div>
+        </div>
 
-    <main class="container">
-        <section class="titulo-secao">
-            <h2>STATUS DE TREINAMENTO</h2>
+        <nav class="atalhos-treinamentos" aria-label="Ações de treinamento">
+            <a href="../status-treinamento/cadastro-treinamentos.html">Cadastrar</a>
+            <a href="../status-treinamento/status-treinamento.html">Dashboard</a>
+        </nav>
+    </header>
+
+    <main class="container-treinamentos">
+        <section class="topo-treinamentos">
+            <div>
+                <h1>Treinamentos</h1>
+                <p>Acompanhe os treinamentos cadastrados, vencimentos e status dos operários.</p>
+            </div>
+
+            <div class="painel-resumo" aria-label="Resumo dos treinamentos">
+                <article>
+                    <span>Total</span>
+                    <strong id="summary-total">0</strong>
+                </article>
+                <article>
+                    <span>Concluídos</span>
+                    <strong id="summary-completed">0</strong>
+                </article>
+                <article>
+                    <span>Pendentes</span>
+                    <strong id="summary-pending">0</strong>
+                </article>
+                <article>
+                    <span>Vencidos</span>
+                    <strong id="summary-expired">0</strong>
+                </article>
+            </div>
         </section>
 
-        <section id="visao-colaborador" class="painel-usuario" style="display: none;">
-            <div class="card-perfil-progresso">
-                <div class="usuario-topo">
-                    <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" id="foto-meu-perfil" alt="Sua foto">
-                    <div>
-                        <h3 id="nome-meu-perfil">Carregando seu perfil...</h3>
-                        <p id="cargo-meu-perfil">Operador</p>
-                    </div>
-                </div>
-                
-                <div class="progresso-geral-box">
-                    <label>Seu Progresso Geral em Treinamentos:</label>
-                    <div class="progresso-container">
-                        <div class="barra">
-                            <div id="barra-meu-progresso" class="progresso verde" style="width: 0%"></div>
-                        </div>
-                        <span id="texto-meu-progresso">0%</span>
-                    </div>
-                </div>
-            </div>
+        <section class="filtros-treinamentos" aria-label="Filtros de treinamentos">
+            <label class="campo-filtro">
+                <span>Busca</span>
+                <input id="training-search" type="search" placeholder="Buscar por operário ou treinamento">
+            </label>
 
-            <div class="meus-treinamentos-lista">
-                <h3 class="subtitulo">Meus Treinamentos Atribuídos</h3>
-                <div id="lista-meus-treinamentos">
-                    </div>
-            </div>
+            <label class="campo-filtro">
+                <span>Setor</span>
+                <select id="training-sector">
+                    <option value="">Todos os setores</option>
+                </select>
+            </label>
+
+            <label class="campo-filtro">
+                <span>Status</span>
+                <select id="training-status">
+                    <option value="">Todos os status</option>
+                    <option value="Concluido">Concluído</option>
+                    <option value="Em andamento">Em andamento</option>
+                    <option value="Pendente">Pendente</option>
+                    <option value="Vencido">Vencido</option>
+                </select>
+            </label>
         </section>
 
+        <section class="treinamentos-rapidos">
+            <div class="cabecalho-secao">
+                <h2>Setores com treinamentos</h2>
+                <span id="sector-count">0 setores</span>
+            </div>
+            <div id="quick-sectors" class="rapidos-container"></div>
+        </section>
 
-        <section id="visao-admin" class="painel-admin" style="display: block;">
-            
-            <div class="filtros-container">
-                <div class="busca-box">
-                    <input type="text" id="input-busca" placeholder="Pesquisar colaborador, treinamento...">
-                </div>
-                <div class="filtro-select">
-                    <label for="filtro-status">Filtrar por status:</label>
-                    <select id="filtro-status">
-                        <option value="Todos">Todos</option>
-                        <option value="Concluido">Concluídos</option>
-                        <option value="Em andamento">Em andamento</option>
-                        <option value="Atrasado">Atrasados</option>
-                        <option value="Não iniciado">Não iniciados</option>
-                    </select>
-                </div>
-                <div class="filtro-select">
-                    <label for="filtro-area">Filtrar por área:</label>
-                    <select id="filtro-area">
-                        <option value="Todas">Todas</option>
-                        <option value="Produção">Produção</option>
-                        <option value="Manutenção">Manutenção</option>
-                        <option value="Qualidade">Qualidade</option>
-                        <option value="Logística">Logística</option>
-                    </select>
-                </div>
+        <section class="treinamentos">
+            <div class="cabecalho-secao">
+                <h2>Lista de treinamentos</h2>
+                <span id="result-count">0 encontrados</span>
             </div>
 
-            <div class="cards-resumo">
-                <div class="card-status concluido">
-                    <div class="card-info">
-                        <span class="qtd" id="qtd-concluido">0</span>
-                        <span class="label">Concluídos</span>
-                    </div>
-                </div>
-                <div class="card-status andamento">
-                    <div class="card-info">
-                        <span class="qtd" id="qtd-andamento">0</span>
-                        <span class="label">Em andamento</span>
-                    </div>
-                </div>
-                <div class="card-status atrasado">
-                    <div class="card-info">
-                        <span class="qtd" id="qtd-atrasado">0</span>
-                        <span class="label">Atrasados</span>
-                    </div>
-                </div>
-                <div class="card-status nao-iniciado">
-                    <div class="card-info">
-                        <span class="qtd" id="qtd-nao-iniciado">0</span>
-                        <span class="label">Não iniciados</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tabela-container">
-                <table class="tabela-treinamentos">
-                    <thead>
-                        <tr>
-                            <th>Colaborador</th>
-                            <th>Treinamento</th>
-                            <th>Status</th>
-                            <th>Progresso</th>
-                            <th>Data limite</th>
-                            <th>Última atividade</th>
-                            <th>Ações</th>
-                        </tr>
-                    </thead>
-                    <tbody id="dados-treinamento">
-                        </tbody>
-                </table>
-            </div>
+            <div id="training-grid" class="treinamentos-grid"></div>
+            <p id="empty-trainings" class="estado-vazio" hidden>Nenhum treinamento cadastrado para os filtros atuais.</p>
         </section>
     </main>
 
-    <script src="../../../assets/js/header.js"></script>
-    <script src="../../../assets/js/treinamento.js"></script>
+    <script src="../../assets/js/training-storage.js"></script>
+    <script src="../../assets/js/treinamentos.js"></script>
 </body>
 </html>
