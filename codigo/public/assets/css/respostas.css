@@ -117,3 +117,47 @@ tbody tr:hover {
     background-color: #f0b52b;
     transform: translateY(-2px);
 }
+
+.modal-dark-custom {
+    background-color: #111;
+    color: white;
+    border: 1px solid #d89b10;
+}
+
+.modal-header {
+    border-bottom: 1px solid #d89b10;
+}
+
+.modal-footer {
+    border-top: 1px solid #333;
+}
+
+.item-modal {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #333;
+    padding: 10px 0;
+}
+
+.status-ok {
+    color: #19c463;
+    font-weight: bold;
+}
+
+.status-nok {
+    color: #f23b3b;
+    font-weight: bold;
+}
+
+.modal.fade .modal-dialog {
+    opacity: 0;
+    transform: scale(0.85);
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+.modal.show .modal-dialog {
+    opacity: 1;
+    transform: scale(1);
+}
