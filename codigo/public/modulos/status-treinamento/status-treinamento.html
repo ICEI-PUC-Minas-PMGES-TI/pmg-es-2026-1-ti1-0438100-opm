@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Status de Treinamento</title>
-  <link rel="stylesheet" href="../saude-das-maquinas/saude-das-maquinas.css">
+  <title>Status de Treinamento - OPM</title>
   <link rel="stylesheet" href="../../assets/css/training.css">
 </head>
 <body>
@@ -87,7 +86,7 @@
           </select>
         </div>
 
-        <select id="dashboard-sort" class="select-filtro-status" aria-label="Ordenar indicadores">
+        <select id="dashboard-sort" class="input-busca" style="min-height:48px;" aria-label="Ordenar indicadores">
           <option value="nome">Ordenar por nome</option>
           <option value="menor-percentual">Menor percentual</option>
           <option value="maior-percentual">Maior percentual</option>
@@ -103,7 +102,7 @@
       <div id="sector-grid" class="setores-grid"></div>
     </section>
 
-    <footer class="rodape-pagina">
+    <footer class="rodape-pagina" style="color: var(--cor-texto-secundario); margin-top: 24px; font-size: 13px;">
       Os dados são atualizados automaticamente a partir dos treinamentos cadastrados.
     </footer>
   </main>
