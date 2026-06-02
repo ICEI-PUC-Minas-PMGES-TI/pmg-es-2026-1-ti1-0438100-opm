@@ -148,3 +148,16 @@ tbody tr:hover {
     color: #f23b3b;
     font-weight: bold;
 }
+
+.modal.fade .modal-dialog {
+    opacity: 0;
+    transform: scale(0.85);
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+.modal.show .modal-dialog {
+    opacity: 1;
+    transform: scale(1);
+}
