@@ -79,31 +79,37 @@ btnBuscar.addEventListener("click", function () {
 });
 
 function visualizarChecklist(id) {
-
     fetch(`http://localhost:3000/formularios/${id}`)
         .then(res => res.json())
         .then(formulario => {
+            const conteudoModal = document.getElementById("conteudo-modal");
 
-            let texto = `
-Funcionário: ${formulario.funcionario}
-
-Máquina: ${formulario.maquinaNome}
-
-Data: ${formulario.dataHora}
-
-Respostas:
-
-`;
+            let html = `
+                <p><strong>Funcionário:</strong> ${formulario.funcionario}</p>
+                <p><strong>Máquina:</strong> ${formulario.maquinaNome}</p>
+                <p><strong>Data:</strong> ${formulario.dataHora}</p>
+                <hr>
+            `;
 
             formulario.respostas.forEach(resposta => {
+                const classeStatus =
+                    resposta.status === "OK" ? "status-ok" : "status-nok";
 
-                texto +=
-                    `${resposta.item} - ${resposta.status}\n`;
-
+                html += `
+                    <div class="item-modal">
+                        <span>${resposta.item}</span>
+                        <span class="${classeStatus}">${resposta.status}</span>
+                    </div>
+                `;
             });
 
-            alert(texto);
+            conteudoModal.innerHTML = html;
 
+            const modal = new bootstrap.Modal(
+                document.getElementById("modalChecklist")
+            );
+
+            modal.show();
         });
 }
 
