@@ -1,0 +1,188 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --cor-fundo-principal: #1d2024;
+  --cor-card: #24272b;
+  --cor-amarelo-principal: #f2a51a;
+  --cor-texto-principal: #ffffff;
+  --cor-texto-secundario: #b8b8b8;
+  --cor-borda: #3a3327;
+
+  --cor-verde: #19b55a;
+  --cor-amarelo-status: #f2a51a;
+  --cor-vermelho: #c90000;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--cor-fundo-principal);
+  color: var(--cor-texto-principal);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.conteudo-principal {
+  padding: 40px;
+}
+
+.grade-maquinas {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px;
+}
+
+.card-maquina {
+  background-color: var(--cor-card);
+  border: 2px solid var(--cor-borda);
+  border-radius: 12px;
+  padding: 26px;
+}
+
+.cabecalho-card-maquina {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.area-nome-maquina {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nome-maquina {
+  font-size: 24px;
+}
+
+.bolinha-status {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: green;
+}
+
+.selo-status {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  border: 2px solid green;
+  color: green;
+}
+
+.area-informacoes-maquina {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-bottom: 26px;
+}
+
+.icone-maquina {
+  width: 80px;
+  height: 64px;
+  background: linear-gradient(
+    135deg,
+    #f5cb7a,
+    #8f7441
+  );
+
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: black;
+  font-size: 34px;
+}
+
+.dados-maquina p {
+  margin-bottom: 10px;
+}
+
+.dados-maquina strong {
+  display: block;
+  color: #f5cb7a;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.dados-maquina span {
+  color: var(--cor-texto-secundario);
+}
+
+.linha-divisoria {
+  width: 100%;
+  height: 1px;
+  background-color: var(--cor-borda);
+  margin-bottom: 24px;
+}
+
+.area-indicadores {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.indicador {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.indicador strong {
+  font-size: 16px;
+}
+
+.indicador span {
+  font-size: 14px;
+  color: var(--cor-texto-secundario);
+}
+
+.barra-fundo {
+  width: 100%;
+  height: 8px;
+  background-color: #3d3d3d;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.barra-preenchida {
+  height: 100%;
+  border-radius: 20px;
+  background-color: green;
+  transition: 0.2s;
+}
+
+.controles-barra {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.controles-barra button {
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: var(--cor-amarelo-principal);
+  color: black;
+}
+
+.grade-maquinas {
+  display: grid;
+
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(320px, 1fr)
+  );
+
+  gap: 26px;
+}

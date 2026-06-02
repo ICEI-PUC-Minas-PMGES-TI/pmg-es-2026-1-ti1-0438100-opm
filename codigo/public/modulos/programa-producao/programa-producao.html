@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planejamento de Produção</title>
+    <link rel="stylesheet" href="../../assets/css/programa-producao.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>OPM - Gestão de Produção CNC</h1>
+        <p>Cadastro de Produção de Peças</p>
+    </header>
+
+    <main class="container">
+
+        <section class="card">
+            <h2>1. Informações do Período</h2>
+
+            <div class="form-grid">
+                <div>
+                    <label>Tipo de período</label>
+                    <select id="periodo">
+                        <option value="Semanal">Semanal</option>
+                        <option value="Mensal">Mensal</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Data inicial</label>
+                    <input type="date" id="dataInicio">
+                </div>
+
+                <div>
+                    <label>Data final</label>
+                    <input type="date" id="dataFim">
+                </div>
+
+                <div>
+                    <label>Máquina CNC disponível</label>
+                    <select id="maquina">
+                        <option value="CNC 01">CNC 01</option>
+                        <option value="CNC 02">CNC 02</option>
+                        <option value="CNC 03">CNC 03</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>2. Cadastro da Peça</h2>
+
+            <div class="form-grid">
+                <div>
+                    <label>Código da peça</label>
+                    <input type="text" id="codigoPeca" placeholder="Ex: PN12345">
+                </div>
+
+                <div>
+                    <label>Nome da peça</label>
+                    <input type="text" id="nomePeca" placeholder="Ex: Eixo A">
+                </div>
+
+                <div>
+                    <label>Quantidade planejada</label>
+                    <input type="number" id="quantidade" placeholder="Ex: 50">
+                </div>
+
+                <div>
+                    <label>Tempo de ciclo</label>
+                    <input type="number" id="tempoCiclo" placeholder="Ex: 12">
+                </div>
+
+                <div>
+                    <label>Prioridade</label>
+                    <select id="prioridade">
+                        <option value="Alta">Alta</option>
+                        <option value="Média">Média</option>
+                        <option value="Baixa">Baixa</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="observacoes">
+                <label>Observações</label>
+                <textarea id="observacoes" placeholder="Digite observações sobre a produção..."></textarea>
+            </div>
+
+            <div class="botoes">
+                <button onclick="salvarPlanejamento()">Salvar Produção</button>
+                <button class="secundario" onclick="limparCampos()">Limpar</button>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>3. Peças Planejadas</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Peça</th>
+                        <th>Máquina</th>
+                        <th>Quantidade</th>
+                        <th>Período</th>
+                        <th>Prioridade</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="tabelaPecas">
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <script src="programa-producao.js"></script>
+</body>
+
+</html>

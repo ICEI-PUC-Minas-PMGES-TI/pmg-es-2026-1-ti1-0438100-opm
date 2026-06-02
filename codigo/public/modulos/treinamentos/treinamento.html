@@ -1,99 +1,70 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Treinamentos - OPM</title>
+
+    <link rel="icon" type="image/png" href="../../assets/images/icon.png">
+
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="stylesheet" href="../../assets/css/header.css">
     <link rel="stylesheet" href="../../assets/css/treinamentos.css">
 </head>
+
 <body>
-    <header class="cabecalho-treinamentos">
-        <div class="marca">
-            <span class="marca-icone">OP</span>
-            <div>
-                <strong>OPERA</strong>
-                <span>Treinamentos</span>
-            </div>
-        </div>
 
-        <nav class="atalhos-treinamentos" aria-label="Ações de treinamento">
-            <a href="../status-treinamento/cadastro-treinamentos.html">Cadastrar</a>
-            <a href="../status-treinamento/status-treinamento.html">Dashboard</a>
-        </nav>
-    </header>
+    <header id="header-container"></header>
 
-    <main class="container-treinamentos">
-        <section class="topo-treinamentos">
-            <div>
-                <h1>Treinamentos</h1>
-                <p>Acompanhe os treinamentos cadastrados, vencimentos e status dos operários.</p>
-            </div>
-
-            <div class="painel-resumo" aria-label="Resumo dos treinamentos">
-                <article>
-                    <span>Total</span>
-                    <strong id="summary-total">0</strong>
-                </article>
-                <article>
-                    <span>Concluídos</span>
-                    <strong id="summary-completed">0</strong>
-                </article>
-                <article>
-                    <span>Pendentes</span>
-                    <strong id="summary-pending">0</strong>
-                </article>
-                <article>
-                    <span>Vencidos</span>
-                    <strong id="summary-expired">0</strong>
-                </article>
-            </div>
+    <main class="container">
+        
+        <section class="titulo-secao">
+            <h2>STATUS DE TREINAMENTO</h2>
         </section>
 
-        <section class="filtros-treinamentos" aria-label="Filtros de treinamentos">
-            <label class="campo-filtro">
-                <span>Busca</span>
-                <input id="training-search" type="search" placeholder="Buscar por operário ou treinamento">
-            </label>
-
-            <label class="campo-filtro">
-                <span>Setor</span>
-                <select id="training-sector">
-                    <option value="">Todos os setores</option>
-                </select>
-            </label>
-
-            <label class="campo-filtro">
-                <span>Status</span>
-                <select id="training-status">
-                    <option value="">Todos os status</option>
-                    <option value="Concluido">Concluído</option>
-                    <option value="Em andamento">Em andamento</option>
-                    <option value="Pendente">Pendente</option>
-                    <option value="Vencido">Vencido</option>
-                </select>
-            </label>
-        </section>
+        <section id="visao-colaborador" class="painel-usuario" style="display: none;">
+            </section>
 
         <section class="treinamentos-rapidos">
-            <div class="cabecalho-secao">
-                <h2>Setores com treinamentos</h2>
-                <span id="sector-count">0 setores</span>
+            <h3>Treinamentos Rápidos</h3>
+            <div class="rapidos-container">
+                <div class="rapido-card"><img src="https://loremflickr.com/300/200/industry?random=1" alt="Thumbnail"></div>
+                <div class="rapido-card"><img src="https://loremflickr.com/300/200/industry?random=2" alt="Thumbnail"></div>
+                <div class="rapido-card"><img src="https://loremflickr.com/300/200/industry?random=3" alt="Thumbnail"></div>
+                <div class="rapido-card"><img src="https://loremflickr.com/300/200/industry?random=4" alt="Thumbnail"></div>
+                <div class="rapido-card"><img src="https://loremflickr.com/300/200/industry?random=5" alt="Thumbnail"></div>
+                <div class="rapido-card"><img src="https://loremflickr.com/300/200/industry?random=6" alt="Thumbnail"></div>
+                <div class="rapido-card"><img src="https://loremflickr.com/300/200/industry?random=7" alt="Thumbnail"></div>
             </div>
-            <div id="quick-sectors" class="rapidos-container"></div>
         </section>
 
         <section class="treinamentos">
-            <div class="cabecalho-secao">
-                <h2>Lista de treinamentos</h2>
-                <span id="result-count">0 encontrados</span>
+            <h3>Treinamentos</h3>
+
+            <div class="filtros">
+                <input 
+                    type="text" 
+                    id="pesquisa" 
+                    placeholder="Pesquisar treinamento..."
+                >
+
+                <select id="categoria">
+                    <option value="Todos">Todas categorias</option>
+                    <option value="Segurança">Segurança</option>
+                    <option value="Operação">Operação</option>
+                    <option value="Qualidade">Qualidade</option>
+                    <option value="Logística">Logística</option>
+                </select>
             </div>
 
-            <div id="training-grid" class="treinamentos-grid"></div>
-            <p id="empty-trainings" class="estado-vazio" hidden>Nenhum treinamento cadastrado para os filtros atuais.</p>
+            <div class="treinamentos-grid" id="treinamentosGrid"></div>
         </section>
+
     </main>
 
-    <script src="../../assets/js/training-storage.js"></script>
+    <script src="../../assets/js/header.js"></script>
     <script src="../../assets/js/treinamentos.js"></script>
+
 </body>
 </html>

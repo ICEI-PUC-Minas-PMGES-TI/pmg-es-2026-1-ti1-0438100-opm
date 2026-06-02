@@ -16,3 +16,104 @@ main {
     justify-content: center;
     padding-top: 55px;
 }
+
+.painel-respostas {
+    width: 90%;
+    max-width: 1200px;
+}
+
+.painel-respostas h1 {
+    color: #f0a51a;
+    margin-bottom: 25px;
+}
+
+.filtros {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+
+    margin-bottom: 25px;
+}
+
+.filtros input,
+.filtros select {
+    background-color: #111;
+    color: white;
+
+    border: 1px solid #333;
+    border-radius: 6px;
+
+    padding: 10px;
+
+    min-width: 220px;
+}
+
+.buscar {
+    background-color: #d89b10;
+    color: #000;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.buscar:hover {
+    background-color: #f0b52b;
+    transform: translateY(-2px);
+}
+
+.tabela-container {
+    background-color: #111;
+
+    border: 1px solid #f0a51a;
+    border-radius: 8px;
+
+    overflow: hidden;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #0d0d0d;
+}
+
+th {
+    color: #f0a51a;
+}
+
+th,
+td {
+    padding: 15px;
+    text-align: left;
+}
+
+tbody tr {
+    border-top: 1px solid #333;
+}
+
+tbody tr:hover {
+    background-color: #181818;
+}
+
+.visualizar {
+    background-color: #d89b10;
+    color: #000;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.visualizar:hover {
+    background-color: #f0b52b;
+    transform: translateY(-2px);
+}

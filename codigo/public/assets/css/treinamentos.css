@@ -1,7 +1,12 @@
+/* === Reset e Variáveis Globais === */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+html {
+    height: 100%;
 }
 
 :root {
@@ -20,6 +25,7 @@
     --red: #ef4444;
 }
 
+/* === Estilos Gerais === */
 body {
     min-height: 100vh;
     background: var(--bg);
@@ -32,6 +38,7 @@ a {
     text-decoration: none;
 }
 
+/* === Cabeçalho === */
 .cabecalho-treinamentos {
     min-height: 82px;
     background: var(--header);
@@ -110,6 +117,7 @@ a {
     color: #151515;
 }
 
+/* === Layout Principal === */
 .container-treinamentos {
     display: flex;
     flex-direction: column;
@@ -136,6 +144,7 @@ a {
     line-height: 1.5;
 }
 
+/* === Cards e Painéis === */
 .painel-resumo {
     display: grid;
     grid-template-columns: repeat(4, minmax(120px, 1fr));
@@ -171,6 +180,7 @@ a {
     margin-top: 8px;
 }
 
+/* === Filtros e Inputs === */
 .filtros-treinamentos {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
@@ -206,6 +216,26 @@ a {
     border-color: var(--accent);
 }
 
+.filtros {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filtros input,
+.filtros select {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #1c1e22;
+    color: white;
+}
+
+.filtros input {
+    flex: 1;
+}
+
+/* === Seções e Grid de Itens === */
 .treinamentos-rapidos,
 .treinamentos {
     padding: 24px;
@@ -234,9 +264,12 @@ a {
 }
 
 .rapido-card {
-    min-height: 118px;
-    padding: 18px;
-    transition: 0.25s ease;
+    min-width: 180px;
+    height: 110px;
+    background: #1c1e22;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.2s;
 }
 
 .rapido-card:hover,
@@ -264,6 +297,7 @@ a {
     gap: 20px;
 }
 
+/* === Componente: Card de Treinamento === */
 .treinamento-card {
     display: flex;
     flex-direction: column;
@@ -275,38 +309,11 @@ a {
 
 .treinamento-card-topo {
     justify-content: space-between;
-    gap: 12px;
-}
-
-.treinamento-card h3 {
-    color: var(--text);
-    font-size: 20px;
-    line-height: 1.25;
-}
-
-.status-pill {
-    border-radius: 6px;
-    display: inline-flex;
-    font-size: 13px;
-    font-weight: 700;
-    padding: 7px 10px;
-    white-space: nowrap;
-}
-
-.status-concluido {
-    border: 1px solid var(--green);
-    color: var(--green);
-}
-
-.status-andamento,
-.status-pendente {
-    border: 1px solid var(--yellow);
-    color: var(--yellow);
-}
-
-.status-vencido {
-    border: 1px solid var(--red);
-    color: var(--red);
+    align-items: center;
+    background: #1c1e22;
+    padding: 20px;
+    border-radius: 15px;
+    transition: 0.2s;
 }
 
 .treinamento-meta {
@@ -322,12 +329,10 @@ a {
     padding: 12px;
 }
 
-.treinamento-meta strong,
-.status-info strong {
-    color: var(--accent-soft);
-    display: block;
-    font-size: 13px;
-    margin-bottom: 5px;
+.info h2 {
+    color: white;
+    margin-top: 0;
+    margin-bottom: 10px;
 }
 
 .status-info {
@@ -338,56 +343,40 @@ a {
     padding-top: 14px;
 }
 
-.estado-vazio {
+.categoria {
+    display: inline-block;
+    background: var(--accent);
+    color: black;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.duracao {
+    margin-top: 10px;
     color: var(--muted);
-    padding: 18px 0 4px;
-    text-align: center;
 }
 
-@media (max-width: 1100px) {
-    .topo-treinamentos,
-    .filtros-treinamentos {
-        grid-template-columns: 1fr;
-    }
-
-    .painel-resumo,
-    .rapidos-container,
-    .treinamentos-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.btn {
+    margin-top: 15px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    background: var(--accent);
+    color: white;
+    cursor: pointer;
 }
 
-@media (max-width: 700px) {
-    .cabecalho-treinamentos {
-        align-items: flex-start;
-        flex-direction: column;
-        padding: 18px;
-    }
+.thumb {
+    width: 220px;
+    height: 130px;
+    border-radius: 10px;
+    overflow: hidden;
+}
 
-    .atalhos-treinamentos,
-    .atalhos-treinamentos a {
-        width: 100%;
-    }
-
-    .container-treinamentos {
-        padding: 30px 18px;
-    }
-
-    .topo-treinamentos h1 {
-        font-size: 30px;
-    }
-
-    .painel-resumo,
-    .rapidos-container,
-    .treinamentos-grid,
-    .treinamento-meta {
-        grid-template-columns: 1fr;
-    }
-
-    .cabecalho-secao,
-    .treinamento-card-topo,
-    .status-info {
-        align-items: flex-start;
-        flex-direction: column;
-    }
+.thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
