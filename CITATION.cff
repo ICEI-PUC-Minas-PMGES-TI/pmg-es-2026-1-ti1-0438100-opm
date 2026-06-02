@@ -2,18 +2,20 @@ cff-version: 1.0.1
 message: Please cite this software using these metadata.
 title: OPM - Operação de máquinas
 authors:
-  - family-names: Vinhal
+  - family-names: Vinhal de Carvalho Teixeira
     given-names: Bernardo
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names:
+  - family-names: Gomes Rolando
+    given-names: Daniel
+  - family-names: de Castro Côrtes Netto
+    given-names: Francisco
+  - family-names: Luiz Santos Chebile
+    given-names: Guilherme
+  - family-names: Federici Petttersen
+    given-names: Leonardo
+  - family-names: Campos Xavier
+    given-names: Lucca
+  - family-names: Ladeia Sepúlveda
+    given-names: Vitor
   - name-suffix: Professor
     affiliation: PUC Minas
     family-names: Augusto
@@ -29,10 +31,10 @@ authors:
 keywords:
   - OPM
   - Opera máquinas
-  - opm 
-  - opera máquinas 
-  - opera maquinas
+  - produção
+  - opera
+  - maquinas
 repository-code: https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2026-1-ti1-0438100-opm.git
 license: CC-BY-4.0
 version: 1.0.0
-date-released: 2026-07-14
+date-released: 2026-07-11
