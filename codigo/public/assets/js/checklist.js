@@ -123,14 +123,27 @@ btnEnviar.addEventListener("click", function () {
         respostas: Object.values(respostas)
     };
 
-    formularios.push(dados);
+    fetch("http://localhost:3000/formularios", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(dados)
+    })
+    .then(res => res.json())
+    .then(data => {
 
-    localStorage.setItem(
-        "formularios",
-        JSON.stringify(formularios)
-    );
+        console.log("Checklist salva:", data);
 
-    console.log("Formulários salvos:", formularios);
+        respostas = {};
+        checklist.innerHTML = "";
+        selectMaquina.value = "";
+        inputFuncionario.value = "";
+
+    })
+    .catch(erro => {
+        console.error("Erro ao salvar:", erro);
+});
 
     respostas = {};
     checklist.innerHTML = "";

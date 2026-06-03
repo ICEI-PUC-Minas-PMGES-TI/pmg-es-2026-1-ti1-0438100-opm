@@ -1,17 +1,23 @@
 {
   "usuarios": [
-    { "id": 1, "login": "admin", "senha": "123", "nome": "Administrador", "email": "admin@abc.com" }
+    {
+      "id": "1",
+      "login": "admin",
+      "senha": "123",
+      "nome": "Administrador",
+      "email": "admin@abc.com"
+    }
   ],
   "maquinas": [
     {
-      "id": 1,
+      "id": "1",
       "login": "admin",
       "senha": "123",
       "nome": "Administrador do Sistema",
       "email": "admin@abc.com"
     },
     {
-      "id": 2,
+      "id": "2",
       "login": "user",
       "senha": "123",
       "nome": "Usuario Comum",
@@ -22,52 +28,51 @@
       "senha": "123",
       "nome": "Rommel",
       "email": "rommel@gmail.com",
-      "id": 3
+      "id": "3"
     }
   ],
   "checklists": [
     {
-    "torno": {
+      "torno": {
         "id": "1",
         "nome": "Torno CNC",
         "itens": [
-        "Máquina limpa e sem cavacos acumulados",
-        "Nível de óleo lubrificante",
-        "Todas ferramentas necessárias disponíveis",
-        "Programa CNC correto carregado",
-        "Botão de emergência funcionando",
-        "EPI’s utilizados"
+          "Máquina limpa e sem cavacos acumulados",
+          "Nível de óleo lubrificante",
+          "Todas ferramentas necessárias disponíveis",
+          "Programa CNC correto carregado",
+          "Botão de emergência funcionando",
+          "EPI’s utilizados"
         ]
-    },
-
-    "fresa": {
+      },
+      "fresa": {
         "id": "2",
         "nome": "Fresadora",
         "itens": [
-        "Máquina limpa e sem cavacos acumulados",
-        "Mesa da máquina limpa",
-        "Todas ferramentas necessárias disponíveis",
-        "Nível de óleo lubrificante",
-        "Ferramenta de corte instalada",
-        "Botão de emergência funcionando",
-        "EPI’s utilizados"
-    ]
-    },
-
-    "furadeira": {
+          "Máquina limpa e sem cavacos acumulados",
+          "Mesa da máquina limpa",
+          "Todas ferramentas necessárias disponíveis",
+          "Nível de óleo lubrificante",
+          "Ferramenta de corte instalada",
+          "Botão de emergência funcionando",
+          "EPI’s utilizados"
+        ]
+      },
+      "furadeira": {
         "id": "3",
         "nome": "Furadeira",
         "itens": [
-        "Máquina limpa e sem cavacos acumulados",
-        "Todas ferramentas necessárias disponíveis",
-        "Nível de óleo lubrificante",
-        "Proteção da máquina posicionada",
-        "Peça presa corretamente",
-        "Botão de emergência funcionando",
-        "EPI’s utilizados"
-    ]
+          "Máquina limpa e sem cavacos acumulados",
+          "Todas ferramentas necessárias disponíveis",
+          "Nível de óleo lubrificante",
+          "Proteção da máquina posicionada",
+          "Peça presa corretamente",
+          "Botão de emergência funcionando",
+          "EPI’s utilizados"
+        ]
+      },
+      "id": "giv97bQR3LU"
     }
-}
   ],
   "formularios": [
     {
@@ -102,6 +107,43 @@
         }
       ],
       "id": "9LmoYOS_LWg"
+    },
+    {
+      "funcionario": "Exemplo2",
+      "maquinaId": "2",
+      "maquinaNome": "Fresadora",
+      "dataHora": "02/06/2026, 22:14:44",
+      "respostas": [
+        {
+          "item": "Máquina limpa e sem cavacos acumulados",
+          "status": "OK"
+        },
+        {
+          "item": "Mesa da máquina limpa",
+          "status": "NOK"
+        },
+        {
+          "item": "Todas ferramentas necessárias disponíveis",
+          "status": "NOK"
+        },
+        {
+          "item": "Nível de óleo lubrificante",
+          "status": "NOK"
+        },
+        {
+          "item": "Ferramenta de corte instalada",
+          "status": "OK"
+        },
+        {
+          "item": "Botão de emergência funcionando",
+          "status": "NOK"
+        },
+        {
+          "item": "EPI’s utilizados",
+          "status": "OK"
+        }
+      ],
+      "id": "oXVSaxSXjo8"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
