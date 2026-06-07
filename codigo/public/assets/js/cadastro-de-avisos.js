@@ -12,9 +12,7 @@ const tabela = document.querySelector(".tabela tbody");
 const dias = document.querySelectorAll(".dias span");
 const seletorMes = document.querySelectorAll(".calendario_topo select")[0];
 const seletorAno = document.querySelectorAll(".calendario_topo select")[1];
-const quantidadeLinhasVazias = 9;
 
-// Mapeamento de mês em texto para número
 const mesesMap = {
     "Janeiro": "01",
     "Fevereiro": "02",
@@ -30,202 +28,370 @@ const mesesMap = {
     "Dezembro": "12"
 };
 
-let contador = 1;
 let dataSelecionada = "";
 let linhaSelecionada = null;
 
-criarLinhasVazias();
+/* ===========================
+   CARREGAR AVISOS
+=========================== */
 
-/* LINHAS VAZIAS DA TABELA */
+async function carregarAvisos() {
 
-function criarLinhasVazias() {
+    try {
 
-    for (let i = 0; i < quantidadeLinhasVazias; i++) {
+        const resposta = await fetch(
+            "http://localhost:3000/avisos"
+        );
 
-        const linha = document.createElement("tr");
+        const avisos = await resposta.json();
 
-        if (i % 2 === 0) {
-            linha.classList.add("cor1tabela");
-        } else {
-            linha.classList.add("cor2tabela");
-        }
+        tabela.innerHTML = "";
 
-        limparLinha(linha);
-        adicionarEventoSelecao(linha);
+        avisos.forEach(function(aviso, indice) {
 
-        tabela.appendChild(linha);
+            const linha = document.createElement("tr");
+
+            linha.dataset.preenchida = "true";
+            linha.dataset.id = aviso.id;
+
+            linha.classList.add(
+                indice % 2 === 0
+                    ? "cor1tabela"
+                    : "cor2tabela"
+            );
+
+            linha.innerHTML = `
+                <td>${aviso.id}</td>
+                <td>${aviso.importancia}</td>
+                <td>${aviso.tipo}</td>
+                <td>${aviso.data}</td>
+                <td>${aviso.texto}</td>
+            `;
+
+            adicionarEventoSelecao(linha);
+
+            tabela.appendChild(linha);
+
+        });
+
     }
+
+    catch (erro) {
+
+        console.error(
+            "Erro ao carregar avisos",
+            erro
+        );
+
+    }
+
 }
 
-function limparLinha(linha) {
-
-    linha.dataset.preenchida = "false";
-    linha.style.outline = "none";
-
-    linha.innerHTML = `
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-    `;
-}
+/* ===========================
+   SELEÇÃO DE LINHA
+=========================== */
 
 function adicionarEventoSelecao(linha) {
 
     linha.addEventListener("click", function() {
 
-        if (linha.dataset.preenchida === "false") {
-            return;
-        }
-
-        const linhas = document.querySelectorAll(".tabela tbody tr");
+        const linhas =
+            document.querySelectorAll(
+                ".tabela tbody tr"
+            );
 
         linhas.forEach(function(item) {
+
             item.style.outline = "none";
+
         });
 
-        linha.style.outline = "3px solid white";
+        linha.style.outline =
+            "3px solid white";
 
         linhaSelecionada = linha;
+
     });
+
 }
 
-/* CALENDARIO */
+/* ===========================
+   CALENDÁRIO
+=========================== */
 
 dias.forEach(function(dia) {
 
     dia.addEventListener("click", function() {
 
         if (dia.textContent === "") {
+
             return;
+
         }
 
         dias.forEach(function(item) {
-            item.classList.remove("selecionado");
+
+            item.classList.remove(
+                "selecionado"
+            );
+
         });
 
-        dia.classList.add("selecionado");
+        dia.classList.add(
+            "selecionado"
+        );
 
-        const mesNumero = mesesMap[seletorMes.value] || "01";
-        const ano = seletorAno.value || "2026";
-        dataSelecionada = dia.textContent + "/" + mesNumero + "/" + ano;
+        const mesNumero =
+            mesesMap[seletorMes.value] ||
+            "01";
+
+        const ano =
+            seletorAno.value ||
+            "2026";
+
+        dataSelecionada =
+            dia.textContent +
+            "/" +
+            mesNumero +
+            "/" +
+            ano;
+
     });
 
 });
 
-/* FILTRO */
+/* ===========================
+   FILTRO
+=========================== */
 
 function ordenarAvisosPorImportancia() {
-    const linhas = Array.from(tabela.querySelectorAll("tr"));
-    const linhasPreenchidas = linhas.filter(function(linha) {
-        return linha.dataset.preenchida === "true";
-    });
 
-    if (linhasPreenchidas.length === 0) {
-        return;
-    }
+    const linhas =
+        Array.from(
+            tabela.querySelectorAll("tr")
+        );
 
     const ordemImportancia = {
+
         "Alta": 1,
         "Média": 2,
         "Baixa": 3
+
     };
 
-    linhasPreenchidas.sort(function(a, b) {
-        const importanciaA = a.children[1].textContent.trim();
-        const importanciaB = b.children[1].textContent.trim();
-        return (ordemImportancia[importanciaA] || 99) - (ordemImportancia[importanciaB] || 99);
-    });
+    linhas.sort(function(a, b) {
 
-    const linhasVazias = linhas.filter(function(linha) {
-        return linha.dataset.preenchida === "false";
+        const importanciaA =
+            a.children[1].textContent.trim();
+
+        const importanciaB =
+            b.children[1].textContent.trim();
+
+        return (
+            ordemImportancia[
+                importanciaA
+            ] -
+            ordemImportancia[
+                importanciaB
+            ]
+        );
+
     });
 
     tabela.innerHTML = "";
-    linhasPreenchidas.concat(linhasVazias).forEach(function(linha, index) {
-        linha.classList.remove("cor1tabela", "cor2tabela");
-        linha.classList.add(index % 2 === 0 ? "cor1tabela" : "cor2tabela");
+
+    linhas.forEach(function(linha, indice) {
+
+        linha.classList.remove(
+            "cor1tabela",
+            "cor2tabela"
+        );
+
+        linha.classList.add(
+            indice % 2 === 0
+                ? "cor1tabela"
+                : "cor2tabela"
+        );
+
         tabela.appendChild(linha);
+
     });
+
 }
 
-if (botaoFiltro) {
-    botaoFiltro.addEventListener("click", function () {
-        ordenarAvisosPorImportancia();
-    });
-}
+botaoFiltro.addEventListener(
+    "click",
+    ordenarAvisosPorImportancia
+);
 
-/* ADICIONAR */
+/* ===========================
+   ADICIONAR
+=========================== */
 
-botaoAdicionar.addEventListener("click", function () {
+botaoAdicionar.addEventListener(
+    "click",
+    async function() {
 
-    if (
-        texto.value === "" ||
-        importancia.value === "" ||
-        tipo.value === "" ||
-        dataSelecionada === ""
-    ) {
-        alert("Preencha todos os campos");
-        return;
+        if (
+
+            texto.value === "" ||
+            importancia.value === "" ||
+            tipo.value === "" ||
+            dataSelecionada === ""
+
+        ) {
+
+            alert(
+                "Preencha todos os campos"
+            );
+
+            return;
+
+        }
+
+        const novoAviso = {
+
+            importancia:
+                importancia.options[
+                    importancia.selectedIndex
+                ].text,
+
+            tipo:
+                tipo.options[
+                    tipo.selectedIndex
+                ].text,
+
+            data:
+                dataSelecionada,
+
+            texto:
+                texto.value
+
+        };
+
+        try {
+
+            await fetch(
+                "http://localhost:3000/avisos",
+                {
+
+                    method: "POST",
+
+                    headers: {
+
+                        "Content-Type":
+                            "application/json"
+
+                    },
+
+                    body: JSON.stringify(
+                        novoAviso
+                    )
+
+                }
+            );
+
+            limparCampos();
+
+            carregarAvisos();
+
+        }
+
+        catch (erro) {
+
+            console.error(
+                "Erro ao adicionar aviso",
+                erro
+            );
+
+        }
+
     }
+);
 
-    const linhaVazia = document.querySelector('.tabela tbody tr[data-preenchida="false"]');
+/* ===========================
+   DELETAR
+=========================== */
 
-    if (linhaVazia === null) {
-        alert("A tabela está cheia");
-        return;
+botaoDeletar.addEventListener(
+    "click",
+    async function() {
+
+        if (
+            linhaSelecionada === null
+        ) {
+
+            alert(
+                "Selecione uma linha"
+            );
+
+            return;
+
+        }
+
+        const id =
+            linhaSelecionada.dataset.id;
+
+        try {
+
+            await fetch(
+                `http://localhost:3000/avisos/${id}`,
+                {
+
+                    method: "DELETE"
+
+                }
+            );
+
+            linhaSelecionada = null;
+
+            carregarAvisos();
+
+        }
+
+        catch (erro) {
+
+            console.error(
+                "Erro ao deletar aviso",
+                erro
+            );
+
+        }
+
     }
+);
 
-    linhaVazia.dataset.preenchida = "true";
+/* ===========================
+   LIMPAR
+=========================== */
 
-    const textoImportancia = importancia.options[importancia.selectedIndex].text;
-    const textoTipo = tipo.options[tipo.selectedIndex].text;
-
-    linhaVazia.innerHTML = `
-        <td>${contador}</td>
-        <td>${textoImportancia}</td>
-        <td>${textoTipo}</td>
-        <td>${dataSelecionada}</td>
-        <td>${texto.value}</td>
-    `;
-
-    contador++;
-
-    limparCampos();
-});
-
-/* LIMPAR */
-
-botaoLimpar.addEventListener("click", function() {
-    limparCampos();
-});
-
-/* DELETAR */
-
-botaoDeletar.addEventListener("click", function() {
-
-    if (linhaSelecionada === null) {
-        alert("Selecione uma linha");
-        return;
-    }
-
-    limparLinha(linhaSelecionada);
-
-    linhaSelecionada = null;
-});
-
-/* FUNÇÃO LIMPAR */
+botaoLimpar.addEventListener(
+    "click",
+    limparCampos
+);
 
 function limparCampos() {
 
     texto.value = "";
+
     importancia.value = "";
+
     tipo.value = "";
 
     dias.forEach(function(item) {
-        item.classList.remove("selecionado");
+
+        item.classList.remove(
+            "selecionado"
+        );
+
     });
 
     dataSelecionada = "";
+
 }
+
+/* ===========================
+   INICIAR
+=========================== */
+
+carregarAvisos();

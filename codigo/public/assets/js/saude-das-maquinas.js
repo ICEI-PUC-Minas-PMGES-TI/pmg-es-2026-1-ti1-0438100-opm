@@ -1,5 +1,6 @@
 const botoesAumentar = document.querySelectorAll(".btn-aumentar");
 const botoesDiminuir = document.querySelectorAll(".btn-diminuir");
+const cards = document.querySelectorAll(".card-maquina");
 
 function atualizarCor(barra, larguraAtual) {
 
@@ -35,7 +36,6 @@ function atualizarStatus(card) {
 
   const selo = card.querySelector(".selo-status");
 
-  // VERDE
   if (vidaUtil > 70 && durabilidade > 70) {
 
     bolinha.style.backgroundColor = "#19b55a";
@@ -48,7 +48,6 @@ function atualizarStatus(card) {
 
   }
 
-  // VERMELHO
   else if (vidaUtil <= 40 && durabilidade <= 40) {
 
     bolinha.style.backgroundColor = "#c90000";
@@ -61,7 +60,6 @@ function atualizarStatus(card) {
 
   }
 
-  // AMARELO
   else {
 
     bolinha.style.backgroundColor = "#f2a51a";
@@ -144,10 +142,100 @@ botoesDiminuir.forEach(function(botao) {
 
 });
 
-const cards = document.querySelectorAll(".card-maquina");
+async function carregarMaquinas() {
 
-cards.forEach(function(card) {
+  try {
 
-  atualizarTudo(card);
+    const resposta = await fetch(
+      "http://localhost:3000/maquinas"
+    );
 
-});
+    const maquinas = await resposta.json();
+
+    cards.forEach(function(card, indice) {
+
+      const barras = card.querySelectorAll(
+        ".barra-preenchida"
+      );
+
+      barras[0].style.width =
+        maquinas[indice].vidaUtil + "%";
+
+      barras[1].style.width =
+        maquinas[indice].durabilidade + "%";
+
+      atualizarTudo(card);
+
+    });
+
+  }
+
+  catch (erro) {
+
+    console.error(
+      "Erro ao carregar máquinas:",
+      erro
+    );
+
+  }
+
+}
+
+async function salvarAlteracoes() {
+
+  try {
+
+    for (let i = 0; i < cards.length; i++) {
+
+      const barras =
+        cards[i].querySelectorAll(
+          ".barra-preenchida"
+        );
+
+      const vidaUtil =
+        parseInt(barras[0].style.width);
+
+      const durabilidade =
+        parseInt(barras[1].style.width);
+
+      await fetch(
+        `http://localhost:3000/maquinas/${i + 1}`,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type":
+              "application/json"
+          },
+          body: JSON.stringify({
+            vidaUtil,
+            durabilidade
+          })
+        }
+      );
+
+    }
+
+    alert("Alterações salvas com sucesso!");
+
+  }
+
+  catch (erro) {
+
+    console.error(
+      "Erro ao salvar:",
+      erro
+    );
+
+  }
+
+}
+
+carregarMaquinas();
+
+const btnSalvar =
+  document.getElementById("btnSalvar");
+
+btnSalvar.addEventListener(
+  "click",
+  salvarAlteracoes
+);

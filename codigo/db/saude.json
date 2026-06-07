@@ -1,0 +1,12 @@
+{
+  "maquinas": [
+    { "id": 1, "vidaUtil": 80, "durabilidade": 75 },
+    { "id": 2, "vidaUtil": 80, "durabilidade": 75 },
+    { "id": 3, "vidaUtil": 80, "durabilidade": 75 },
+    { "id": 4, "vidaUtil": 80, "durabilidade": 75 },
+    { "id": 5, "vidaUtil": 80, "durabilidade": 75 },
+    { "id": 6, "vidaUtil": 80, "durabilidade": 75 },
+    { "id": 7, "vidaUtil": 80, "durabilidade": 75 },
+    { "id": 8, "vidaUtil": 80, "durabilidade": 75 }
+  ]
+}

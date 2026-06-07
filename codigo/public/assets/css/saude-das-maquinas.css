@@ -186,3 +186,25 @@ body {
 
   gap: 26px;
 }
+#btnSalvar{
+    background-color: #d89b10;
+    color: #000;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#btnSalvar:hover {
+    background-color: #f0b52b;
+    transform: translateY(-2px);
+}
+.area-salvar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}

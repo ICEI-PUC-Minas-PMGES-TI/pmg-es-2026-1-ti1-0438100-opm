@@ -14,21 +14,27 @@
       "login": "admin",
       "senha": "123",
       "nome": "Administrador do Sistema",
-      "email": "admin@abc.com"
+      "email": "admin@abc.com",
+      "vidaUtil": 80,
+      "durabilidade": 75
     },
     {
       "id": "2",
       "login": "user",
       "senha": "123",
       "nome": "Usuario Comum",
-      "email": "user@abc.com"
+      "email": "user@abc.com",
+      "vidaUtil": 10,
+      "durabilidade": 5
     },
     {
       "login": "rommel",
       "senha": "123",
       "nome": "Rommel",
       "email": "rommel@gmail.com",
-      "id": "3"
+      "id": "3",
+      "vidaUtil": 80,
+      "durabilidade": 75
     }
   ],
   "checklists": [
@@ -144,6 +150,106 @@
         }
       ],
       "id": "oXVSaxSXjo8"
+    }
+  ],
+  "saude": [
+    {
+      "maquinas": [
+        {
+          "id": 1,
+          "vidaUtil": 80,
+          "durabilidade": 75
+        },
+        {
+          "id": 2,
+          "vidaUtil": 80,
+          "durabilidade": 75
+        },
+        {
+          "id": 3,
+          "vidaUtil": 80,
+          "durabilidade": 75
+        },
+        {
+          "id": 4,
+          "vidaUtil": 80,
+          "durabilidade": 75
+        },
+        {
+          "id": 5,
+          "vidaUtil": 80,
+          "durabilidade": 75
+        },
+        {
+          "id": 6,
+          "vidaUtil": 80,
+          "durabilidade": 75
+        },
+        {
+          "id": 7,
+          "vidaUtil": 80,
+          "durabilidade": 75
+        },
+        {
+          "id": 8,
+          "vidaUtil": 80,
+          "durabilidade": 75
+        }
+      ],
+      "id": "mXNPBIL-J-8"
+    }
+  ],
+  "avisos": [
+    {
+      "importancia": "Alta",
+      "tipo": "Operário",
+      "data": "18/01/2026",
+      "texto": "Leonardo arrumou a máquina 3",
+      "id": "3J4vKh_UJxU"
+    },
+    {
+      "importancia": "Alta",
+      "tipo": "Operário",
+      "data": "15/01/2026",
+      "texto": "Daniel fez a parte dele",
+      "id": "tq5v2BhU0QE"
+    }
+  ],
+  "importancias": [
+    {
+      "id": "1",
+      "nome": "Alta",
+      "prioridade": 1,
+      "descricao": "Aviso urgente ou muito importante"
+    },
+    {
+      "id": "2",
+      "nome": "Média",
+      "prioridade": 2,
+      "descricao": "Aviso de importância intermediária"
+    },
+    {
+      "id": "3",
+      "nome": "Baixa",
+      "prioridade": 3,
+      "descricao": "Aviso informativo ou de baixa urgência"
+    }
+  ],
+  "tiposUsuarios": [
+    {
+      "id": "1",
+      "nome": "Operário",
+      "descricao": "Usuário responsável pela operação das máquinas"
+    },
+    {
+      "id": "2",
+      "nome": "Manutenção",
+      "descricao": "Usuário responsável por manutenções e reparos"
+    },
+    {
+      "id": "3",
+      "nome": "Gestor",
+      "descricao": "Usuário responsável pela gestão e acompanhamento"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
