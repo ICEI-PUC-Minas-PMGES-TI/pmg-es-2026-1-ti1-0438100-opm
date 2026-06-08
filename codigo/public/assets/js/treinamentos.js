@@ -1,54 +1,98 @@
-(function () {
-    // === Mapeamento de Elementos do DOM ===
-    // (Unificando os seletores da branch Current com os da Incoming)
-    const trainingGrid = document.querySelector("#treinamentosGrid") || document.getElementById("treinamentosGrid");
-    const searchInput = document.querySelector("#treinamentosSearch") || document.getElementById("pesquisa");
-    const sectorFilter = document.querySelector("#treinamentosSector") || document.getElementById("categoria");
-    
-    // Elementos exclusivos da branch Current (novos filtros e contadores)
-    const statusFilter = document.querySelector("#treinamentosStatus");
-    const quickSectors = document.querySelectorAll("#quickSectors"); // ou querySelector dependendo da estrutura
-    const emptyState = document.querySelector("#emptyState");
-    const resultCount = document.querySelector("#resultCount");
-    const sectorCount = document.querySelector("#sectorCount");
+const grid = document.getElementById("treinamentosGrid");
+const pesquisa = document.getElementById("pesquisa");
+const categoria = document.getElementById("categoria");
 
-    // Estado da aplicação (vindo da branch Incoming)
-    let treinamentos = [];
+let treinamentos = [];
 
-    // === Funções de Lógica e Dados ===
+async function carregarTreinamentos() {
 
-    // Função trazida da branch Incoming
-    async function carregarTreinamentos() {
-        try {
-            const resposta = await fetch("../../../db/treinamentos.json"); // Ajuste o caminho se necessário
-            const dados = await resposta.json();
-            treinamentos = dados.treinamentos;
-            
-            // Renderiza os treinamentos iniciais
-            renderizarTreinamentos(treinamentos);
-        } catch (erro) {
-            console.error("Erro ao carregar os treinamentos:", erro);
-        }
-    }
+    const resposta = await fetch("../../../db/treinamentos.json");
 
-    // Função trazida da branch Current
-    function getEffectiveStatus(training) {
-        if (window.TrainingStorage) {
-            // Lógica existente na sua branch local...
-        }
-        // ... restante da função
-    }
+    const dados = await resposta.json();
 
-    // Exemplo de como a renderização pode conversar com o Grid mapeado
-    function renderizarTreinamentos(lista) {
-        if (!trainingGrid) return;
-        // Lógica para limpar e preencher o HTML do grid...
-    }
+    treinamentos = dados.treinamentos;
 
-    // === Inicialização ===
-    document.addEventListener("DOMContentLoaded", () => {
-        carregarTreinamentos();
-        // Configurar event listeners para os filtros aqui (search, sectorFilter, etc.)
+    renderizarTreinamentos(treinamentos);
+}
+
+function renderizarTreinamentos(lista) {
+
+    grid.innerHTML = "";
+
+    lista.forEach(function (treinamento) {
+
+        grid.innerHTML += `
+
+            <div class="treinamento-card">
+
+                <div class="info">
+
+                    <span class="categoria">
+                        ${treinamento.categoria}
+                    </span>
+
+                    <h2>
+                        ${treinamento.titulo}
+                    </h2>
+
+                    <p>
+                        ${treinamento.descricao}
+                    </p>
+
+                    <div class="duracao">
+                        ⏱ ${treinamento.duracao}
+                    </div>
+
+                    <div class="progresso">
+
+                        <div
+                            class="barra"
+                            style="width:${treinamento.progresso}%"
+                        ></div>
+
+                    </div>
+
+                    <button class="btn">
+                        Iniciar Treinamento
+                    </button>
+
+                </div>
+
+                <div class="thumb">
+
+                    <img src="${treinamento.imagem}">
+
+                </div>
+
+            </div>
+
+        `;
+    });
+}
+
+function filtrarTreinamentos() {
+
+    const texto = pesquisa.value.toLowerCase();
+
+    const cat = categoria.value;
+
+    const filtrados = treinamentos.filter(function (treinamento) {
+
+        const correspondeTexto =
+            treinamento.titulo.toLowerCase().includes(texto);
+
+        const correspondeCategoria =
+            cat === "Todos" ||
+            treinamento.categoria === cat;
+
+        return correspondeTexto && correspondeCategoria;
     });
 
-})();
+    renderizarTreinamentos(filtrados);
+}
+
+pesquisa.addEventListener("input", filtrarTreinamentos);
+
+categoria.addEventListener("change", filtrarTreinamentos);
+
+carregarTreinamentos();
