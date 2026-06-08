@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relatório do Operário</title>
+    <link rel="stylesheet" href="../../assets/css/header.css">
+    <link rel="stylesheet" href="../../assets/css/relatorio-operario.css">
+</head>
+<body>
+    <header id="header">
+            <button class="menu">☰</button>
+    
+            <div class="logo-area">
+                <img src="../../assets/images/logotipo.png" alt="logotipo">
+            </div>
+    </header>
+
+  <main class="conteudo-principal">
+
+      <div class="filtros">
+          <div class="filtros__grupo">
+              <label class="filtros__etiqueta" for="filtro-operario">Operário</label>
+              <input id="filtro-operario" class="filtros__entrada" type="text" placeholder="Nome do operário">
+          </div>
+          <div class="filtros__grupo">
+              <label class="filtros__etiqueta" for="filtro-inicio">Período — início</label>
+              <input id="filtro-inicio" class="filtros__entrada" type="date">
+          </div>
+          <div class="filtros__grupo">
+              <label class="filtros__etiqueta" for="filtro-fim">Período — fim</label>
+              <input id="filtro-fim" class="filtros__entrada" type="date">
+          </div>
+          <div class="filtros__grupo">
+              <label class="filtros__etiqueta" for="filtro-setor">Setor</label>
+              <select id="filtro-setor" class="filtros__selecao">
+                  <option value="">Todos</option>
+                  <option value="Usinagem">Usinagem</option>
+                  <option value="Montagem">Montagem</option>
+                  <option value="Manutenção">Manutenção</option>
+                  <option value="Qualidade">Qualidade</option>
+                  <option value="Logística">Logística</option>
+              </select>
+          </div>
+          <button class="botao-filtrar" id="botao-filtrar">Filtrar</button>
+      </div>
+    
+      <!-- KPIs -->
+      <div class="kpis">
+          <div class="kpis__cartao kpis__cartao--horas">
+              <span class="kpis__valor kpis__valor--vazio" id="kpi-horas">—</span>
+              <span class="kpis__rotulo">Horas trabalhadas</span>
+          </div>
+          <div class="kpis__cartao kpis__cartao--tarefas">
+              <span class="kpis__valor kpis__valor--vazio" id="kpi-tarefas">—</span>
+              <span class="kpis__rotulo">Tarefas concluídas</span>
+          </div>
+          <div class="kpis__cartao kpis__cartao--ocorr">
+              <span class="kpis__valor kpis__valor--vazio" id="kpi-ocorr">—</span>
+              <span class="kpis__rotulo">Ocorrências</span>
+          </div>
+      </div>
+    
+      <div class="cartao-operario" id="cartao-operario">
+          <div class="cartao-operario__avatar" id="operario-avatar">
+              <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="24" cy="18" r="9" fill="#444"/>
+                  <path d="M6 42c0-9.941 8.059-18 18-18s18 8.059 18 18" fill="#444"/>
+              </svg>
+          </div>
+          <div class="cartao-operario__info" id="operario-info">
+              <span class="cartao-operario__vazio">Selecione um operário e clique em <strong>Filtrar</strong></span>
+          </div>
+          <div class="cartao-operario__status" id="operario-status">Status</div>
+      </div>
+    
+      <div class="grade-central">
+      
+          <div class="cartao-secao">
+              <div class="secao__rotulo">Desempenho</div>
+              <div id="desempenho-container">
+                  <span class="texto-vazio">Nenhum dado disponível</span>
+              </div>
+          </div>
+        
+          <div class="cartao-secao">
+              <div class="secao__rotulo">Máquinas Operadas</div>
+              <table class="tabela-maquinas">
+                  <thead>
+                      <tr>
+                          <th>Máquina</th>
+                          <th class="tabela-maquinas__col-direita">Tempo de uso</th>
+                      </tr>
+                  </thead>
+                  <tbody id="maquinas-corpo">
+                      <tr><td colspan="2" class="texto-vazio">Nenhum dado disponível</td></tr>
+                  </tbody>
+              </table>
+          </div>
+        
+      </div>
+    
+      <div class="cartao-historico">
+          <div class="cartao-historico__cabecalho">
+              <div class="secao__rotulo">Histórico de Tarefas</div>
+          </div>
+          <table class="tabela-historico">
+              <thead>
+                  <tr>
+                      <th>Data</th>
+                      <th>Descrição</th>
+                      <th>Status</th>
+                  </tr>
+              </thead>
+              <tbody id="historico-corpo">
+                  <tr><td colspan="3" class="texto-vazio">Nenhum dado disponível</td></tr>
+              </tbody>
+          </table>
+      </div>
+    
+      <div class="cartao-obs">
+          <div class="secao__rotulo">Observações do Supervisor</div>
+          <textarea id="obs-textarea" class="cartao-obs__textarea"
+              placeholder="Digite aqui as observações sobre o desempenho do operário no período..."
+              maxlength="500"></textarea>
+          <div class="cartao-obs__rodape">
+              <span class="cartao-obs__contador" id="obs-contador">0 / 500</span>
+              <button class="botao-salvar" id="botao-salvar">Salvar observações</button>
+          </div>
+          <p class="cartao-obs__confirmacao" id="obs-confirmacao" hidden>✓ Observações salvas com sucesso.</p>
+      </div>
+    
+  </main>
+  <script src="../../assets/js/header.js"></script>
+  <script src="../../assets/js/relatorio-operario.js"></script>
+</body>
+</html>
