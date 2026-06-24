@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "codigo": "PN12345",
+    "peca": "Eixo A",
+    "maquina": "CNC 01",
+    "prioridade": "Alta",
+    "quantidadeDia": 50,
+    "tempoCiclo": 12,
+    "status": "Pendente",
+    "data": "2026-06-24"
+  },
+  {
+    "id": 2,
+    "codigo": "PN67890",
+    "peca": "Suporte B",
+    "maquina": "CNC 02",
+    "prioridade": "Média",
+    "quantidadeDia": 30,
+    "tempoCiclo": 8,
+    "status": "Em produção",
+    "data": "2026-06-24"
+  },
+  {
+    "id": 3,
+    "codigo": "PN54321",
+    "peca": "Flange C",
+    "maquina": "CNC 01",
+    "prioridade": "Baixa",
+    "quantidadeDia": 20,
+    "tempoCiclo": 15,
+    "status": "Pendente",
+    "data": "2026-06-25"
+  },
+  {
+    "id": 4,
+    "codigo": "PN11111",
+    "peca": "Bucha D",
+    "maquina": "CNC 03",
+    "prioridade": "Alta",
+    "quantidadeDia": 40,
+    "tempoCiclo": 10,
+    "status": "Pendente",
+    "data": "2026-06-25"
+  },
+  {
+    "id": 5,
+    "codigo": "PN22222",
+    "peca": "Tampa E",
+    "maquina": "CNC 02",
+    "prioridade": "Média",
+    "quantidadeDia": 25,
+    "tempoCiclo": 9,
+    "status": "Pendente",
+    "data": "2026-06-26"
+  },
+  {
+    "id": 6,
+    "codigo": "PN33333",
+    "peca": "Placa F",
+    "maquina": "CNC 01",
+    "prioridade": "Baixa",
+    "quantidadeDia": 15,
+    "tempoCiclo": 7,
+    "status": "Em produção",
+    "data": "2026-06-26"
+  },
+  {
+    "id": 7,
+    "codigo": "PN44444",
+    "peca": "Eixo G",
+    "maquina": "CNC 03",
+    "prioridade": "Média",
+    "quantidadeDia": 35,
+    "tempoCiclo": 11,
+    "status": "Pendente",
+    "data": "2026-06-27"
+  },
+  {
+    "id": 8,
+    "codigo": "PN55555",
+    "peca": "Carcaça H",
+    "maquina": "CNC 02",
+    "prioridade": "Alta",
+    "quantidadeDia": 10,
+    "tempoCiclo": 20,
+    "status": "Pendente",
+    "data": "2026-06-27"
+  }
+]

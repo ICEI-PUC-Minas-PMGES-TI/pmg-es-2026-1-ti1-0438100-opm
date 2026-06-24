@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Listagem de Peças CNC</title>
+
   <link rel="stylesheet" href="../../assets/css/header.css">
-  <link rel="stylesheet" href="https://cloudflare.com">
   <link rel="stylesheet" href="../../assets/css/lista-de-pecas.css">
   <link rel="icon" type="image/png" href="../../assets/images/icon.png">
 </head>
+
 <body>
 
   <div id="header"></div>
@@ -16,143 +17,135 @@
   <main>
 
     <section class="filtros-container">
+
       <div class="filtros">
         <h2>FILTROS</h2>
 
         <div class="campos-filtros">
+
           <div class="campo">
             <label>Máquina CNC</label>
-            <select>
-              <option>Todos</option>
-              <option>CNC 01</option>
-              <option>CNC 02</option>
-              <option>CNC 03</option>
+            <select id="filtroMaquina">
+              <option value="">Todos</option>
             </select>
           </div>
 
           <div class="campo">
             <label>Prioridade</label>
-            <select>
-              <option>Todas</option>
-              <option>Alta</option>
-              <option>Média</option>
-              <option>Baixa</option>
+            <select id="filtroPrioridade">
+              <option value="">Todas</option>
             </select>
           </div>
 
           <div class="campo">
             <label>Status</label>
-            <select>
-              <option>Todos</option>
-              <option>Pendente</option>
-              <option>Em produção</option>
+            <select id="filtroStatus">
+              <option value="">Todos</option>
             </select>
           </div>
 
           <div class="campo buscar">
             <label>Buscar peça</label>
-            <input type="text" placeholder="Digite o nome ou código da peça...">
+            <input id="filtroBusca" type="text" placeholder="Digite o nome ou código da peça...">
           </div>
 
           <div class="campo">
             <label>Data</label>
-            <input type="date">
+            <input id="filtroData" type="date">
           </div>
+
         </div>
 
         <div class="botoes-filtro">
-          <button class="btn secundario">🔄 Limpar</button>
-          <button class="btn principal">🔎 Filtrar</button>
+          <button id="btnLimpar" class="btn secundario">🔄 Limpar</button>
+          <button id="btnFiltrar" class="btn principal">🔎 Filtrar</button>
         </div>
+
       </div>
 
       <aside class="oee-card">
+
         <h2>OEE - MÁQUINA SELECIONADA</h2>
 
         <div class="oee-conteudo">
-          <div class="oee-circulo">68%</div>
+
+          <div id="oeePercentual" class="oee-circulo">
+            68%
+          </div>
 
           <div class="oee-indicadores">
-            <p>Disponibilidade <strong>72%</strong></p>
-            <p>Performance <strong>75%</strong></p>
-            <p>Qualidade <strong>84%</strong></p>
+            <p>Disponibilidade <strong id="disponibilidade">72%</strong></p>
+            <p>Performance <strong id="performance">75%</strong></p>
+            <p>Qualidade <strong id="qualidade">84%</strong></p>
           </div>
+
         </div>
 
         <p class="meta">Meta: 85%</p>
+
       </aside>
+
     </section>
 
     <section class="lista-pecas">
+
       <div class="titulo-lista">
         <h2>LISTA DE PEÇAS</h2>
-        <span>Total de peças: 8</span>
+        <span id="totalPecas">Total de peças: 0</span>
       </div>
 
-      <table>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Código</th>
-            <th>Peça</th>
-            <th>Máquina CNC</th>
-            <th>Prioridade</th>
-            <th>Quantidade/Dia</th>
-            <th>Tempo Ciclo (min)</th>
-            <th>Status</th>
-            <th>Ações</th>
-          </tr>
-        </thead>
+      <div class="tabela-container">
 
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>PN12345</td>
-            <td>Eixo A</td>
-            <td>CNC 01</td>
-            <td><span class="prioridade alta">Alta</span></td>
-            <td>50</td>
-            <td>12</td>
-            <td><span class="status pendente">Pendente</span></td>
-            <td>
-              <button>▶ Iniciar</button>
-              <button>☑ Concluir</button>
-            </td>
-          </tr>
+        <table class="tabela-pecas">
 
-          <tr>
-            <td>2</td>
-            <td>PN67890</td>
-            <td>Suporte B</td>
-            <td>CNC 02</td>
-            <td><span class="prioridade media">Média</span></td>
-            <td>30</td>
-            <td>8</td>
-            <td><span class="status producao">Em produção</span></td>
-            <td>
-              <button>⏸ Pausar</button>
-              <button>☑ Concluir</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Código</th>
+              <th>Peça</th>
+              <th>Máquina CNC</th>
+              <th>Prioridade</th>
+              <th>Quantidade/Dia</th>
+              <th>Tempo Ciclo (min)</th>
+              <th>Status</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+
+          <tbody id="corpoTabela"></tbody>
+
+        </table>
+
+      </div>
+
     </section>
 
     <footer class="rodape">
+
       <div>
         <label>Ordenar por</label>
-        <select>
-          <option>Prioridade</option>
-          <option>Quantidade</option>
-          <option>Tempo de ciclo</option>
+
+        <select id="ordenarPor">
+          <option value="prioridade">Prioridade</option>
+          <option value="quantidade">Quantidade</option>
+          <option value="tempo">Tempo de ciclo</option>
         </select>
       </div>
 
-      <button class="btn secundario">🔄 Atualizar lista</button>
-      <button class="btn principal">⬇ Exportar relatório</button>
+      <button id="btnAtualizar" class="btn secundario">
+        🔄 Atualizar lista
+      </button>
+
+      <button id="btnExportar" class="btn principal">
+        ⬇ Exportar relatório
+      </button>
+
     </footer>
 
   </main>
-<script src="../../assets/js/header.js"></script>
+
+  <script src="../../assets/js/header.js"></script>
+  <script src="../../assets/js/lista-de-pecas.js"></script>
+
 </body>
 </html>
