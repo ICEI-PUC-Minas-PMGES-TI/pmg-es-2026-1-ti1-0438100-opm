@@ -37,15 +37,6 @@
             "duracao": "25 min",
             "progresso": 60
 
-        },
-        {
-            "id": 5,
-            "titulo": "Uso de EPIs",
-            "descricao": "Equipamentos de proteção individual.",
-            "imagem": "https://loremflickr.com/400/300/industry?random=15",
-            "categoria": "Segurança",
-            "duracao": "10 min",
-            "progresso": 100
         }
     ]
 }

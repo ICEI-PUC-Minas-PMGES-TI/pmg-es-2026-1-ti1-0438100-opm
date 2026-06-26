@@ -4,27 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Status de Treinamento - OPM</title>
+
+  <link rel="stylesheet" href="../../assets/css/header.css">
   <link rel="stylesheet" href="../../assets/css/training.css">
 </head>
+
 <body>
-  <header class="cabecalho-principal">
-    <button class="botao-menu" type="button">☰</button>
 
-    <div class="area-logo">
-      <div class="icone-logo">⚙</div>
-      <div class="texto-logo">
-        <strong>OPERA</strong>
-        <span>TREINAMENTOS</span>
-      </div>
-    </div>
-
-    <div class="area-icones-cabecalho">
-      <span class="icone-cabecalho">🔔</span>
-      <span class="icone-cabecalho">👤</span>
-    </div>
-  </header>
+  <!-- HEADER REUTILIZÁVEL -->
+  <div id="header"></div>
 
   <main class="conteudo-principal">
+
     <section class="secao-topo-pagina">
       <div class="area-titulo-pagina">
         <h1 class="titulo-pagina">Status de Treinamento</h1>
@@ -105,9 +96,12 @@
     <footer class="rodape-pagina" style="color: var(--cor-texto-secundario); margin-top: 24px; font-size: 13px;">
       Os dados são atualizados automaticamente a partir dos treinamentos cadastrados.
     </footer>
+
   </main>
 
+  <script src="../../assets/js/header.js"></script>
   <script src="../../assets/js/training-storage.js"></script>
   <script src="../../assets/js/training-dashboard.js"></script>
+
 </body>
 </html>
