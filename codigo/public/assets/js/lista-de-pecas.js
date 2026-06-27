@@ -48,15 +48,27 @@ const oeeMaquinas = {
   }
 };
 
+const API_URL_MAQUINAS = "http://localhost:3000/maquinas";
+const API_URL_PECAS = 'http://localhost:3000/pecas'
+let maquinas = [];
+
+
+async function carregarMaquinas() {
+    const resposta = await fetch(API_URL_MAQUINAS);
+    maquinas = await resposta.json();
+}
+
 async function carregarPecas() {
   try {
-    const resposta = await fetch("/codigo/db/lista-de-pecas.json");
+    const resposta = await fetch(API_URL_PECAS);
 
     if (!resposta.ok) {
       throw new Error("Arquivo JSON não encontrado");
     }
 
     pecas = await resposta.json();
+    
+    await carregarMaquinas()
 
     preencherFiltros();
     renderizarTabela(ordenarLista(pecas));
@@ -82,7 +94,7 @@ function preencherFiltros() {
   filtroPrioridade.innerHTML = `<option value="">Todas</option>`;
   filtroStatus.innerHTML = `<option value="">Todos</option>`;
 
-  const maquinas = [...new Set(pecas.map(item => item.maquina))];
+  const maquinas = [...new Set(pecas.map(item => item.associacao))];
   const prioridades = [...new Set(pecas.map(item => item.prioridade))];
   const status = [...new Set(pecas.map(item => item.status))];
 
@@ -131,7 +143,7 @@ function renderizarTabela(lista) {
 
     if (item.status === "Pendente") {
       acaoPrincipal = `
-        <button onclick="iniciarPeca(${item.id})">
+        <button onclick="iniciarPeca('${item.id}')">
           ▶ Iniciar
         </button>
       `;
@@ -139,7 +151,7 @@ function renderizarTabela(lista) {
 
     if (item.status === "Em produção") {
       acaoPrincipal = `
-        <button onclick="pausarPeca(${item.id})">
+        <button onclick="pausarPeca('${item.id}')">
           ⏸ Pausar
         </button>
       `;
@@ -150,7 +162,7 @@ function renderizarTabela(lista) {
         <td>${index + 1}</td>
         <td>${item.codigo}</td>
         <td>${item.peca}</td>
-        <td>${item.maquina}</td>
+        <td>${item.associacao}</td>
         <td>
           <span class="prioridade ${prioridadeClasse}">
             ${item.prioridade}
@@ -168,7 +180,7 @@ function renderizarTabela(lista) {
             item.status !== "Concluído"
               ? `
                 ${acaoPrincipal}
-                <button onclick="concluirPeca(${item.id})">
+                <button onclick="concluirPeca('${item.id}')">
                   ☑ Concluir
                 </button>
               `
@@ -188,7 +200,7 @@ function filtrarPecas() {
   const data = filtroData.value;
 
   let resultado = pecas.filter(item => {
-    const filtroPorMaquina = maquina === "" || item.maquina === maquina;
+    const filtroPorMaquina = maquina === "" || item.associacao === maquina;
     const filtroPorPrioridade = prioridade === "" || item.prioridade === prioridade;
     const filtroPorStatus = status === "" || item.status === status;
     const filtroPorData = data === "" || item.data === data;
@@ -256,40 +268,74 @@ function limparFiltros() {
 }
 
 function atualizarOEE() {
-  const maquinaSelecionada = filtroMaquina.value || "Todos";
-  const dadosOEE = oeeMaquinas[maquinaSelecionada];
 
-  oeePercentual.textContent = `${dadosOEE.oee}%`;
-  disponibilidade.textContent = `${dadosOEE.disponibilidade}%`;
-  performance.textContent = `${dadosOEE.performance}%`;
-  qualidade.textContent = `${dadosOEE.qualidade}%`;
+    const maquinaSelecionada = filtroMaquina.value;
+
+    let dadosOEE;
+
+    if (maquinaSelecionada === "") {
+
+        // Todos
+        dadosOEE = {
+            OEE: 70,
+            disponibilidade: 75,
+            performance: 78,
+            qualidade: 85
+        };
+
+    } else {
+
+        dadosOEE = maquinas.find(
+            maquina => maquina.nome === maquinaSelecionada
+        );
+
+    }
+
+    if (!dadosOEE) return;
+
+    oeePercentual.textContent = `${dadosOEE.OEE}%`;
+    disponibilidade.textContent = `${dadosOEE.disponibilidade}%`;
+    performance.textContent = `${dadosOEE.performance}%`;
+    qualidade.textContent = `${dadosOEE.qualidade}%`;
+}
+
+
+async function atualizarStatus(id, novoStatus) {
+
+  try {
+
+    const resposta = await fetch(`${API_URL_PECAS}/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        status: novoStatus
+      })
+    });
+
+    if (!resposta.ok) {
+      throw new Error("Erro ao atualizar a peça.");
+    }
+
+    await carregarPecas();
+
+  } catch (erro) {
+    console.error(erro);
+  }
+
 }
 
 function iniciarPeca(id) {
-  const indice = pecas.findIndex(item => item.id === id);
-
-  if (indice !== -1) {
-    pecas[indice].status = "Em produção";
-    filtrarPecas();
-  }
+  atualizarStatus(id, "Em produção");
 }
 
 function pausarPeca(id) {
-  const indice = pecas.findIndex(item => item.id === id);
-
-  if (indice !== -1) {
-    pecas[indice].status = "Pendente";
-    filtrarPecas();
-  }
+  atualizarStatus(id, "Pendente");
 }
 
 function concluirPeca(id) {
-  const indice = pecas.findIndex(item => item.id === id);
-
-  if (indice !== -1) {
-    pecas[indice].status = "Concluído";
-    filtrarPecas();
-  }
+  atualizarStatus(id, "Concluído");
 }
 
 function exportarRelatorio() {

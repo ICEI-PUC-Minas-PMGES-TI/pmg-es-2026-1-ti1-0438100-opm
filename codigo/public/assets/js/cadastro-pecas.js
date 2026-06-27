@@ -9,7 +9,7 @@ let pecas = []
 
 
 function limparForm() {
-    ['fTipo', 'fModelo', 'fCodigo', 'fFabricante', 'fAssociacao', 'fAno'].forEach(id => {
+    ['fTipo', 'fPeca', 'fCodigo', 'fFabricante', 'fAssociacao', 'fAno'].forEach(id => {
         document.getElementById(id).value = '';
     });
     editando = false;
@@ -39,7 +39,7 @@ function toggleFiltro() {
 }
 
 function limparFiltro() {
-    ['filtTipo', 'filtModelo', 'filtFabricante', 'filtAssociacao', 'filtAno'].forEach(id => {
+    ['filtTipo', 'filtPeca', 'filtFabricante', 'filtAssociacao', 'filtAno'].forEach(id => {
         document.getElementById(id).value = '';
     });
     renderTabela();
@@ -47,14 +47,14 @@ function limparFiltro() {
 
 function getFiltrados() {
     const tipo = document.getElementById('filtTipo')?.value.toLowerCase() || '';
-    const modelo = document.getElementById('filtModelo')?.value.toLowerCase() || '';
+    const peca = document.getElementById('filtPeca')?.value.toLowerCase() || '';
     const fabricante = document.getElementById('filtFabricante')?.value.toLowerCase() || '';
     const associacao = document.getElementById('filtAssociacao')?.value.toLowerCase() || '';
     const ano = document.getElementById('filtAno')?.value || '';
 
     return pecas.filter(p => {
         if (tipo && !p.tipo.toLowerCase().includes(tipo)) return false;
-        if (modelo && !p.modelo.toLowerCase().includes(modelo)) return false;
+        if (peca && !p.peca.toLowerCase().includes(peca)) return false;
         if (fabricante && !p.fabricante.toLowerCase().includes(fabricante)) return false;
         if (associacao && !p.associacao.toLowerCase().includes(associacao)) return false;
         if (ano && p.ano !== ano) return false;
@@ -84,7 +84,7 @@ function renderTabela() {
         tr.innerHTML = `
         <td>${i + 1}</td>
         <td><span class="badge">${p.tipo}</span></td>
-        <td>${p.modelo}</td>
+        <td>${p.peca}</td>
         <td style="font-family:'IBM Plex Mono',monospace;font-size:12px">${p.codigo}</td>
         <td>${p.fabricante}</td>
         <td>${p.associacao}</td>`;
@@ -95,18 +95,23 @@ function renderTabela() {
 
 async function adicionarOuSalvar() {
     const tipo = document.getElementById('fTipo').value;
-    const modelo = document.getElementById('fModelo').value.trim();
+    const nomePeca = document.getElementById('fPeca').value.trim();
     const codigo = document.getElementById('fCodigo').value.trim();
     const fabricante = document.getElementById('fFabricante').value.trim();
     const associacao = document.getElementById('fAssociacao').value.trim();
     const ano = document.getElementById('fAno').value;
+    const prioridade = document.getElementById('fPrioridade').value.trim();
+    const quantidadeDia = document.getElementById('fQuantidadeDia').value;
+    const tempoCiclo = document.getElementById('fTempoCiclo').value.trim();
+    const status = document.getElementById('fStatus').value.trim();
 
-    if (!tipo || !modelo || !codigo || !fabricante || !associacao) {
+
+    if (!tipo || !nomePeca || !codigo || !fabricante || !associacao || !prioridade || !quantidadeDia || !tempoCiclo || !status) {
         showToast('⚠ Preencha todos os campos obrigatórios.');
         return;
     }
 
-    const peca = { id: "", tipo, modelo, codigo, fabricante, associacao, ano };
+    const peca = { id: "", tipo, peca, codigo, fabricante, associacao, ano, prioridade, quantidadeDia, tempoCiclo, status };
 
     if (editando && selectedIndex >= 0) {
         await fetch(`${API_URL}/${pecas[selectedIndex].id}`, {
@@ -156,10 +161,14 @@ function alterarSelecionado() {
     if (selectedIndex < 0) { showToast('Selecione uma linha para alterar.'); return; }
     const p = pecas[selectedIndex];
     document.getElementById('fTipo').value = p.tipo;
-    document.getElementById('fModelo').value = p.modelo;
+    document.getElementById('fPeca').value = p.peca;
     document.getElementById('fCodigo').value = p.codigo;
     document.getElementById('fFabricante').value = p.fabricante;
     document.getElementById('fAssociacao').value = p.associacao;
+    document.getElementById('fPrioridade').value = p.prioridade;
+    document.getElementById('fQuantidadeDia').value = p.quantidadeDia;
+    document.getElementById('fTempoCiclo').value = p.tempoCiclo;
+    document.getElementById('fStatus').value = p.status;
     document.getElementById('fAno').value = p.ano;
     editando = true;
     document.querySelector('.btn-add').textContent = 'Salvar';

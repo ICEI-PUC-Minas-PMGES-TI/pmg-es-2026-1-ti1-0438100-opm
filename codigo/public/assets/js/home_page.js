@@ -30,10 +30,10 @@ async function carregarAvisos() {
 }
 
 /* OEE */
-const API_URL = 'http://localhost:3000/maquinas'
+const API_URL_MAQUINAS = 'http://localhost:3000/maquinas'
 
 async function carregarMaquinas() {
-    const response = await fetch(API_URL)
+    const response = await fetch(API_URL_MAQUINAS)
     maquinas = await response.json()
     carregarOee()
 }

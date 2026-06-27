@@ -84,14 +84,18 @@ async function adicionarOuSalvar() {
     const status = document.getElementById('fStatus').value;
     const OEE = Number(document.getElementById('fOEE').value.trim());
     const ultManutencao = document.getElementById('fUltManutencao').value;
+    const disponibilidade = document.getElementById('fDisponibilidade').value;
+    const performance = document.getElementById('fPerformance').value;
+    const qualidade = document.getElementById('fQualidade').value;
+
     const obs = document.getElementById('fObs').value.trim();
 
-    if (!nome || !tipo || !patrimonio || !local || !status || !OEE) {
+    if (!nome || !tipo || !patrimonio || !local || !status || !OEE || !disponibilidade || !performance || !qualidade) {
         showToast('⚠ Preencha os campos obrigatórios.');
         return;
     }
 
-    const maquina = { nome, tipo, patrimonio, serie, fabricante, ano, local, status, OEE, ultManutencao, obs };
+    const maquina = { nome, tipo, patrimonio, serie, fabricante, ano, local, status, OEE, ultManutencao, disponibilidade, performance, qualidade ,obs };
 
     if (editando && selectedIndex >= 0) {
         await fetch(`${API_URL}/${maquinas[selectedIndex].id}`, {
@@ -121,8 +125,8 @@ async function adicionarOuSalvar() {
 
 async function deletarSelecionado() {
     if (selectedIndex < 0) { showToast('Selecione uma linha para deletar.'); return; }
-    await fetch(`${API_URL}/${maquinas[selectedIndex].id}`,{
-        method: 'DELETE'  
+    await fetch(`${API_URL}/${maquinas[selectedIndex].id}`, {
+        method: 'DELETE'
     })
     selectedIndex = -1;
     await carregarMaquinas();
@@ -142,6 +146,9 @@ function alterarSelecionado() {
     document.getElementById('fStatus').value = m.status;
     document.getElementById('fOEE').value = m.OEE;
     document.getElementById('fUltManutencao').value = m.ultManutencao;
+    document.getElementById('fDisponibilidade').value = m.disponibilidade;
+    document.getElementById('fPerformance').value = m.performance;
+    document.getElementById('fQualidade').value = m.qualidade;
     document.getElementById('fObs').value = m.obs;
     editando = true;
     document.querySelector('.btn-add').textContent = 'Salvar';
@@ -150,7 +157,7 @@ function alterarSelecionado() {
 
 function limparForm() {
     ['fNome', 'fTipo', 'fPatrimonio', 'fSerie', 'fFabricante', 'fAno',
-        'fLocal', 'fStatus', 'fOEE', 'fUltManutencao', 'fObs'].forEach(id => {
+        'fLocal', 'fStatus', 'fOEE', 'fUltManutencao', 'fDisponibilidade', 'fPerformance','fQualidade','fObs'].forEach(id => {
             document.getElementById(id).value = '';
         });
     editando = false;

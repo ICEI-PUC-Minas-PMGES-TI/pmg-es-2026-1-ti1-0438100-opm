@@ -39,8 +39,8 @@
                         </div>
                     </div>
                     <div class="filter-field">
-                        <label>Modelo</label>
-                        <input id="filtModelo" type="text" placeholder="Buscar modelo..." oninput="renderTabela()" />
+                        <label>Peça</label>
+                        <input id="filtPeca" type="text" placeholder="Buscar peça..." oninput="renderTabela()" />
                     </div>
                     <div class="filter-field">
                         <label>Fabricante</label>
@@ -76,7 +76,7 @@
                         <tr>
                             <th>Id</th>
                             <th>Tipo</th>
-                            <th>Modelo</th>
+                            <th>Peça</th>
                             <th>Código</th>
                             <th>Fabricante</th>
                             <th>Associação</th>
@@ -107,7 +107,7 @@
 
             <div class="campo">
                 <label>Modelo da Peça</label>
-                <input id="fModelo" type="text" placeholder="Insira o nome da peça" />
+                <input id="fPeca" type="text" placeholder="Insira o nome da peça" />
             </div>
 
             <div class="campo">
@@ -124,7 +124,37 @@
                 <label>Associação da Máquina</label>
                 <input id="fAssociacao" type="text" placeholder="Insira a máquina associada à peça" />
             </div>
-
+            <div class="campo">
+                <label>Prioridade</label>
+                <div class="select-container">
+                    <select id="fPrioridade">
+                        <option value="">Insira a prioridade da peca</option>
+                        <option>Alta</option>
+                        <option>Média</option>
+                        <option>Baixa</option>
+                    </select>
+                </div>
+            </div>
+            <div class="campo">
+                <label>Quantidade por Dia</label>
+                <input id="fQuantidadeDia" type="number"
+                    placeholder="Insira a quantidade de pecas produzidas por dia" />
+            </div>
+            <div class="campo">
+                <label>Tempo do Ciclo</label>
+                <input id="fTempoCiclo" type="number" placeholder="Insira o tempo do ciclo" />
+            </div>
+            <div class="campo">
+                <label>Status</label>
+                <div class="select-container">
+                    <select id="fStatus">
+                        <option value="">Selecione o Status da Peca</option>
+                        <option>Pendente</option>
+                        <option>Em produção</option>
+                        <option>Concluído</option>
+                    </select>
+                </div>
+            </div>
             <div class="campo">
                 <label>Ano de Peça</label>
                 <div class="select-container">
