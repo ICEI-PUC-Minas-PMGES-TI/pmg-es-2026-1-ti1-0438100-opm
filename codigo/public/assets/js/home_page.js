@@ -30,12 +30,18 @@ async function carregarAvisos() {
 }
 
 /* OEE */
+const API_URL = 'http://localhost:3000/maquinas'
+
+async function carregarMaquinas() {
+    const response = await fetch(API_URL)
+    maquinas = await response.json()
+    carregarOee()
+}
+
+let maquinas = []
 
 async function carregarOee() {
 
-    const resposta = await fetch("../../../db/oee.json");
-
-    const maquinas = await resposta.json();
 
     maquinas.forEach(function (maquina) {
 
@@ -44,7 +50,7 @@ async function carregarOee() {
         let corBorda = "#166534";
 
         const valor = parseFloat(
-            maquina.oee.replace("%", "").replace(",", ".")
+            String(maquina.OEE).replace("%", "").replace(",", ".")
         );
 
         /* LARANJA */
@@ -71,7 +77,7 @@ async function carregarOee() {
 
             <div class="oee-card">
 
-                <strong>${maquina.maquina}</strong>
+                <strong>${maquina.nome}</strong>
 
                 <span 
                     class="oee-valor"
@@ -81,7 +87,7 @@ async function carregarOee() {
                         border:1px solid ${corBorda};
                     "
                 >
-                    ${maquina.oee}
+                    ${maquina.OEE}%
                 </span>
 
             </div>
@@ -173,4 +179,4 @@ async function carregarPecas() {
 
 carregarPecas();
 carregarAvisos();
-carregarOee();
+carregarMaquinas();

@@ -82,15 +82,16 @@ async function adicionarOuSalvar() {
     const ano = document.getElementById('fAno').value;
     const local = document.getElementById('fLocal').value.trim();
     const status = document.getElementById('fStatus').value;
+    const OEE = Number(document.getElementById('fOEE').value.trim());
     const ultManutencao = document.getElementById('fUltManutencao').value;
     const obs = document.getElementById('fObs').value.trim();
 
-    if (!nome || !tipo || !patrimonio || !local || !status) {
+    if (!nome || !tipo || !patrimonio || !local || !status || !OEE) {
         showToast('⚠ Preencha os campos obrigatórios.');
         return;
     }
 
-    const maquina = { nome, tipo, patrimonio, serie, fabricante, ano, local, status, ultManutencao, obs };
+    const maquina = { nome, tipo, patrimonio, serie, fabricante, ano, local, status, OEE, ultManutencao, obs };
 
     if (editando && selectedIndex >= 0) {
         await fetch(`${API_URL}/${maquinas[selectedIndex].id}`, {
@@ -139,6 +140,7 @@ function alterarSelecionado() {
     document.getElementById('fAno').value = m.ano;
     document.getElementById('fLocal').value = m.local;
     document.getElementById('fStatus').value = m.status;
+    document.getElementById('fOEE').value = m.OEE;
     document.getElementById('fUltManutencao').value = m.ultManutencao;
     document.getElementById('fObs').value = m.obs;
     editando = true;
@@ -148,7 +150,7 @@ function alterarSelecionado() {
 
 function limparForm() {
     ['fNome', 'fTipo', 'fPatrimonio', 'fSerie', 'fFabricante', 'fAno',
-        'fLocal', 'fStatus', 'fUltManutencao', 'fObs'].forEach(id => {
+        'fLocal', 'fStatus', 'fOEE', 'fUltManutencao', 'fObs'].forEach(id => {
             document.getElementById(id).value = '';
         });
     editando = false;

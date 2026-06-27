@@ -8,7 +8,7 @@
       "email": "admin@abc.com"
     }
   ],
-  "maquinas": [
+  "maquinas2": [
     {
       "id": "1",
       "login": "admin",
@@ -250,6 +250,65 @@
       "id": "3",
       "nome": "Gestor",
       "descricao": "Usuário responsável pela gestão e acompanhamento"
+    }
+  ],
+  "pecas": [
+    {
+      "id": "jYDapmTM7Pw",
+      "tipo": "Acessório",
+      "modelo": "Modelo 45A",
+      "codigo": "786310964",
+      "fabricante": "Fabricante 1",
+      "associacao": "Maquina 32B",
+      "ano": "2018"
+    },
+    {
+      "id": "sHMvso4Uups",
+      "tipo": "Peça",
+      "modelo": "Modelo 21B",
+      "codigo": "854720943",
+      "fabricante": "Fabricante 5",
+      "associacao": "Maquina 17K",
+      "ano": "2019"
+    },
+    {
+      "id": "CEHCj-y4KdY",
+      "tipo": "Componente",
+      "modelo": "Modelo 4Z",
+      "codigo": "389103943",
+      "fabricante": "Fabricante 3",
+      "associacao": "Maquina 32B",
+      "ano": "2022"
+    }
+  ],
+  "maquinas": [
+    {
+      "nome": "Maquina A1",
+      "tipo": "Torno CNC",
+      "patrimonio": "PAT-0423",
+      "serie": "SN-8564732",
+      "fabricante": "Fabricante A",
+      "ano": "2015",
+      "local": "Galpao B - Linha 4",
+      "status": "Ativo",
+      "OEE": 89,
+      "ultManutencao": "2025-06-07",
+      "obs": "",
+      "id": "vt-uVGvfw98"
+    },
+    {
+      "nome": "Maquina H8",
+      "tipo": "Injetora",
+      "patrimonio": "PAT- 8641",
+      "serie": "SN-7543105",
+      "fabricante": "Fabricante K",
+      "ano": "2021",
+      "local": "Galpao U - Linha 2",
+      "status": "Inativo",
+      "OEE": 83.4,
+      "ultManutencao": "2026-06-06",
+      "obs": "",
+      "id": "AjX4dtoDG_A"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
