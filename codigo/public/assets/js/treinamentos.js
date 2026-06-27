@@ -1,16 +1,17 @@
 const grid = document.getElementById("treinamentosGrid");
 const pesquisa = document.getElementById("pesquisa");
 const categoria = document.getElementById("categoria");
+const API_URL = "http://localhost:3000"
 
 let treinamentos = [];
 
 async function carregarTreinamentos() {
 
-    const resposta = await fetch("../../../db/treinamentos.json");
+    const resposta = await fetch(`${API_URL}/treinamentos`);
 
     const dados = await resposta.json();
 
-    treinamentos = dados.treinamentos;
+    treinamentos = dados;
 
     renderizarTreinamentos(treinamentos);
 }
