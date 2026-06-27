@@ -1,11 +1,12 @@
 const containerAvisos = document.getElementById("avisos");
 const containerOee = document.getElementById("oee");
+const API_URL = "http://localhost:3000"
 
 /* AVISOS */
 
 async function carregarAvisos() {
 
-    const resposta = await fetch("../../../db/avisos.json");
+    const resposta = await fetch(`${API_URL}/avisos`);
 
     const avisos = await resposta.json();
 

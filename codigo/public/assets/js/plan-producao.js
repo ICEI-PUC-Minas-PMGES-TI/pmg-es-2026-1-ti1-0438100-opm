@@ -1,9 +1,10 @@
 let pecasPlanejadas = [];
 let pecasDisponiveis = [];
+const API_URL = "http://localhost:3000";
 
 async function carregarPecas() {
   try {
-    const resposta = await fetch("../../../db/plan-producao.json");
+    const resposta = await fetch(`${API_URL}/plan-producao`);
     pecasDisponiveis = await resposta.json();
 
     preencherSelectPecas();
