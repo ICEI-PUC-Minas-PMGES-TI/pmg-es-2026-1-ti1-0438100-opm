@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório do Operário</title>
+    <link rel="stylesheet" href="../../assets/css/header.css">
+    <link rel="stylesheet" href="../../assets/css/relatorio-operario.css">
+</head>
+<body>
+    <header id="header">
+            <button class="menu">☰</button>
+    
+            <div class="logo-area">
+                <img src="../../assets/images/logotipo.png" alt="logotipo">
+            </div>
+    </header>
+    <main class="conteudo-principal">
+            <div class="filtros">
+            <div class="filtros__grupo">
+                <label class="filtros__etiqueta" for="filtro-operario">Operário</label>
+                <input id="filtro-operario" class="filtros__entrada" type="text" placeholder="">
+            </div>
+            <div class="filtros__grupo">
+                <label class="filtros__etiqueta" for="filtro-inicio">Período — início</label>
+                <input id="filtro-inicio" class="filtros__entrada" type="date">
+            </div>
+            <div class="filtros__grupo">
+                <label class="filtros__etiqueta" for="filtro-fim">Período — fim</label>
+                <input id="filtro-fim" class="filtros__entrada" type="date">
+            </div>
+            <div class="filtros__grupo">
+                <label class="filtros__etiqueta" for="filtro-setor">Setor</label>
+                <select id="filtro-setor" class="filtros__selecao">
+                    <option value=""></option>
+                </select>
+            </div>
+            <button class="botao-filtrar" id="botao-filtrar">🔎 Filtrar</button>
+        </div>
+
+        <div class="cartao-operario">
+            <div class="cartao-operario__status">Status</div>
+        </div>
+
+        <div class="grade-central">
+ 
+            <div class="cartao-secao">
+                <div class="secao__rotulo">Desempenho</div>
+            </div>
+
+            <div class="cartao-secao">
+                <div class="secao__rotulo">Máquinas Operadas</div>
+            </div>
+ 
+        </div>
+
+        <div class="cartao-historico">
+            <div class="cartao-historico__cabecalho">
+                <div class="secao__rotulo">Histórico de Tarefas</div>
+            </div>
+        </div>
+    </main>
+    <script src="../../assets/js/header.js"></script>
+    <script src="relatorio-operario.js"></script>
+</body>
+</html>
+</body>
+</html>

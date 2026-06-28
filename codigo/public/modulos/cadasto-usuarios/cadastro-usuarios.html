@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuário</title>
+    <link rel="stylesheet" href="../../assets/css/header.css">
+    <link rel="stylesheet" href="../../assets/css/cadastro-usuarios.css">
+</head>
+<body>
+    <header id="header">
+            <button class="menu">☰</button>
+    
+            <div class="logo-area">
+                <img src="../../assets/images/logotipo.png" alt="logotipo">
+            </div>
+    </header>
+
+    <main>
+        <div class="cadastro-usuario">
+            <h3 class="titulo-cadastro">Cadastro de Usuário</h3>
+                <div class="lado-a-lado">
+                    <div class="info-usuario">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" placeholder="" required>
+                    </div>
+                    <div class="info-usuario">
+                        <label for="sobrenome">Sobrenome</label>
+                        <input type="text" id="sobrenome" placeholder="" required>
+                    </div>
+                </div>
+                <div class="info-usuario">
+                    <label for="cargo">Cargo</label>
+                    <input type="text" id="cargo" placeholder="Ex: Supervisor, Operador, etc." required>
+                </div>
+                <div class="info-usuario">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" placeholder="********" autocomplete="new-password" required>
+                </div>
+                <div class="info-usuario">
+                    <label for="confirma-senha">Confirmar Senha</label>
+                    <input type="password" id="confirma-senha" placeholder="********" autocomplete="new-password" required>
+                </div>
+                 <button onclick="enviarCadastro()"class="botao-cadastrar" id="botao-cadastrar">Cadastrar</button>
+            </div>
+        </div>
+    </main>
+<script src="../../assets/js/header.js"></script>
+<script src="../../assets/js/cadastro-usuarios.js"></script>
+</body>
+</html>

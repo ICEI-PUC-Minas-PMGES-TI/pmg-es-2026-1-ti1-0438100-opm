@@ -1,7 +1,7 @@
 :root {
-    --preto: #111318;
+    --preto: #0f1115;
     --preto-card: #1b1e24;
-    --preto-tabela: #0b0b0b;
+    --preto-tabela: #050505;
     --dourado: #f5aa16;
     --cinza: #2b2f38;
     --cinza-claro: #3a3f4b;
@@ -14,10 +14,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
 body {
-    font-family: Arial, sans-serif;
     background-color: var(--preto);
     color: var(--branco);
 }
@@ -115,12 +115,12 @@ textarea {
     margin-top: 22px;
 }
 
-button {
+button{
     padding: 11px 18px;
     border: 1px solid var(--dourado);
     border-radius: 5px;
     background-color: var(--dourado);
-    color: #111318;
+    color: black;
     font-weight: bold;
     cursor: pointer;
 }

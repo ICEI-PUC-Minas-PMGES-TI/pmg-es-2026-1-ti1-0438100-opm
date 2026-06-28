@@ -1,0 +1,86 @@
+[
+  {
+    "nome": "Carlos Augusto",
+    "matricula": "A-5542",
+    "funcao": "Operador de CNC",
+    "setor": "Usinagem",
+    "status": "ativo",
+    "horas": 80,
+    "tarefas": 15,
+    "ocorrencias": 0,
+    "desempenho": [
+      { "item": "Produtividade", "pct": 94 },
+      { "item": "Qualidade das peças", "pct": 98 },
+      { "item": "Pontualidade", "pct": 100 },
+      { "item": "Segurança", "pct": 97 },
+      { "item": "Trabalho em equipe", "pct": 88 }
+    ],
+    "maquinas": [
+      { "nome": "Torno CNC", "tempo": "50h" },
+      { "nome": "Fresadora", "tempo": "30h" }
+    ],
+    "historico": [
+      { "data": "05/05/2026", "descricao": "Usinagem de eixos", "status": "Finalizado" },
+      { "data": "08/05/2026", "descricao": "Setup da fresadora", "status": "Finalizado" },
+      { "data": "12/05/2026", "descricao": "Manutenção preventiva do torno", "status": "Finalizado" },
+      { "data": "14/05/2026", "descricao": "Conferência dimensional de lote", "status": "Finalizado" }
+    ],
+    "observacoes": "Operador manteve excelente ritmo de produção e cumpriu todas as metas de segurança do período."
+  },
+  {
+    "nome": "Ana Paula Ribeiro",
+    "matricula": "B-1120",
+    "funcao": "Operadora de Montagem",
+    "setor": "Montagem",
+    "status": "ativo",
+    "horas": 72,
+    "tarefas": 22,
+    "ocorrencias": 1,
+    "desempenho": [
+      { "item": "Produtividade", "pct": 88 },
+      { "item": "Qualidade", "pct": 91 },
+      { "item": "Pontualidade", "pct": 95 },
+      { "item": "Segurança", "pct": 100 },
+      { "item": "Trabalho em equipe", "pct": 93 }
+    ],
+    "maquinas": [
+      { "nome": "Estação de Montagem A", "tempo": "40h" },
+      { "nome": "Parafusadeira Bosch", "tempo": "32h" }
+    ],
+    "historico": [
+      { "data": "02/05/2026", "descricao": "Montagem subconjunto hidráulico", "status": "Finalizado" },
+      { "data": "07/05/2026", "descricao": "Inspeção de qualidade lote 44", "status": "Finalizado" },
+      { "data": "10/05/2026", "descricao": "Ajuste de linha de montagem", "status": "Em andamento" },
+      { "data": "13/05/2026", "descricao": "Treinamento NR-12", "status": "Pendente" }
+    ],
+    "observacoes": ""
+  },
+  {
+    "nome": "João Marcos Silva",
+    "matricula": "C-0873",
+    "funcao": "Técnico de Manutenção",
+    "setor": "Manutenção",
+    "status": "ferias",
+    "horas": 40,
+    "tarefas": 8,
+    "ocorrencias": 2,
+    "desempenho": [
+      { "item": "Produtividade", "pct": 72 },
+      { "item": "Qualidade", "pct": 85 },
+      { "item": "Pontualidade", "pct": 80 },
+      { "item": "Segurança", "pct": 90 },
+      { "item": "Trabalho em equipe", "pct": 78 }
+    ],
+    "maquinas": [
+      { "nome": "Multímetro Digital", "tempo": "15h" },
+      { "nome": "Torno Manual", "tempo": "25h" }
+    ],
+    "historico": [
+      { "data": "01/05/2026", "descricao": "Revisão geral compressor", "status": "Finalizado" },
+      { "data": "06/05/2026", "descricao": "Troca de rolamento torno", "status": "Finalizado" },
+      { "data": "09/05/2026", "descricao": "Diagnóstico elétrico painel", "status": "Pendente" },
+      { "data": "11/05/2026", "descricao": "Lubrificação geral", "status": "Em andamento" }
+    ],
+    "observacoes": ""
+  }
+]

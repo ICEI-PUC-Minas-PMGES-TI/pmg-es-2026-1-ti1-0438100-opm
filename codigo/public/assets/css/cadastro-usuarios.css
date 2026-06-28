@@ -1,108 +1,126 @@
 :root {
-    --bg: #1c1e22;
-    --text: #dde2ec;
-    --surface: #2a2c30;
-    --border: #4a4c50;
-    --destaque: #f0a51a;
-    --cor-tp:#dde2ec;
-    --cor-ts:#6b7280;
+  --background: #0f1115;
+  --background-secundario: #1a1d24;
+
+  --preto: #050505;
+  --cinza-escuro: #2a2d35;
+  --cinza: #555b66;
+  --cinza-claro: #c7ccd4;
+
+  --dourado: #f2aa1f;
+  --dourado-claro: #ffd277;
+  --dourado-escuro: #b37b00;
+
+  --branco: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
 body {
-    font-family: 'Barlow', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    margin: 0;
+  background-color: var(--background);
+  color: var(--branco);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-main{
-    flex: 1;       
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 16px;
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
 }
 
-.cadastro-usuario{
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    width: 100%;
-    max-width: 460px;
-    padding: 40px 36px;
-    box-shadow: 0 24px 64px rgba(0,0,0,.45);
+.cadastro-usuario {
+  background-color: var(--background-secundario);
+  border: 1px solid var(--cinza-escuro);
+  border-top: 4px solid var(--dourado);
+  border-radius: 10px;
+  width: 100%;
+  max-width: 460px;
+  padding: 40px 36px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
-.titulo-cadastro{
-    font-size: 26px;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: var(--destaque);
-    margin-bottom: 32px;
-    padding-bottom: 14px;
-    padding-left: 5%;
-    border-bottom: 1px solid var(--border)
+.titulo-cadastro {
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--dourado);
+  border-left: 5px solid var(--dourado);
+  padding-left: 10px;
+  margin-bottom: 28px;
+  padding-bottom: 0;
 }
 
-.lado-a-lado{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 16px;
+.lado-a-lado {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 16px;
 }
 
-.info-usuario{    
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
+.info-usuario {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 20px;
 }
 
-.info-usuario label{
-    font-size: 11px;
-    font-weight: 600;
-    text-transform: uppercase;
-    color: var(--cor-ts);
-    margin-bottom: 6px;
+.info-usuario label {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--branco);
 }
 
 .info-usuario input {
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    color: var(--cor-tp);
-    font-size: 15px;
-    padding: 10px 14px;
-    outline: none;
-    transition: border-color .2s, box-shadow .2s;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background-color: var(--cinza-escuro);
+  color: var(--branco);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.info-usuario input:focus {
+  border-color: var(--dourado);
+  box-shadow: 0 0 0 2px rgba(242, 170, 31, 0.2);
 }
 
 .botao-cadastrar {
-    width: 100%;
-    padding: 13px;
-    background: var(--destaque);
-    color: #111;
-    border: none;
-    border-radius: 7px;
-    font-size: 16px;
-    font-weight: 700;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background .2s, transform .1s, box-shadow .2s;
-    margin-top: 4px;
+  width: 100%;
+  padding: 9px 14px;
+  background-color: var(--dourado);
+  color: var(--preto);
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+  margin-top: 4px;
 }
+
 .botao-cadastrar:hover {
-    background: #ffb93a;
-    box-shadow: 0 4px 20px rgba(240,165,26,.35);
+  background-color: var(--dourado-claro);
+  transform: scale(1.03);
 }
 
 .botao-cadastrar:active {
-    transform: scale(.98);
+  transform: scale(0.98);
 }
+
 .botao-cadastrar:disabled {
-    background: var(--border);
-    color: var(--cor-ts);
-    cursor: not-allowed;
-    box-shadow: none;
+  background-color: var(--cinza-escuro);
+  color: var(--cinza);
+  cursor: not-allowed;
+  transform: none;
 }

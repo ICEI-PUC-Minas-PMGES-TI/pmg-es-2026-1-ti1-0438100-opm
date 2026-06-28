@@ -54,7 +54,7 @@ header {
     display: block;
 }
 
-button {
+.menuBtn {
     border: none;
     color: white;
     font-weight: bold;
