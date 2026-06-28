@@ -7,8 +7,13 @@ Informações básicas do projeto.
 * **Membros da equipe:**
 
   * [Bernardo Vinhal](https://github.com/bvinhal01)
-  * [Beltrano](https://github.com/beltrano) ⚠️ EXEMPLO ⚠️
-  * [Cicrano](https://github.com/cicrano) ⚠️ EXEMPLO ⚠️
+  * [Daniel Rolando](https://github.com/beltrano)
+  * [Francisco Cortes](https://github.com/cicrano)
+  * [Guilherme Luiz](https://github.com/cicrano)
+  * [Leonardo Pettersen](https://github.com/cicrano)
+  * [Lucca Xavier](https://github.com/cicrano)
+  * [Vitor Sepulveda](https://github.com/cicrano)
+  
 
 A documentação do projeto é estruturada da seguinte forma:
 
