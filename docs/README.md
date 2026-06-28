@@ -1,91 +1,401 @@
-# Introdução
-
-Informações básicas do projeto.
-
-* **Projeto:** [OPM - Operação de máquinas]
-* **Repositório GitHub:** [[Repositório](https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2026-1-ti1-0438100-opm.git)]
-* **Membros da equipe:**
-
-  * [Bernardo Vinhal](https://github.com/bvinhal01)
-  * [Daniel Rolando](https://github.com/beltrano)
-  * [Francisco Cortes](https://github.com/cicrano)
-  * [Guilherme Luiz](https://github.com/cicrano)
-  * [Leonardo Pettersen](https://github.com/cicrano)
-  * [Lucca Xavier](https://github.com/cicrano)
-  * [Vitor Sepulveda](https://github.com/cicrano)
-  
-
-A documentação do projeto é estruturada da seguinte forma:
-
-1. Introdução
-2. Contexto
-3. Product Discovery
-4. Product Design
-5. Metodologia
-6. Solução
-7. Referências Bibliográficas
-
-✅ [Documentação de Design Thinking (MIRO)](files/processo-dt.pdf)
+# OPM - Operação de Máquinas
 
 ## Introdução
 
-Interface web voltada para a otimização e gestão da produção em ambientes industriais, centralizando ferramentas essenciais para a rotina operacional. O sistema busca organizar processos críticos, como o controle de login e cadastro de usuários por função.
+O **OPM (Operação de Máquinas)** é uma aplicação web desenvolvida para otimizar a gestão da produção industrial, centralizando informações relacionadas à operação de máquinas, segurança dos operadores e acompanhamento da eficiência produtiva.
 
-## Contexto do projeto
-No ritmo acelerado das fábricas, manter a produção em dia e as máquinas seguras é um desafio constante. Atualmente, muitas informações de eficiência e segurança ainda estão espalhadas ou são anotadas manualmente, o que dificulta o controle real do que acontece no chão de fábrica.
+**Repositório GitHub:** *(Adicionar link do repositório)*
+
+## Integrantes da equipe
+
+- Bernardo Vinhal
+- Daniel Rolando
+- Francisco Cortes
+- Guilherme Luiz
+- Leonardo Pettersen
+- Lucca Xavier
+- Vitor Sepulveda
+
+---
+
+# Contexto do Projeto
 
 ## Problema
-A falta de organização e padronização. Sem uma centralização, é difícil garantir que toda máquina passou por um checklist de segurança antes de ligar ou acompanhar se a produção está atingindo as metas de OEE (eficiência global) em tempo real . Isso gera riscos de acidentes e atrasos desnecessários.
 
-## Objetivo do projeto
-  * Geral: Desenvolver uma interface web que organize a rotina operacional e centralize os dados de produção e segurança .
-  * Objetivos específicos: Digitalizar o processo de checklist (verificação de óleo, ferramentas e EPIs) e oferecer um portal de treinamentos rápidos para capacitação imediata do operador.
-   * Oferecer um portal de treinamentos rápidos para garantir a capacitação imediata do operador no posto de trabalho.
+Em ambientes industriais, a rotina operacional depende de processos organizados para garantir produtividade e segurança. Entretanto, muitas empresas ainda utilizam checklists em papel ou sistemas descentralizados para registrar inspeções, treinamentos e indicadores de produção.
+
+Essa falta de integração dificulta o acompanhamento da eficiência das máquinas, aumenta a possibilidade de falhas operacionais e reduz a confiabilidade das informações utilizadas pelos gestores na tomada de decisões.
+
+Além disso, a ausência de um controle centralizado pode ocasionar atrasos na produção, aumento dos custos de manutenção e maior risco de acidentes decorrentes do não cumprimento dos procedimentos de segurança.
+
+## Objetivo do Projeto
+
+### Objetivo Geral
+
+Desenvolver um software web capaz de centralizar informações operacionais e de segurança, oferecendo uma plataforma que auxilie operadores e gestores no acompanhamento da produção industrial.
+
+### Objetivos Específicos
+
+- Digitalizar os checklists de inspeção das máquinas.
+- Disponibilizar treinamentos rápidos para operadores.
+- Apresentar indicadores de eficiência (OEE) em tempo real.
+- Centralizar o gerenciamento de usuários conforme suas funções.
+- Facilitar a tomada de decisão através de informações organizadas.
 
 ## Justificativa
-Escolhemos focar na integração do checklist com indicadores de performance porque máquina parada por erro operacional custa caro. Centralizar essas funções ajuda a aumentar a vida útil dos equipamentos e garante que o gestor tenha dados confiáveis para tomar decisões rápidas.
 
-## Público-alvo
-O projeto é voltado para operadores de máquinas e gestores de produção. A interface foi pensada para ser simples e direta, facilitando o uso por profissionais que precisam de agilidade no chão de fábrica e respostas rápidas na tela.
+O gerenciamento eficiente das operações industriais impacta diretamente na produtividade e nos custos das empresas.
 
-## Processo de Product Discovery
+Ao substituir processos manuais por uma plataforma digital, espera-se reduzir erros de preenchimento, eliminar perdas de documentos físicos e disponibilizar informações em tempo real para gestores e operadores.
 
-Matriz CSD
-* Certezas: Checklists de papel são fáceis de perder; paradas não planejadas geram prejuízo.
-* Suposições: O operador usará o sistema se ele for mais rápido que o papel.
-* Dúvidas: Qual a resistência da equipe antiga com a nova tecnologia?
+A escolha do projeto também possibilita aprofundar conhecimentos sobre desenvolvimento web, integração entre interface e banco de dados, autenticação de usuários e visualização de indicadores industriais.
+
+## Público-Alvo
+
+A aplicação foi desenvolvida para empresas do setor industrial.
+
+### Operadores
+
+- Conhecimento básico em informática;
+- Utilizam computadores ou tablets durante o trabalho;
+- Precisam realizar checklists rapidamente;
+- Consultam treinamentos quando necessário.
+
+### Gestores de Produção
+
+- Responsáveis pelo acompanhamento dos indicadores;
+- Realizam cadastros de usuários;
+- Monitoram produtividade e desempenho das máquinas.
+
+### Equipe de Manutenção
+
+- Consulta os registros dos checklists;
+- Identifica falhas recorrentes;
+- Programa manutenções preventivas.
+
+---
+
+# Processo de Product Discovery
+
+## Matriz CSD
+
+### Certezas
+
+- Checklists físicos podem ser perdidos.
+- Paradas inesperadas geram prejuízos.
+- A digitalização facilita o armazenamento das informações.
+
+### Suposições
+
+- Operadores utilizarão o sistema caso ele seja mais rápido que o processo em papel.
+- Gestores preferirão dashboards atualizados automaticamente.
+
+### Dúvidas
+
+- Qual será a resistência dos operadores mais experientes?
+- Qual o melhor dispositivo para utilização na fábrica?
+- Os treinamentos rápidos serão suficientes para reduzir erros operacionais?
 
 ## Mapa de Stakeholders
 
-* Operadores: Usuários principais do checklist e treinamentos.
+| Stakeholder | Papel |
+|-------------|-------|
+| Operadores | Utilizar checklists e treinamentos |
+| Gestores | Monitorar indicadores e produtividade |
+| Manutenção | Consultar histórico das máquinas |
+| Administradores | Gerenciar usuários e permissões |
 
-* Gestores/Admin: Responsáveis por analisar o OEE e manter os cadastros.
+## Entrevistas Qualitativas
 
-* Manutenção: Utiliza os dados de checklist para prevenir quebras.
+Foram realizadas entrevistas informais com pessoas que possuem contato com ambientes industriais para compreender dificuldades relacionadas ao uso de checklists físicos e ao acompanhamento da produção.
+
+### Perguntas realizadas
+
+- Como os checklists são feitos atualmente?
+- Quais dificuldades existem no processo?
+- Como ocorre o treinamento de novos operadores?
+- Quais informações são mais importantes para os gestores?
+
+## Highlights da Pesquisa
+
+Os principais pontos identificados foram:
+
+- Necessidade de eliminar documentos em papel.
+- Facilidade de acesso aos dados da produção.
+- Interface simples para reduzir o tempo de preenchimento.
+- Visualização rápida dos indicadores de desempenho.
 
 ## Personas
-* Operador Proativo: Precisa de agilidade para bater as metas de produção.
 
-* Gestor Analítico: Precisa de dados reais para otimizar os turnos da fábrica.
+### Persona 1 — Operador Proativo
 
-## Processo de Product Design
-  Histórias de usuários
-  * "Como operador, quero realizar o checklist da máquina antes de iniciar o turno para trabalhar com segurança." 
-  * "Como gestor, quero visualizar o OEE das máquinas para identificar gargalos na produção." 
-  Projeto de Interface
-  * Fluxo do usuário: Login -> Home -> Checklist -> Painel de Produção.
-  * Wireframes: Estrutura focada em blocos de informação claros para rápida leitura.
-   Protótipo Interativo: [(https://www.figma.com/design/CNkfetUjhWQKAP0sK5NebE/Wireframe-OTM?node-id=0-1&t=dV5jlhZaUWU7i1Jj-1)]
+| Característica | Informação |
+|---------------|------------|
+| Nome | Carlos |
+| Idade | 29 anos |
+| Cargo | Operador de Máquina |
 
-## Metodologia
-Ferramentas
-* Figma: Para design de interface e prototipagem.
+**Objetivo**
 
-* GitHub: Para versionamento de código e documentação.
+Realizar rapidamente o checklist diário e iniciar sua produção sem atrasos.
 
-* WhatsApp: Para comunicação síncrona da equipe.
+**Dores**
 
-* Miro: Organização, passos visuais e documentação visual do grupo.
+- Perda de tempo com formulários.
+- Falta de acesso rápido aos treinamentos.
 
-Organização da equipe e divisão de papéis
-* Trabalhamos com o framework Scrum, dividindo as tarefas em Sprints semanais para garantir as entregas de design e documentação.
+---
+
+### Persona 2 — Gestor Analítico
+
+| Característica | Informação |
+|---------------|------------|
+| Nome | Mariana |
+| Idade | 42 anos |
+| Cargo | Gestora de Produção |
+
+**Objetivo**
+
+Monitorar a eficiência das máquinas e identificar gargalos da produção.
+
+**Dores**
+
+- Informações descentralizadas.
+- Dificuldade para acompanhar indicadores em tempo real.
+
+---
+
+# Processo de Product Design
+
+## Histórias de Usuário
+
+### Operador
+
+- Como operador, quero realizar o checklist da máquina antes de iniciar meu turno para garantir segurança.
+- Como operador, quero acessar treinamentos rápidos para esclarecer dúvidas durante o trabalho.
+
+### Gestor
+
+- Como gestor, quero visualizar o OEE das máquinas para identificar gargalos na produção.
+- Como gestor, quero cadastrar operadores para controlar o acesso ao sistema.
+
+## Proposta de Valor
+
+### Produtos e Serviços
+
+- Sistema web para gerenciamento operacional.
+- Dashboard de indicadores.
+- Checklist digital.
+- Portal de treinamentos.
+- Cadastro de usuários.
+
+### Benefícios
+
+- Redução de erros.
+- Melhor organização.
+- Aumento da produtividade.
+- Informações centralizadas.
+- Mais segurança operacional.
+
+> **Inserir aqui a imagem do Mapa de Proposta de Valor produzido pelo grupo.**
+
+## Requisitos do Projeto
+
+### Requisitos Funcionais
+
+| Código | Descrição |
+|---------|-----------|
+| RF01 | Permitir login de usuários. |
+| RF02 | Permitir cadastro de usuários. |
+| RF03 | Realizar checklists digitais. |
+| RF04 | Exibir indicadores OEE. |
+| RF05 | Disponibilizar treinamentos. |
+| RF06 | Registrar histórico de inspeções. |
+
+### Requisitos Não Funcionais
+
+| Código | Descrição |
+|---------|-----------|
+| RNF01 | Interface responsiva. |
+| RNF02 | Sistema seguro com autenticação. |
+| RNF03 | Banco de dados confiável. |
+| RNF04 | Tempo de resposta inferior a 2 segundos. |
+| RNF05 | Compatibilidade com navegadores modernos. |
+
+---
+
+# Projeto de Interface
+
+## Fluxo do Usuário
+
+```text
+Login
+   │
+   ▼
+Página Inicial
+   │
+   ├── Dashboard
+   ├── Checklist
+   ├── Produção
+   ├── Treinamentos
+   └── Administração
+```
+
+## Wireframes
+
+> Inserir imagens dos wireframes desenvolvidos no Figma.
+
+## Protótipo Interativo
+
+https://www.figma.com/design/CNkfetUjhWQKAP0sK5NebE/Wireframe-OTM
+
+---
+
+# Metodologia
+
+## Ferramentas
+
+| Ferramenta | Utilização |
+|------------|------------|
+| Visual Studio Code | Desenvolvimento |
+| GitHub | Versionamento |
+| GitHub Projects | Kanban |
+| Figma | Protótipos |
+| Miro | Design Thinking |
+| WhatsApp | Comunicação |
+
+## Organização da Equipe
+
+O projeto foi desenvolvido utilizando a metodologia ágil **Scrum**, com divisão das atividades em sprints semanais.
+
+As tarefas foram distribuídas entre os membros da equipe considerando suas habilidades, envolvendo desenvolvimento Front-end, Back-end, documentação, testes e prototipação.
+
+Reuniões periódicas foram realizadas para acompanhamento do progresso e redefinição das prioridades quando necessário.
+
+## Quadro Kanban
+
+O gerenciamento das tarefas foi realizado utilizando o **GitHub Projects**, organizado nas colunas:
+
+- Backlog
+- A Fazer
+- Em Desenvolvimento
+- Em Revisão
+- Concluído
+
+> Inserir captura de tela do quadro Kanban.
+
+---
+
+# Solução Implementada
+
+## Funcionalidades
+
+### Login
+
+**Descrição**
+
+Permite autenticar operadores e administradores.
+
+**Estrutura de Dados**
+
+Usuário.
+
+**Como utilizar**
+
+Informar e-mail e senha cadastrados.
+
+---
+
+### Cadastro de Usuários
+
+Permite cadastrar operadores e administradores do sistema.
+
+---
+
+### Checklist
+
+Permite registrar a inspeção obrigatória antes da utilização da máquina.
+
+---
+
+### Dashboard OEE
+
+Exibe indicadores de eficiência da produção em tempo real.
+
+---
+
+### Portal de Treinamentos
+
+Disponibiliza conteúdos para capacitação dos operadores.
+
+---
+
+# Estruturas de Dados
+
+## Usuário
+
+```json
+{
+  "id": 1,
+  "nome": "Carlos Silva",
+  "email": "carlos@email.com",
+  "perfil": "Operador"
+}
+```
+
+## Checklist
+
+```json
+{
+  "id": 5,
+  "maquina": "Torno CNC",
+  "oleo": true,
+  "ferramentas": true,
+  "epi": true,
+  "data": "2026-06-10"
+}
+```
+
+## Indicador OEE
+
+```json
+{
+  "maquina": "Torno CNC",
+  "disponibilidade": 95,
+  "performance": 92,
+  "qualidade": 98,
+  "oee": 85.6
+}
+```
+
+---
+
+# Módulos e APIs
+
+## Frameworks e Bibliotecas
+
+- HTML5
+- CSS3
+- JavaScript
+- React *(caso utilizado)*
+- Node.js *(caso utilizado)*
+- Express *(caso utilizado)*
+- Bootstrap *(caso utilizado)*
+
+## APIs
+
+- API REST para autenticação.
+- API de gerenciamento de usuários.
+- API para indicadores de produção.
+
+---
+
+# Referências Bibliográficas
+
+- SOMMERVILLE, Ian. **Engenharia de Software**. Pearson.
+- PRESSMAN, Roger. **Engenharia de Software**. McGraw-Hill.
+- https://developer.mozilla.org/
+- https://react.dev/ *(caso utilizem React)*
+- https://nodejs.org/ *(caso utilizem Node.js)*
+- https://help.figma.com/
+- https://github.com/
