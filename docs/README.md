@@ -4,7 +4,7 @@
 
 O **OPM (Operação de Máquinas)** é uma aplicação web desenvolvida para otimizar a gestão da produção industrial, centralizando informações relacionadas à operação de máquinas, segurança dos operadores e acompanhamento da eficiência produtiva.
 
-**Repositório GitHub:** *(Adicionar link do repositório)*
+**Repositório GitHub:** *(https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2026-1-ti1-0438100-opm.git)*
 
 ## Integrantes da equipe
 
