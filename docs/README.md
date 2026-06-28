@@ -197,7 +197,7 @@ Monitorar a eficiência das máquinas e identificar gargalos da produção.
 - Informações centralizadas.
 - Mais segurança operacional.
 
-> **Inserir aqui a imagem do Mapa de Proposta de Valor produzido pelo grupo.**
+![Logo do projeto](docs/images/mapa_proposta_valor.png)
 
 ## Requisitos do Projeto
 
