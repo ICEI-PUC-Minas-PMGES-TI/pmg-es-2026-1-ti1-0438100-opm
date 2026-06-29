@@ -282,8 +282,6 @@ O gerenciamento das tarefas foi realizado utilizando o **GitHub Projects**, orga
 - Em Revisão
 - Concluído
 
-> Inserir captura de tela do quadro Kanban.
-
 ---
 
 # Solução Implementada
