@@ -3,7 +3,7 @@ console.log("login.js carregado");
 
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("btnLogin").addEventListener("click", async () => {
-        const nome = document.getElementById("nome").value.trim();
+        const login = document.getElementById("login").value.trim();
         const senha = document.getElementById("senha").value;
         const errorMsg = document.getElementById("loginError");
         errorMsg.style.display = "none";
@@ -11,13 +11,13 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
             const res = await fetch(API_URL);
             const usuarios = await res.json();
-            const usuario = usuarios.find(u => u.nome === nome && u.senha === senha);
+            const usuario = usuarios.find(u => u.login === login && u.senha === senha);
 
             if (usuario) {
-                // Salva id, nome E admin para o menu dinâmico funcionar
+                // Salva id, login E admin para o menu dinâmico funcionar
                 sessionStorage.setItem(
                     "usuarioLogado",
-                    JSON.stringify({ id: usuario.id, nome: usuario.nome, admin: usuario.admin })
+                    JSON.stringify({ id: usuario.id, login: usuario.login, admin: usuario.admin })
                 );
                 window.location.href = "/codigo/public/modulos/home_page/home.html";
             } else {
