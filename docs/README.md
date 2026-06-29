@@ -4,7 +4,7 @@
 
 O **OPM (Operação de Máquinas)** é uma aplicação web desenvolvida para otimizar a gestão da produção industrial, centralizando informações relacionadas à operação de máquinas, segurança dos operadores e acompanhamento da eficiência produtiva.
 
-**Repositório GitHub:** *(https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2026-1-ti1-0438100-opm.git)*
+**Repositório GitHub:** [Acessar repositório](https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2026-1-ti1-0438100-opm)
 
 ## Integrantes da equipe
 
@@ -211,6 +211,14 @@ Monitorar a eficiência das máquinas e identificar gargalos da produção.
 | RF04 | Exibir indicadores OEE. |
 | RF05 | Disponibilizar treinamentos. |
 | RF06 | Registrar histórico de inspeções. |
+| RF07 | Cadastrar máquinas
+| RF08 | Cadastrar peças
+| RF09 | Gerenciar avisos
+| RF10 | Visualizar saúde das máquinas
+| RF11 | Consultar respostas dos checklists
+| RF12 | Gerar relatório do operário
+| RF13 | Gerar relatório de produção
+| RF14| Planejar produção
 
 ### Requisitos Não Funcionais
 
@@ -398,28 +406,39 @@ Disponibiliza conteúdos para capacitação dos operadores.
 
 ---
 
+
 # Módulos e APIs
 
-## Frameworks e Bibliotecas
+## Tecnologias Utilizadas
 
 - HTML5
 - CSS3
 - JavaScript
-- Node.js *(caso utilizado)*
+- Node.js
+- Express.js
+- JSON Server
+- Git
+- GitHub
 
-## APIs
+## APIs e Módulos
 
-- API REST para autenticação.
-- API de gerenciamento de usuários.
-- API para indicadores de produção.
-
----
+- API REST para autenticação de usuários.
+- API para gerenciamento de usuários.
+- API para gerenciamento de máquinas.
+- API para gerenciamento de peças.
+- API para checklists.
+- API para treinamentos.
+- API para avisos.
+- API para relatórios de produção.
+- API para planejamento da produção.
 
 # Referências Bibliográficas
 
-- SOMMERVILLE, Ian. **Engenharia de Software**. Pearson.
-- PRESSMAN, Roger. **Engenharia de Software**. McGraw-Hill.
+- SOMMERVILLE, Ian. Engenharia de Software.
+- PRESSMAN, Roger. Engenharia de Software.
 - https://developer.mozilla.org/
 - https://nodejs.org/
+- https://expressjs.com/
+- https://react.dev/ (caso utilizado)
 - https://help.figma.com/
 - https://github.com/
