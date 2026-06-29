@@ -346,7 +346,7 @@ Informar e-mail e senha cadastrados.
 
 Permite cadastrar operadores e administradores do sistema.
 
----
+![Cadastro de Usuários](Imagens/cadastrodeuser.jpg)
 
 ### Checklist
 
@@ -364,7 +364,7 @@ Exibe indicadores de eficiência da produção em tempo real.
 
 Disponibiliza conteúdos para capacitação dos operadores.
 
----
+![Portal de Treinamentos](Imagens/portal%20de%20treinamentos.jpg)
 
 # Estruturas de Dados
 
