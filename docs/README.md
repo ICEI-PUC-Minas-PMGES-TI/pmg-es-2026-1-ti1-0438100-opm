@@ -429,6 +429,5 @@ Disponibiliza conteúdos para capacitação dos operadores.
 - https://developer.mozilla.org/
 - https://nodejs.org/
 - https://expressjs.com/
-- https://react.dev/ (caso utilizado)
 - https://help.figma.com/
 - https://github.com/
