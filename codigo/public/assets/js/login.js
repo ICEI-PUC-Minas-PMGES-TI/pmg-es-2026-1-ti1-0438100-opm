@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     "usuarioLogado",
                     JSON.stringify({ id: usuario.id, login: usuario.login, admin: usuario.admin })
                 );
-                window.location.href = "/codigo/public/modulos/home_page/home.html";
+                window.location.href = "http://localhost:3000/modulos/home-page/home.html";
             } else {
                 errorMsg.style.display = "block";
             }

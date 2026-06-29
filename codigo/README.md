@@ -80,7 +80,7 @@ Assim que o Node.js estiver instalado no seu computador, siga os passos a seguir
 4. Execute o comando `npm start` para iniciar o JSON Server e permitir que você consiga acessar o seu site no navegador.
 5. Para testar o projeto:
    1. **Site Front End**: abra um navegador e acesse o seu site pela seguinte URL:
-      [http://localhost:3000]()
+      [http://localhost:3000/modulos/login/login.html]()
    2. **Site Back End**: abra o navegador e acesse as informações da estrutura de usuários por meio da API REST do JSON Server a partir da seguinte URL:
       [http://localhost:3000/usuarios](http://localhost:3000/usuarios)
 
