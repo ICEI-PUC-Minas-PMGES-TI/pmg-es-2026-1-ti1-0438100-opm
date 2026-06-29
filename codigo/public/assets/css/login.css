@@ -1,0 +1,149 @@
+:root {
+    --background: #0f1115;
+    --background-secundario: #1a1d24;
+
+    --preto: #050505;
+    --cinza-escuro: #2a2d35;
+    --cinza: #555b66;
+    --cinza-claro: #c7ccd4;
+
+    --dourado: #f2aa1f;
+    --dourado-claro: #ffd277;
+    --dourado-escuro: #b37b00;
+
+    --branco: #ffffff;
+
+    --verde: #2e9e45;
+    --vermelho: #d62828;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--branco);
+}
+
+/* ===== Navbar ===== */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px;
+    background-color: var(--background-secundario);
+    border-bottom: 4px solid var(--dourado);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+#logoImgNav {
+    height: 48px;
+    width: auto;
+    display: block;
+}
+
+#userArea {
+    color: var(--cinza-claro);
+    font-size: 14px;
+}
+
+.dropdown-content {
+    background-color: var(--background-secundario);
+    border: 1px solid var(--cinza-escuro);
+    border-radius: 8px;
+}
+
+/* ===== Card de login ===== */
+.card {
+    background-color: var(--background-secundario) !important;
+    color: var(--branco);
+    border: 1px solid var(--cinza-escuro);
+    border-top: 4px solid var(--dourado);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4) !important;
+}
+
+.card h2 {
+    color: var(--dourado);
+    font-size: 22px;
+}
+
+/* ===== Labels e inputs ===== */
+.form-label {
+    color: var(--cinza-claro);
+    font-size: 14px;
+}
+
+.form-control {
+    background-color: #2a2d35;
+    border: 1px solid #444;
+    color: var(--branco);
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.form-control::placeholder {
+    color: var(--cinza);
+}
+
+.form-control:focus {
+    background-color: #2a2d35;
+    color: var(--branco);
+    outline: none;
+    border-color: var(--dourado);
+    box-shadow: 0 0 0 2px rgba(242, 170, 31, 0.2);
+}
+
+/* ===== Botão Entrar ===== */
+.btn-dark {
+    background-color: var(--dourado) !important;
+    border: none !important;
+    color: #000 !important;
+    font-weight: bold;
+    border-radius: 6px;
+    padding: 10px;
+    transition: 0.2s;
+}
+
+.btn-dark:hover {
+    background-color: var(--dourado-claro) !important;
+    color: #000 !important;
+    transform: scale(1.02);
+}
+
+/* ===== Link de cadastro ===== */
+.card a {
+    color: var(--dourado);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.card a:hover {
+    color: var(--dourado-claro);
+    text-decoration: underline;
+}
+
+/* ===== Alerta de erro ===== */
+.alert-danger {
+    background-color: rgba(214, 40, 40, 0.15);
+    border: 1px solid var(--vermelho);
+    color: var(--vermelho);
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 768px) {
+    nav {
+        padding: 12px;
+    }
+
+    main {
+        padding: 12px !important;
+    }
+}
