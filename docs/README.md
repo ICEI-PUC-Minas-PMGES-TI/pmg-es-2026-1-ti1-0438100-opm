@@ -409,10 +409,7 @@ Disponibiliza conteúdos para capacitação dos operadores.
 - HTML5
 - CSS3
 - JavaScript
-- React *(caso utilizado)*
 - Node.js *(caso utilizado)*
-- Express *(caso utilizado)*
-- Bootstrap *(caso utilizado)*
 
 ## APIs
 
@@ -427,7 +424,6 @@ Disponibiliza conteúdos para capacitação dos operadores.
 - SOMMERVILLE, Ian. **Engenharia de Software**. Pearson.
 - PRESSMAN, Roger. **Engenharia de Software**. McGraw-Hill.
 - https://developer.mozilla.org/
-- https://react.dev/ *(caso utilizem React)*
-- https://nodejs.org/ *(caso utilizem Node.js)*
+- https://nodejs.org/
 - https://help.figma.com/
 - https://github.com/
