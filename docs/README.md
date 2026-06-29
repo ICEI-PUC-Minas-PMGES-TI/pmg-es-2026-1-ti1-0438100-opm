@@ -278,15 +278,17 @@ O projeto foi desenvolvido utilizando a metodologia ágil **Scrum**, com divisã
 
 # Sprint 1
 
-A Sprint 1 teve como objetivo desenvolver as funcionalidades fundamentais da aplicação, distribuindo as tarefas entre os integrantes da equipe conforme o planejamento inicial.
+Na **Sprint 1**, cada integrante ficou responsável por uma funcionalidade essencial da aplicação, conforme a divisão abaixo:
 
-Checklist de máquinas/operador | Leonardo Federici |
-Cadastro de máquinas/peças | Lucca Xavier |
-Cadastro de novos usuários | Francisco Côrtes |
-Login | Guilherme Chebile |
-Quadro de avisos | Daniel Gomes |
-Listagem de peças | Vitor Ladeia |
-Apresentação do status das máquinas | Bernardo Vinhal |
+| Integrante | Funcionalidade |
+|------------|----------------|
+| Bernardo Vinhal | Apresentação do Status das Máquinas |
+| Daniel Gomes | Quadro de Avisos |
+| Francisco Côrtes | Cadastro de Novos Usuários |
+| Guilherme Chebile | Login |
+| Leonardo Federici | Checklist de Máquinas/Operador |
+| Lucca Xavier | Cadastro de Máquinas/Peças |
+| Vitor Ladeia | Listagem de Peças |
 
 # Sprint 2
 
