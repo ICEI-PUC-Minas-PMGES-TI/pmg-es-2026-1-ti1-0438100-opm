@@ -197,7 +197,7 @@ Monitorar a eficiência das máquinas e identificar gargalos da produção.
 - Informações centralizadas.
 - Mais segurança operacional.
 
-> **Inserir aqui a imagem do Mapa de Proposta de Valor produzido pelo grupo.**
+![Logo do projeto](images/mapa_proposta_valor.png)
 
 ## Requisitos do Projeto
 
@@ -281,8 +281,6 @@ O gerenciamento das tarefas foi realizado utilizando o **GitHub Projects**, orga
 - Em Desenvolvimento
 - Em Revisão
 - Concluído
-
-> Inserir captura de tela do quadro Kanban.
 
 ---
 
