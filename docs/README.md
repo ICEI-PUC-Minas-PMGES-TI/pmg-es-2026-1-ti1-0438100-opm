@@ -241,16 +241,15 @@ Página Inicial
    └── Administração
 ```
 
-## Wireframes
+## Projeto de Interface
 
-> Inserir imagens dos wireframes desenvolvidos no Figma.
+### Demonstração
 
-## Protótipo Interativo
+![Demonstração](images/demo.gif)
+
+### Protótipo completo
 
 https://www.figma.com/design/CNkfetUjhWQKAP0sK5NebE/Wireframe-OTM
-
----
-
 # Metodologia
 
 ## Ferramentas
