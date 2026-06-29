@@ -8,7 +8,7 @@ O **OPM (Operação de Máquinas)** é uma aplicação web desenvolvida para oti
 
 ## Integrantes da equipe
 
-- [Bernardo Vinhal](https://github.com/bvinhal01))
+- [Bernardo Vinhal](https://github.com/bvinhal01)
 - [Daniel Rolando](https://github.com/TaroNukem)
 - [Francisco Cortes](https://github.com/chicortes)
 - [Guilherme Luiz](https://github.com/GuilhermeChebile)
