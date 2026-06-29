@@ -197,7 +197,7 @@ Monitorar a eficiência das máquinas e identificar gargalos da produção.
 - Informações centralizadas.
 - Mais segurança operacional.
 
-![Logo do projeto](docs/images/mapa_proposta_valor.png)
+![Logo do projeto](images/opm.jpeg)
 
 ## Requisitos do Projeto
 
@@ -241,15 +241,11 @@ Página Inicial
    └── Administração
 ```
 
-## Wireframes
+# Projeto de Interfaces
 
-> Inserir imagens dos wireframes desenvolvidos no Figma.
-
-## Protótipo Interativo
+### Protótipo completo / Wireframe
 
 https://www.figma.com/design/CNkfetUjhWQKAP0sK5NebE/Wireframe-OTM
-
----
 
 # Metodologia
 
@@ -272,6 +268,40 @@ As tarefas foram distribuídas entre os membros da equipe considerando suas habi
 
 Reuniões periódicas foram realizadas para acompanhamento do progresso e redefinição das prioridades quando necessário.
 
+## Organização da Equipe
+
+O projeto foi desenvolvido utilizando a metodologia ágil **Scrum**, com divisão das atividades em sprints semanais.
+
+# Sprint 1
+
+Na **Sprint 1**, cada integrante ficou responsável por uma funcionalidade essencial da aplicação, conforme a divisão abaixo:
+
+| Integrante | Funcionalidade |
+|------------|----------------|
+| Bernardo Vinhal | Apresentação do Status das Máquinas |
+| Daniel Gomes | Quadro de Avisos |
+| Francisco Côrtes | Cadastro de Novos Usuários |
+| Guilherme Chebile | Login |
+| Leonardo Federici | Checklist de Máquinas/Operador |
+| Lucca Xavier | Cadastro de Máquinas/Peças |
+| Vitor Ladeia | Listagem de Peças |
+
+# Sprint 2
+
+Na **Sprint 2**, cada integrante ficou responsável por uma funcionalidade específica da aplicação, conforme a divisão abaixo:
+
+| Integrante | Funcionalidade |
+|------------|----------------|
+| Bernardo Vinhal | Status de Treinamento |
+| Daniel Rolando | Página de Treinamentos |
+| Francisco Côrtes | Página de Relatório para Operário |
+| Guilherme Chebile | Saúde das Máquinas |
+| Leonardo Pettersen | Acesso às Respostas dos Checklists |
+| Lucca Xavier | Página de Relatório de Produção de Máquinas |
+| Vitor Ladeia | Planejamento da Produção |
+
+As tarefas foram acompanhadas por meio do GitHub Projects utilizando um quadro Kanban, permitindo o acompanhamento do andamento das atividades e da evolução do projeto durante a Sprint.
+
 ## Quadro Kanban
 
 O gerenciamento das tarefas foi realizado utilizando o **GitHub Projects**, organizado nas colunas:
@@ -281,8 +311,6 @@ O gerenciamento das tarefas foi realizado utilizando o **GitHub Projects**, orga
 - Em Desenvolvimento
 - Em Revisão
 - Concluído
-
-> Inserir captura de tela do quadro Kanban.
 
 ---
 
@@ -377,10 +405,7 @@ Disponibiliza conteúdos para capacitação dos operadores.
 - HTML5
 - CSS3
 - JavaScript
-- React *(caso utilizado)*
 - Node.js *(caso utilizado)*
-- Express *(caso utilizado)*
-- Bootstrap *(caso utilizado)*
 
 ## APIs
 
@@ -395,7 +420,6 @@ Disponibiliza conteúdos para capacitação dos operadores.
 - SOMMERVILLE, Ian. **Engenharia de Software**. Pearson.
 - PRESSMAN, Roger. **Engenharia de Software**. McGraw-Hill.
 - https://developer.mozilla.org/
-- https://react.dev/ *(caso utilizem React)*
-- https://nodejs.org/ *(caso utilizem Node.js)*
+- https://nodejs.org/
 - https://help.figma.com/
 - https://github.com/
