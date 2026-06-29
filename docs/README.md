@@ -241,13 +241,9 @@ Página Inicial
    └── Administração
 ```
 
-## Projeto de Interface
+# Projeto de Interfaces
 
-### Demonstração
-
-![Demonstração](images/demo.gif)
-
-### Protótipo completo
+### Protótipo completo / Wireframe
 
 https://www.figma.com/design/CNkfetUjhWQKAP0sK5NebE/Wireframe-OTM
 # Metodologia
