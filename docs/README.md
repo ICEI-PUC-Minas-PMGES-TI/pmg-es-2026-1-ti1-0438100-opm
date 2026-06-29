@@ -405,15 +405,7 @@ Disponibiliza conteúdos para capacitação dos operadores.
 - HTML5
 - CSS3
 - JavaScript
-- Node.js *(caso utilizado)*
-
-## APIs
-
-- API REST para autenticação.
-- API de gerenciamento de usuários.
-- API para indicadores de produção.
-
----
+- Node.js
 
 # Referências Bibliográficas
 
