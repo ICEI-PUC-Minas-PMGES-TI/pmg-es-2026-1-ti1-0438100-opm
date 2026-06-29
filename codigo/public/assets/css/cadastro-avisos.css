@@ -1,224 +1,273 @@
+:root {
+    --background: #0f1115;
+    --background-secundario: #1a1d24;
 
+    --preto: #050505;
+    --cinza-escuro: #2a2d35;
+    --cinza: #555b66;
+    --cinza-claro: #c7ccd4;
 
-body {
-    background-color: #1c1e22;
-    margin: 0;
+    --dourado: #f2aa1f;
+    --dourado-claro: #ffd277;
+    --dourado-escuro: #b37b00;
+
+    --branco: #ffffff;
+
+    --verde: #2e9e45;
+    --vermelho: #d62828;
 }
 
-/* CORPO */
-
-.corpo {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    padding: 100px;
-    font-size: 20px;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
 }
 
-h1 {
-    color: #e8a020;
-    font-family: Arial, Helvetica, sans-serif;
+body{
+    background:var(--background);
+    color:var(--branco);
 }
 
-i {
-    background-color: white;
-    height: 50px;
+.corpo{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+    padding:24px;
 }
 
-/* LADO ESQUERDO */
-
-.esquerda {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr;
-    gap: 10px;
+.esquerda,
+.selecao-direita{
+    background:var(--background-secundario);
+    border:1px solid var(--cinza-escuro);
+    border-top:4px solid var(--dourado);
+    border-radius:10px;
+    padding:20px;
+    box-shadow:0 4px 15px rgba(0,0,0,.4);
 }
 
-.botoes-acao {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    gap: 10px;
+h1{
+    color:var(--dourado);
+    border-left:5px solid var(--dourado);
+    padding-left:10px;
+    margin-bottom:20px;
+    font-size:20px;
 }
 
-/* BOTÕES */
-
-.funil {
-    background-color: #e8a020;
-    border-radius: 20px;
-    height: 40px;
-    width: 50px;
+.botoes-acao{
+    display:flex;
+    gap:12px;
+    margin-bottom:20px;
 }
 
-.funil img {
-    height: 40px;
-    width: 30px;
+.funil,
+.alterar,
+.adicionar{
+    background:var(--dourado);
+    color:var(--preto);
+    border:none;
+    border-radius:6px;
+    padding:10px 16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.2s;
 }
 
-.deletar {
-    background-color: rgb(99, 4, 4);
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    border-radius: 5px;
-    border: none;
-    font-size: 25px;
-    height: 40px;
-    width: 310px;
-    padding: 0 15px;
-    cursor: pointer;
-    
+.deletar,
+.limpar{
+    background:transparent;
+    color:var(--vermelho);
+    border:1px solid var(--vermelho);
+    border-radius:6px;
+    padding:10px 16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.2s;
 }
 
-.alterar {
-    background-color: rgb(27, 93, 27);
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    border-radius: 5px;
-    border: none;
-    font-size: 20px;
-    padding: 7px;
-    cursor: pointer;
+.funil:hover,
+.alterar:hover,
+.adicionar:hover{
+    background:var(--dourado-claro);
+    transform:scale(1.03);
 }
 
-.limpar {
-    background-color: rgb(99, 4, 4);
-    color: white;
-    border: none;
-    border-radius: 7px;
-    padding: 12px;
-    font-size: 30px;
-    cursor: pointer;
+.deletar:hover,
+.limpar:hover{
+    background:var(--vermelho);
+    color:var(--branco);
+    transform:scale(1.03);
 }
 
-.adicionar {
-    background-color: rgb(27, 93, 27);
-    color: white;
-    border: none;
-    border-radius: 7px;
-    padding: 12px;
-    font-size: 30px;
-    cursor: pointer;
+.funil{
+    width:50px;
 }
 
-/* TABELA */
+.funil img{
+    width:22px;
+    height:22px;
+}
 
-.tabela {
-    background-color: #e8a020;
-    font-family: Arial, Helvetica, sans-serif;
-    grid-column: 1/4;
-    width: 100%;
-    border-collapse: collapse;
+.tabela{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+    background:var(--background-secundario);
+}
+
+.tabela th{
+    background:var(--preto);
+    color:var(--dourado);
 }
 
 .tabela th,
-.tabela td {
-    padding: 10px;
-    text-align: center;
+.tabela td{
+    border:1px solid var(--cinza-escuro);
+    padding:12px;
+    text-align:center;
 }
 
-.cor1tabela {
-    background-color: #8b7144;
+.cor1tabela{
+    background:#22252d;
 }
 
-.cor2tabela {
-    background-color: #eec682;
+.cor2tabela{
+    background:#2a2d35;
 }
 
-/* LADO DIREITO */
+.tabela tbody tr:hover{
+    background:#323844;
+}
 
 .selecao-direita select,
-.selecao-direita input {
-    border-radius: 10px;
-    font-size: 20px;
-    padding: 8px;
-    width: 100%;
+.selecao-direita input{
+    width:100%;
+    padding:10px;
+    margin-bottom:15px;
+    border-radius:6px;
+    border:1px solid #444;
+    background:var(--cinza-escuro);
+    color:var(--branco);
+    font-size:14px;
 }
 
-/* CALENDARIO */
-
-.calendario_area {
-    display: grid;
-    justify-items: center;
-    font-family: Arial, Helvetica, sans-serif;
+.selecao-direita select:focus,
+.selecao-direita input:focus{
+    outline:none;
+    border-color:var(--dourado);
+    box-shadow:0 0 0 2px rgba(242,170,31,.2);
 }
 
-.calendario_area h1 {
-    font-size: 18px;
-    color: #eec682;
-    margin: 10px 0;
+.calendario_area{
+    margin-top:25px;
 }
 
-.calendario {
-    background-color: white;
-    width: 320px;
-    padding: 20px;
-    border-radius: 15px;
+.calendario{
+    width:100%;
+    max-width:340px;
+    margin:auto;
+    background:var(--preto);
+    border:1px solid var(--cinza-escuro);
+    border-radius:10px;
+    padding:20px;
 }
 
-.calendario_topo {
-    display: grid;
-    grid-template-columns: auto 1fr 1fr auto;
-    gap: 10px;
-    align-items: center;
+.calendario_area h1{
+    font-size:18px;
 }
 
-.calendario_topo button {
-    border: none;
-    background-color: white;
-    font-size: 25px;
-    cursor: pointer;
+.calendario_topo{
+    display:grid;
+    grid-template-columns:auto 1fr 1fr auto;
+    gap:10px;
+    align-items:center;
 }
 
-.calendario_topo select {
-    padding: 5px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    font-size: 16px;
+.calendario_topo button{
+    background:none;
+    border:none;
+    color:var(--dourado);
+    font-size:22px;
+    cursor:pointer;
 }
 
-.dias_semana {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    text-align: center;
-    margin-top: 20px;
-    color: gray;
-    font-size: 14px;
+.calendario_topo select{
+    background:var(--cinza-escuro);
+    color:var(--branco);
+    border:1px solid #444;
+    border-radius:6px;
+    padding:6px;
 }
 
-.dias {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    text-align: center;
-    gap: 8px;
-    margin-top: 15px;
+.dias_semana{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    text-align:center;
+    color:var(--cinza-claro);
+    margin-top:20px;
 }
 
-.dias span {
-    padding: 10px 0;
-    border-radius: 8px;
-    font-size: 18px;
-    cursor: pointer;
+.dias{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    gap:8px;
+    margin-top:15px;
 }
 
-.dias .selecionado {
-    background-color: #2b2b2b;
-    color: white;
+.dias span{
+    padding:10px;
+    border-radius:6px;
+    cursor:pointer;
+    transition:.2s;
 }
 
+.dias span:hover{
+    background:var(--cinza-escuro);
+}
 
-.botoes_calendario {
-    display: flex;
-    gap: 50px;
-    margin-top: 40px;
+.dias .selecionado{
+    background:var(--dourado);
+    color:var(--preto);
+    font-weight:bold;
+}
+
+.botoes_calendario{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+    justify-content:center;
 }
 
 .final-footer{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: black;  
+    margin-top:30px;
+    background:var(--preto);
+    border-top:2px solid var(--dourado);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:16px;
 }
+
 .final-footer h1{
-    font-size: 20px;
+    border:none;
+    padding:0;
+    margin:0;
+    color:var(--cinza-claro);
+    font-size:16px;
+}
+
+@media (max-width:900px){
+
+    .corpo{
+        grid-template-columns:1fr;
+        padding:12px;
+    }
+
+    .botoes-acao{
+        flex-wrap:wrap;
+    }
+
+    .botoes-acao button{
+        flex:1;
+    }
 }
