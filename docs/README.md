@@ -272,6 +272,38 @@ As tarefas foram distribuídas entre os membros da equipe considerando suas habi
 
 Reuniões periódicas foram realizadas para acompanhamento do progresso e redefinição das prioridades quando necessário.
 
+## Organização da Equipe
+
+O projeto foi desenvolvido utilizando a metodologia ágil **Scrum**, com divisão das atividades em sprints semanais.
+
+# Sprint 1
+
+A Sprint 1 teve como objetivo desenvolver as funcionalidades fundamentais da aplicação, distribuindo as tarefas entre os integrantes da equipe conforme o planejamento inicial.
+
+Checklist de máquinas/operador | Leonardo Federici |
+Cadastro de máquinas/peças | Lucca Xavier |
+Cadastro de novos usuários | Francisco Côrtes |
+Login | Guilherme Chebile |
+Quadro de avisos | Daniel Gomes |
+Listagem de peças | Vitor Ladeia |
+Apresentação do status das máquinas | Bernardo Vinhal |
+
+# Sprint 2
+
+Na **Sprint 2**, cada integrante ficou responsável por uma funcionalidade específica da aplicação, conforme a divisão abaixo:
+
+| Integrante | Funcionalidade |
+|------------|----------------|
+| Bernardo Vinhal | Status de Treinamento |
+| Daniel Rolando | Página de Treinamentos |
+| Francisco Côrtes | Página de Relatório para Operário |
+| Guilherme Chebile | Saúde das Máquinas |
+| Leonardo Pettersen | Acesso às Respostas dos Checklists |
+| Lucca Xavier | Página de Relatório de Produção de Máquinas |
+| Vitor Ladeia | Planejamento da Produção |
+
+As tarefas foram acompanhadas por meio do GitHub Projects utilizando um quadro Kanban, permitindo o acompanhamento do andamento das atividades e da evolução do projeto durante a Sprint.
+
 ## Quadro Kanban
 
 O gerenciamento das tarefas foi realizado utilizando o **GitHub Projects**, organizado nas colunas:
