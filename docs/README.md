@@ -340,31 +340,26 @@ Usuário.
 
 Informar e-mail e senha cadastrados.
 
----
 
 ### Cadastro de Usuários
 
 Permite cadastrar operadores e administradores do sistema.
 
-![Cadastro de Usuários](Imagens/cadastrodeuser.jpg)
 
 ### Checklist
 
 Permite registrar a inspeção obrigatória antes da utilização da máquina.
 
----
 
 ### Dashboard OEE
 
 Exibe indicadores de eficiência da produção em tempo real.
 
----
 
 ### Portal de Treinamentos
 
 Disponibiliza conteúdos para capacitação dos operadores.
 
-![Portal de Treinamentos](Imagens/portal%20de%20treinamentos.jpg)
 
 # Estruturas de Dados
 
