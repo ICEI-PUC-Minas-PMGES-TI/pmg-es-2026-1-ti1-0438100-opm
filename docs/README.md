@@ -197,7 +197,7 @@ Monitorar a eficiência das máquinas e identificar gargalos da produção.
 - Informações centralizadas.
 - Mais segurança operacional.
 
-![Logo do projeto](images/mapa_proposta_valor.png)
+![Logo do projeto](docs/images/opm.jpeg)
 
 ## Requisitos do Projeto
 
