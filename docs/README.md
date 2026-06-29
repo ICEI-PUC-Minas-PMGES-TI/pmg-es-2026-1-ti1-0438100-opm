@@ -44,12 +44,7 @@ Desenvolver um software web capaz de centralizar informações operacionais e de
 
 ## Justificativa
 
-O gerenciamento eficiente das operações industriais impacta diretamente na produtividade e nos custos das empresas.
-
-Ao substituir processos manuais por uma plataforma digital, espera-se reduzir erros de preenchimento, eliminar perdas de documentos físicos e disponibilizar informações em tempo real para gestores e operadores.
-
-A escolha do projeto também possibilita aprofundar conhecimentos sobre desenvolvimento web, integração entre interface e banco de dados, autenticação de usuários e visualização de indicadores industriais.
-
+Segundo a Confederação Nacional da Indústria (CNI), a digitalização da indústria reduz desperdícios e melhora a eficiência operacional.
 ## Público-Alvo
 
 A aplicação foi desenvolvida para empresas do setor industrial.
