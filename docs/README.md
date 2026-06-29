@@ -211,6 +211,14 @@ Monitorar a eficiência das máquinas e identificar gargalos da produção.
 | RF04 | Exibir indicadores OEE. |
 | RF05 | Disponibilizar treinamentos. |
 | RF06 | Registrar histórico de inspeções. |
+| RF07 | Cadastrar máquinas
+| RF08 | Cadastrar peças
+| RF09 | Gerenciar avisos
+| RF10 | Visualizar saúde das máquinas
+| RF11 | Consultar respostas dos checklists
+| RF12 | Gerar relatório do operário
+| RF13 | Gerar relatório de produção
+| RF14| Planejar produção
 
 ### Requisitos Não Funcionais
 
@@ -423,3 +431,14 @@ Disponibiliza conteúdos para capacitação dos operadores.
 - API para avisos.
 - API para relatórios de produção.
 - API para planejamento da produção.
+
+# Referências Bibliográficas
+
+- SOMMERVILLE, Ian. Engenharia de Software.
+- PRESSMAN, Roger. Engenharia de Software.
+- https://developer.mozilla.org/
+- https://nodejs.org/
+- https://expressjs.com/
+- https://react.dev/ (caso utilizado)
+- https://help.figma.com/
+- https://github.com/
