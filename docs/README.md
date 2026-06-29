@@ -398,20 +398,28 @@ Disponibiliza conteúdos para capacitação dos operadores.
 
 ---
 
+
 # Módulos e APIs
 
-## Frameworks e Bibliotecas
+## Tecnologias Utilizadas
 
 - HTML5
 - CSS3
 - JavaScript
 - Node.js
+- Express.js
+- JSON Server
+- Git
+- GitHub
 
-# Referências Bibliográficas
+## APIs e Módulos
 
-- SOMMERVILLE, Ian. **Engenharia de Software**. Pearson.
-- PRESSMAN, Roger. **Engenharia de Software**. McGraw-Hill.
-- https://developer.mozilla.org/
-- https://nodejs.org/
-- https://help.figma.com/
-- https://github.com/
+- API REST para autenticação de usuários.
+- API para gerenciamento de usuários.
+- API para gerenciamento de máquinas.
+- API para gerenciamento de peças.
+- API para checklists.
+- API para treinamentos.
+- API para avisos.
+- API para relatórios de produção.
+- API para planejamento da produção.
